@@ -1,5 +1,5 @@
 # fbtr64toolbox
-TR064-Script for AVM fritzboxes
+Bash-TR064-Script for AVM fritzboxes
 
 Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 
