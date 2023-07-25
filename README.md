@@ -10,7 +10,7 @@ Abhaengig von der Firmware einer Fritzbox sind moeglicherweise nicht
 alle Funktionen des Skriptes verfuegbar und fuehren dann zur
 Fehlermeldung "Error on communication with fritzbox".
 
-Vor Benutzung bitte die Dokumentation unter
+Vor Benutzung bitte die Dokumentation im Archiv unter
 
 /usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt
 
