@@ -134,22 +134,22 @@ Parameter                            Used by commands
 --fbconffilepassword "<text>"        savefbconfig
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>          mysoaprequest
---SOAPdescfile <xmlfilename>     mysoaprequest
---SOAPcontrolURL <URL>           mysoaprequest
---SOAPserviceType <service type> mysoaprequest
---SOAPaction <function name>     mysoaprequest
---SOAPdata "<function data>"     mysoaprequest
---SOAPsearch "<search text>|all" mysoaprequest
---SOAPtitle "<text>"             mysoaprequest
+--SOAPtype <https|http>              mysoaprequest
+--SOAPdescfile <xmlfilename>         mysoaprequest
+--SOAPcontrolURL <URL>               mysoaprequest
+--SOAPserviceType <service type>     mysoaprequest
+--SOAPaction <function name>         mysoaprequest
+--SOAPdata "<function data>"         mysoaprequest
+--SOAPsearch "<search text>|all"     mysoaprequest
+--SOAPtitle "<text>"                 mysoaprequest
 
---experimental                   Enables experimental commands (*).
+--experimental                       Enables experimental commands (*).
 
---debugfb                        Activate debug output on fritzbox communication.
---verbose                        Print out return code of all TR-064 function calls.
+--debugfb                            Activate debug output on fritzbox communication.
+--verbose                            Print out return code of all TR-064 function calls.
 
-version|--version                Prints version and copyright informations.
-help|--help|-h                   Prints help page.
+version|--version                    Prints version and copyright informations.
+help|--help|-h                       Prints help page.
 
 Necessary parameters not given on the command line are taken from default
 values or ${HOME}/.fbtr64toolbox.
@@ -177,6 +177,81 @@ Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
 through the tr-064 interface ending up in corrupted port forwarding entries.
+```
+
+Das Kommando writeconfig schreibt eine beispielhafte Konfigurationsdatei in das Homeverzeichnis,
+die den eigenen Erfordernissen anzupassen ist:
+```
+# Configuration file for fbtr64toolbox.sh                                                                                                                                                     
+#                                                                                                                                                                                             
+# Fritzbox settings                                                                                                                                                                           
+# Address (IP or FQDN)                                                                                                                                                                        
+FBIP="192.168.178.1"                                                                                                                                                                            
+# SOAP port; do not change                                                                                                                                                                    
+FBPORT="49000"                                                                                                                                                                                
+# SSL SOAP port; will be read from the fritzbox in the script.                                                                                                                                
+FBPORTSSL="49443"                                                                                                                                                                             
+                                                                                                                                                                                              
+# Fixes for faulty fritzboxes / fritzbox firmwares                                                                                                                                            
+# Maybe fixed in firmware version 6.80.                                                                                                                                                       
+# It seams that some of them reverses the values of "NewInternalPort" and                                                                                                                     
+# "NewExternalPort" in function "GetGenericPortMapEntry" of "WANIPConnection:1"                                                                                                               
+# resp. "WANPPPConnection:1".                                                                                                                                                                 
+# Set this to true if you are affected."                                                                                                                                                      
+FBREVERSEPORTS="false"                                                                                                                                                                        
+# It seams that some of them reverses the values of "NewFTPWANEnable" and                                                                                                                     
+# "NewFTPWANSSLOnly" in function "SetFTPWANServer" of "X_AVM-DE_Storage:1".                                                                                                                   
+# Set this to true if you are affected."                                                                                                                                                      
+FBREVERSEFTPWAN="false"
+
+# Authentification settings
+# dslf-config is the standard user defined in TR-064 with web login password.
+# You can use any other user defined in your fritzbox with sufficient rights.
+#
+# Instead of writing down your password here it is safer to use ${HOME}/.netrc
+# for the authentification data avoiding that the password could be seen in
+# environment or process list.
+# Rights on ${HOME}/.netrc has to be 0600: chmod 0600 ${HOME}/.netrc
+# Content of a line in this file for your fritzbox should look like:
+# machine <ip of fritzbox> login <user> password <password>
+# f. e.
+# machine 192.168.1.1 login dslf-config password xxxxx
+# The fritzbox address has to be given in the same type (ip or fqdn) in
+# ${HOME}/.fbtr64toolbox or on command line parameter --fbip and ${HOME}/.netrc.
+user="dslf-config"
+password="xxxxx"
+
+# Save fritzbox configuration settings
+# Absolute path to fritzbox configuration file; not empty.
+fbconffilepath="/root"
+# Prefix/suffix of configuration file name.
+# Model name, serial number, firmware version and date/time stamp will be added.
+# "_" is added to prefix and "." is added to suffix automatically so that name
+# will be: prefix_<model>_<serialno>_<firmwareversion>_<date_time>.suffix
+fbconffileprefix="fritzbox"
+fbconffilesuffix="config"
+# Password for fritzbox configuration file, could be empty.
+# Configuration files without password could restored to
+# the same fritzbox not to a different fritzbox.
+fbconffilepassword="xxxxx"
+
+# Default port forwarding settings
+# do not change
+new_remote_host=""
+# Source port
+new_external_port="80"
+# Protocol TCP or UDP
+new_protocol="TCP"
+# Target port
+new_internal_port="80"
+# Target ip address
+new_internal_client="192.168.178.3"
+# Port forward enabled (1) or disabled (0)
+new_enabled="1"
+# Description (not empty)
+new_port_mapping_description="http forward for letsencrypt"
+# do not change
+new_lease_duration="0"
 ```
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
