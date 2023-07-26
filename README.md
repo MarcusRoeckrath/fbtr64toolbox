@@ -6,7 +6,7 @@ Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen.
 Copyright (c) 2016-2023 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
-Abhaengig von der Firmware einer Fritzbox sind möglicherweise nicht
+Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
 Fehlermeldung "Error on communication with fritzbox".
 
