@@ -167,8 +167,8 @@ ftpwansslswitch : Activates/deactivates ssl only on ftp wan server.
 smbswitch       : Activates/deactivates smb server.
 nasswitch       : Activates/deactivates nas server (local ftp and smb).
 upnpmediainfo   : Information/Status of upnp media server.
-upnpswitch      : Activates/deactivate of upnp status messages.
-mediaswitch     : Activates/deactivate of media server.
+upnpswitch      : Activates/deactivates upnp status messages.
+mediaswitch     : Activates/deactivates media server.
 taminfo         : Information/Status of answering machines.
 tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
@@ -1154,5 +1154,5 @@ die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
 die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-07-17
+Stand: 2023-07-26
 Marcus Roeckrath
