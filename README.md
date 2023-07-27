@@ -197,26 +197,26 @@ through the tr-064 interface ending up in corrupted port forwarding entries.
 Das Kommando writeconfig schreibt eine beispielhafte Konfigurationsdatei in das Homeverzeichnis,
 die den eigenen Erfordernissen anzupassen ist:
 ```
-# Configuration file for fbtr64toolbox.sh                                                                                                                                                     
-#                                                                                                                                                                                             
-# Fritzbox settings                                                                                                                                                                           
-# Address (IP or FQDN)                                                                                                                                                                        
-FBIP="192.168.178.1"                                                                                                                                                                            
-# SOAP port; do not change                                                                                                                                                                    
-FBPORT="49000"                                                                                                                                                                                
-# SSL SOAP port; will be read from the fritzbox in the script.                                                                                                                                
-FBPORTSSL="49443"                                                                                                                                                                             
-                                                                                                                                                                                              
-# Fixes for faulty fritzboxes / fritzbox firmwares                                                                                                                                            
-# Maybe fixed in firmware version 6.80.                                                                                                                                                       
-# It seams that some of them reverses the values of "NewInternalPort" and                                                                                                                     
-# "NewExternalPort" in function "GetGenericPortMapEntry" of "WANIPConnection:1"                                                                                                               
-# resp. "WANPPPConnection:1".                                                                                                                                                                 
-# Set this to true if you are affected."                                                                                                                                                      
-FBREVERSEPORTS="false"                                                                                                                                                                        
-# It seams that some of them reverses the values of "NewFTPWANEnable" and                                                                                                                     
-# "NewFTPWANSSLOnly" in function "SetFTPWANServer" of "X_AVM-DE_Storage:1".                                                                                                                   
-# Set this to true if you are affected."                                                                                                                                                      
+# Configuration file for fbtr64toolbox.sh
+#
+# Fritzbox settings
+# Address (IP or FQDN)
+FBIP="192.168.178.1"
+# SOAP port; do not change
+FBPORT="49000"
+# SSL SOAP port; will be read from the fritzbox in the script.
+FBPORTSSL="49443"
+
+# Fixes for faulty fritzboxes / fritzbox firmwares
+# Maybe fixed in firmware version 6.80.
+# It seams that some of them reverses the values of "NewInternalPort" and
+# "NewExternalPort" in function "GetGenericPortMapEntry" of "WANIPConnection:1"
+# resp. "WANPPPConnection:1".
+# Set this to true if you are affected."
+FBREVERSEPORTS="false"
+# It seams that some of them reverses the values of "NewFTPWANEnable" and
+# "NewFTPWANSSLOnly" in function "SetFTPWANServer" of "X_AVM-DE_Storage:1".
+# Set this to true if you are affected."
 FBREVERSEFTPWAN="false"
 
 # Authentification settings
