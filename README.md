@@ -154,6 +154,8 @@ help|--help|-h                       Prints help page.
 Necessary parameters not given on the command line are taken from default
 values or ${HOME}/.fbtr64toolbox.
 
+If exists /root/.fbtr64toolbox is read on startup to override defaults.
+
 If modifying an existing port forwarding entry with the add, enable or disable commands
 the values for extport, intclient and protocol has to be entered in exact the same
 way as they are stored in the port forwarding entry on the fritzbox! Differing values
@@ -231,7 +233,7 @@ fbconffilepath="/root"
 fbconffileprefix="fritzbox"
 fbconffilesuffix="config"
 # Password for fritzbox configuration file, could be empty.
-# Configuration files without password could restored to
+# Configuration files without password could be restored to
 # the same fritzbox not to a different fritzbox.
 fbconffilepassword="xxxxx"
 
