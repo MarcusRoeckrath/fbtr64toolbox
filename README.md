@@ -13,6 +13,21 @@ Fehlermeldung "Error on communication with fritzbox".
 Neben den vordefinierten Kommandos kann über Kommandozeilenoptionen oder
 Steuerungsdateien jede beliebige TR-064-Funktion ausgeführt werden.
 
+Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
+https://avm.de/service/schnittstellen/
+
+Auf dem Zielsystem benötigte Tools: grep, sed, curl, wget und ksh
+
+**Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
+**/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
+
+Das Skript wurde in folgenden System getestet:
+- eisfair (Linux-Serverdistribution eisfair.org)
+- OpenSuSE
+- Ubuntu (im Windows Subsystem for Linux WSL1 in Windows 10)
+- Debian (im Windows Subsystem for Linux WSL1 in Windows 10)
+- Raspbian
+
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
 Fritzbox TR-064 command line interface
@@ -253,18 +268,3 @@ new_port_mapping_description="http forward for letsencrypt"
 # do not change
 new_lease_duration="0"
 ```
-
-Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
-https://avm.de/service/schnittstellen/
-
-Auf dem Zielsystem benötigte Tools: grep, sed, curl, wget und ksh
-
-Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter
-/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.
-
-Das Skript wurde in folgenden System getestet:
-- eisfair (Linux-Serverdistribution eisfair.org)
-- OpenSuSE
-- Ubuntu (im Windows Subsystem for Linux WSL1 in Windows 10)
-- Debian (im Windows Subsystem for Linux WSL1 in Windows 10)
-- Raspbian
