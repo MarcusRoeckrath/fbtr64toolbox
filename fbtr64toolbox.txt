@@ -235,25 +235,27 @@ Parameter                            Used by commands
 --fbconffilepassword "<text>"        savefbconfig
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>          mysoaprequest
---SOAPdescfile <xmlfilename>     mysoaprequest
---SOAPcontrolURL <URL>           mysoaprequest
---SOAPserviceType <service type> mysoaprequest
---SOAPaction <function name>     mysoaprequest
---SOAPdata "<function data>"     mysoaprequest
---SOAPsearch "<search text>|all" mysoaprequest
---SOAPtitle "<text>"             mysoaprequest
+--SOAPtype <https|http>              mysoaprequest
+--SOAPdescfile <xmlfilename>         mysoaprequest
+--SOAPcontrolURL <URL>               mysoaprequest
+--SOAPserviceType <service type>     mysoaprequest
+--SOAPaction <function name>         mysoaprequest
+--SOAPdata "<function data>"         mysoaprequest
+--SOAPsearch "<search text>|all"     mysoaprequest
+--SOAPtitle "<text>"                 mysoaprequest
 
---experimental                   Enables experimental commands (*).
+--experimental                       Enables experimental commands (*).
 
---debugfb                        Activate debug output on fritzbox communication.
---verbose                        Print out return code of all TR-064 function calls.
+--debugfb                            Activate debug output on fritzbox communication.
+--verbose                            Print out return code of all TR-064 function calls.
 
-version|--version                Prints version and copyright informations.
-help|--help|-h                   Prints help page.
+version|--version                    Prints version and copyright informations.
+help|--help|-h                       Prints help page.
 
 Necessary parameters not given on the command line are taken from default
 values or ${HOME}/.fbtr64toolbox.
+
+If exists ${HOME}/.fbtr64toolbox is read on startup to override defaults.
 
 If modifying an existing port forwarding entry with the add, enable or disable commands
 the values for extport, intclient and protocol has to be entered in exact the same
@@ -264,8 +266,6 @@ these values in the port forwarding entry on the fritzbox.
 If deleting an port forwarding entry on the fritzbox the values for extport and protocol
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
-
-The script reads default values for all variables from ${HOME}/.fbtr64toolbox.
 
 The script can use the fritzbox authentification data from ${HOME}/.netrc
 which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
@@ -909,7 +909,7 @@ action: X_AVM-DE_CreateUrlSID
 createsoapfiles:
 Erzeugt aus den auf der Fritzbox gespeicherten XML-Dokumenten SOAP-Dateien.
 Das Zielverzeichnis ist mit vollem Pfad anzugeben. Siehe hierzu die
-Beschreibung dritten Kapitel dieses Dokumentes. Ein erneuter Aufruf dieser
+Beschreibung im dritten Kapitel dieses Dokumentes. Ein erneuter Aufruf dieser
 Funktion loescht zunaechst die bisherigen Dateien im Zielverzeichnis.
 
 
@@ -974,7 +974,7 @@ und Dokumente zur SOAP-Schnittstelle.
 Unter dem Menue-Punkt "Create sample soap files from fritzbox documents" (siehe
 oben unter 1. Das Menue) koennen fuer alle TR-04-Funktionen der eigenen Fritzbox
 SOAP-Beispieldateien erzeugt werden. Eine Beschreibung dieser Dateien folgt im
-3. Kapitel dieser Dokumentation.
+dritten Kapitel dieser Dokumentation.
 
 Wird eine solche SOAP-Datei ausgefuehrt, haben Kommandozeilenparameter Vorrang
 vor den Werten innerhalb der SOAP-Datei, z. B.
@@ -1154,5 +1154,5 @@ die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
 die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-07-26
+Stand: 2023-07-27
 Marcus Roeckrath
