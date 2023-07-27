@@ -30,7 +30,7 @@ das Skript oder einem der folgenden Pfade
 abzulegen und wird dann automatisch vom Skript gefunden und inkludiert.
 Die unbedingt notwendige Include-Datei eislib ist im Verzeichnis
 /usr/share/doc/fbtr64toolbox hinterlegt. Auf dem Zielsystem muss neben
-den Standardtools wie grep und sed auch curl, wget und ksh existieren.
+den Standardtools wie grep, awk und sed auch curl, wget und ksh existieren.
 
 ============================================================================
 
