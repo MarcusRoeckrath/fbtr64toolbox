@@ -16,7 +16,7 @@ Steuerungsdateien jede beliebige TR-064-Funktion ausgeführt werden.
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
 
-Auf dem Zielsystem benötigte Tools: grep, sed, curl, wget und ksh
+Auf dem Zielsystem benötigte Tools: awk, grep, sed, curl, wget und ksh
 
 **Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
 **/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
