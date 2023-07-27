@@ -166,8 +166,6 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script reads default values for all variables from ${HOME}/.fbtr64toolbox.
-
 The script can use the fritzbox authentification data from ${HOME}/.netrc
 which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like: machine <address of fritzbox> login <username> password <password>
