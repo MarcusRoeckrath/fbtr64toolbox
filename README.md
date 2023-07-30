@@ -10,6 +10,14 @@ Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
 Fehlermeldung "Error on communication with fritzbox".
 
+Einzelne Funktionen wie die Speicherung der Konfiguration erfordern die Deaktivierung
+der "zusätzlichen Bestätigung" durch einen zweiten Faktor. Solche Funktionen des
+Skriptes funktionieren daher nicht, wenn diese "zusätzliche Bestätigung" aktiviert
+ist. Mit der Firmware 7.5x ist eine Deaktivierung dieser Sicherheitsfunktion nicht
+mehr möglich, wird bei einem Firmware-Update von einer früheren Version jedoch
+zunächst übernommen und auch beachtet. Ein Werksreset oder eine manuelle Änderung
+dieser Einstellung entfernt dann jedoch dauerhaft diese Option.
+
 Neben den vordefinierten Kommandos kann über Kommandozeilenoptionen oder
 Steuerungsdateien jede beliebige TR-064-Funktion ausgeführt werden.
 
