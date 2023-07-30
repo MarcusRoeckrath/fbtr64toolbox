@@ -98,9 +98,17 @@ der Parameter "Zugriff fuer Anwendungen zulassen" zu aktivieren.
 Einige Funktionen sind nicht verfuegbar, wenn unter
 
     System->FRITZ!Box-Benutzer->Anmeldung im Heimnetz
+oder
+    System->FRITZ!Box-Benutzer->Zusaetzliche Bestaetigung
 
 die Option "Ausfuehrung bestimmter Einstellungen und Funktionen zusaetzlich
 bestaetigen" aktiviert ist.
+
+Seit Firmware 7.5x ist die Deaktivierung der "zusaetzlichen Bestaetigung"
+nicht mehr moeglich. Bei einem Update von einer frueheren Firmware wird
+eine vorhandene Einstellung zunaechst uebernommen, nach einem Werksreset oder
+manuellen Aktivierung dieser Einstellung, kann sie nicht wieder abgeschaltet
+werden.
 
 Ein Fritz!Box-Benutzer braucht die Berechtigung "Fritz!Box Einstellungen", um
 uber das Skript mit der Fritzbox zu kommunizieren.
@@ -1154,5 +1162,5 @@ die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
 die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-07-27
+Stand: 2023-07-30
 Marcus Roeckrath
