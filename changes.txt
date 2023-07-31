@@ -1,3 +1,9 @@
+v2.14.13 stable - 2023-07-31
+============================
+! Fixed typo in name of variable wlaninfowlanglobalenable
+* fbtr64toolbox.sh version 2.9.12
+
+
 v2.14.12 stable - 2023-07-31
 ============================
 ! Added --no-check-certificate to wget download
