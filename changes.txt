@@ -1,3 +1,10 @@
+v2.14.15 stable - 2023-08-03
+============================
++ taminfo: Added additional check and quotes around
+  url in wget call
+* fbtr64toolbox.sh version 2.9.14
+
+
 v2.14.14 stable - 2023-08-01
 ============================
 ! Fixed typo in name of variable wlaninfowlanglobalenable
