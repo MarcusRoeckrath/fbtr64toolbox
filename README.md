@@ -165,6 +165,9 @@ Explanations for these parameters could be found in the SOAP sample file.
 --SOAPdata "<function data>"         mysoaprequest
 --SOAPsearch "<search text>|all"     mysoaprequest
 --SOAPtitle "<text>"                 mysoaprequest
+Useable for special prepared SOAP files as created by the createsoapfiles command.
+--SOAPparameterlist "<parameter><separator>..<parameter><separator>"
+                                     mysoaprequest
 
 --experimental                       Enables experimental commands (*).
 
