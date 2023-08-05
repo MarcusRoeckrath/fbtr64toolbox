@@ -251,6 +251,9 @@ Explanations for these parameters could be found in the SOAP sample file.
 --SOAPdata "<function data>"         mysoaprequest
 --SOAPsearch "<search text>|all"     mysoaprequest
 --SOAPtitle "<text>"                 mysoaprequest
+Useable for special prepared SOAP files as created by the createsoapfiles command.
+--SOAPparameterlist "<parameter><separator>..<parameter><separator>"
+                                     mysoaprequest
 
 --experimental                       Enables experimental commands (*).
 
@@ -998,12 +1001,66 @@ folgende data-Sektion (ui2 steht fuer den Datentyp; siehe 3. Die
 SOAP-Beispieldateien)
 
 data="
-       <NewIndex>ui2</NewIndex>
+       <NewIndex>${P1}<type>ui2</type></NewIndex>
      "
 
 kann man die SOAP-Datei ohne Aenderung fuer einen bestimmten Index ausfuehren:
 
 fbtr64toolbox.sh mysoaprequest ... --SOAPdata "<NewIndex>1</NewIndex>"
+
+Der anstatt --SOAPdata verwendbare Parameter --SOAPparameterlist fuellt bei Einlesen
+einer solchen SOAP-Datei den/die Platzhalter ${P<x>} automatisch. Im vorsteheden
+Beispiel wuerde der Aufruf von
+
+fbtr64toolbox.sh mysoaprequest ... --SOAPparameterlist "1,"
+
+die data-Zeilen so modifiziert an die TR064-Funktion uebergeben:
+
+data="
+       <NewIndex>1</NewIndex>
+     "
+
+Erfordert eine Funktion mehrere Eingangswerte, ist die Liste entsprechend zu verlaengern:
+
+fbtr64toolbox.sh mysoaprequest ... --SOAPparameterlist "1,abc,123,Max Mustermann,"
+
+Die Beispieldatei x_tamSCPD.xml.MarkMessage_1 enthaelt den Datenblock:
+
+data="
+       <NewIndex>${P1}<type>ui2</NewIndex>
+       <NewMessageIndex>${P2}<type>ui2</NewMessageIndex>
+       <NewMarkedAsRead>${P3}<type>boolean</NewMarkedAsRead>
+"
+
+Der Aufruf
+
+fbtr64toolbox.sh mysoaprequest x_tamSCP.xml.MarkMessage_1 --SOAPparameterlist "3,12,1,"
+
+wird dann den Datenblock folgendermassen an die TR064-Funktion uebergeben:
+
+data="
+       <NewIndex>3</NewIndex>
+       <NewMessageIndex>12</NewMessageIndex>
+       <NewMarkedAsRead>1</NewMarkedAsRead>
+"
+
+Als Separator darf genau eines der Zeichen .:,;-_%/=+~# genutzt werden und muss zudem
+das letzte Zeichen der Zeichenkette sein, die insgesamt in " einzuschliessen ist. Der
+Separator ist so zu waehlen, dass dieser in den Eingangswerten selbst nicht vorkommt.
+
+Um diese Option zu nutzen, muessen die durch createsoapfiles erzeugten SOAP-Dateien
+eventuell neu erzeugt werden, um die notwendigen Platzhalter zu enthalten.
+
+Enthaelt die Parameterliste zuviele Werte, werden ueberzaehlige ignoriert. Sind es zuwenige,
+wird fuer die fehlenden Werte ein Leerstring angenommen.
+
+Mittels --SOAPsearch "<search text|all>" wird der Output gefiltert und in der Form:
+
+Variable|Wert
+Variable|Wert
+...
+
+dargestellt.
 
 
 writeconfig:
@@ -1106,6 +1163,13 @@ Erklaerungen fuer diese Parameter stehen in der SOAP-Beispieldatei.
 --SOAPdata "<function data>"        mysoaprequest
 --SOAPsearch "<search text>|all"    mysoaprequest
 --SOAPtitle "<text>"                mysoaprequest
+Die folgende Option kann in speziellen aufbereiteten SOAP-Dateien,
+wie den durch das Kommando createsoapfiles erzeugten Beispieldateien
+genutzt werden, um Platzhalter mit Werten zu versehen. Die Beispieldateien
+sind ab Skriptversion 2.9.15 entsprechend vorbereitet und muessen daher
+eventuell mit dem Kommando createsoapfiles neu erzeugt werden.
+--SOAPparameterlist "<parameter><separator>..<parameter><separator>"
+                                    mysoaprequest
 
 --experimental
     Schaltet als experimentell eingestufte Kommandos frei.
@@ -1162,5 +1226,5 @@ die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
 die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-07-30
+Stand: 2023-08-05
 Marcus Roeckrath

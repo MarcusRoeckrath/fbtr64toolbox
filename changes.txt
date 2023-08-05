@@ -1,3 +1,15 @@
+v2.15.0  stable - 2023-08-05
+============================
++ mysoaprequest: New option --SOAPparameterlist for
+  automatic filling in values for arguments in soap files
+  Recreation of SOAP files created by the createsoapfiles
+  command needed to use this new option
++ Added description of handling of data lines in SOAP files
+  created by createsoapfiles
++ Enhancements to documentation
+* fbtr64toolbox.sh version 3.0.0
+
+
 v2.14.15 stable - 2023-08-03
 ============================
 + taminfo: Added additional check and quotes around
