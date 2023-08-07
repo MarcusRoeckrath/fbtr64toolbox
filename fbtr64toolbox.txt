@@ -156,12 +156,12 @@ homeautoswitch "<ain>" (*)
                 : Switches home automation switch given by ain.
 homepluginfo    : Shows homeplug/powerline devices list.
 hostsinfo       : Shows hosts list.
-hostbyipinfo <ip>
-                : Informations about host given by ip.
-wanaccessinfo <ip>
-                : Shows if client given by ip address has WAN access.
-wanaccessswitch <ip>
-                : Activates/Deactivates WAN access for host given by ip address.
+hostinfo <ip>|<name>
+                : Informations about host given by ip address or name.
+wanaccessinfo <ip>|<name>
+                : Shows if client given by ip address or name has WAN access.
+wanaccessswitch <ip>|<name>
+                : Activates/Deactivates WAN access for host given by ip address or name.
                   WAN access depends also on the profile defined in fritzbox web ui.
 autowolinfo <ip>|<mac>|<name>
                 : Shows Auto WOL configuration of host given by ip address, mac address or name.

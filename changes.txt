@@ -1,3 +1,11 @@
+v2.15.3  stable - 2023-08-07
+============================
+! Fixed regexp in (host)name egrep
+* Renamed hostbyipinfo to hostinfo accepting ip or hostname
++ Commands wanccessinfo and wanaccessswitch accept hostname also
+* fbtr64toolbox.sh version 3.0.3
+
+
 v2.15.2  stable - 2023-08-07
 ============================
 ! Fixed typo resulting in "command not found" error message
@@ -126,7 +134,7 @@ v2.14.1 stable  - 2023-04-09
 v2.14.0 stable  - 2023-04-09
 ============================
 + Enhanced/Changed output of command updateinfo because
-  of enhancements/changes of TR-64 functions in firmware 7.50
+  of enhancements/changes of TR-064 functions in firmware 7.50
 * fbtr64toolbox.sh version 2.9.0
 
 
@@ -142,9 +150,9 @@ v2.13.0 stable  - 2022-01-02
 + Enhancements to documentation because of
   problem in firmware 2.25+ not correctly
   deleting port forwardings
-  (TR64 DeletePortMapping function)
+  (TR-064 DeletePortMapping function)
 * Simplyfying detection and switching
-  between WanIP and WanPPP TR64 functions
+  between WanIP and WanPPP TR-064 functions
 * fbtr64toolbox.sh version 2.8.0
 
 
@@ -202,7 +210,7 @@ v2.12.0 stable  - 2020-09-23
 
 v2.11.1 stable  - 2020-09-23
 ============================
-! Fixed typos in data lines of tr64 commands
+! Fixed typos in data lines of TR-064 commands
   wanaccessinfo, wanaccessswitch and hostsinfo
 * fbtr64toolbox.sh version 2.6.1
 
@@ -238,7 +246,7 @@ v2.10.6 stable  - 2020-07-05
 v2.10.5 stable  - 2020-07-01
 ============================
 * Replaced expr by bash internal calculations
-* Removed additional calls of tr64 function DeviceInfo:GetInfo
+* Removed additional calls of TR-064 function DeviceInfo:GetInfo
 + Additions to documentation
 * fbtr64toolbox.sh version 2.5.0
 
@@ -379,7 +387,7 @@ v2.9.0  stable  - 2019-05-10
 v2.8.15 stable  - 2019-05-01
 ============================
 + Added time measurements to debug output
-* Increased curl timeout on tr64 function
+* Increased curl timeout on TR-064 function
   calls from 5 to 15 seconds
 + Added timeout to some more curl calls
 * avm-fritz-toolbox.sh version 2.2.20
@@ -609,7 +617,7 @@ v1.6.10 stable  - 2017-09-25
 v1.6.9 stable   - 2017-09-14
 ============================
 + Additions to documentation
-+ New command tr69info showing tr-069 settings
++ New command tr69info showing TR-069 settings
 * Changes to help page
 * avm-fritz-toolbox.sh version 1.9.17
 
@@ -777,7 +785,8 @@ v1.4.1 stable   - 2017-01-26
 
 v1.4.0 stable   - 2017-01-26
 ============================
-! Fixed determination of authmethod if fbip on command line
+! Fixed determination of authmethod if FBIP specified
+  on command line
 + SOAP request file could contain all general settings
   overriding those from the config file; read documentation
 ! Added missing check on FBREVERSEFTPWAN variable
