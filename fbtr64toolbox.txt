@@ -2,7 +2,7 @@
                  Das fbtr64toolbox-Paket
 
 
-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
+Bash-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 
 Copyright (c) 2016-2023 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
@@ -30,7 +30,8 @@ das Skript oder einem der folgenden Pfade
 abzulegen und wird dann automatisch vom Skript gefunden und inkludiert.
 Die unbedingt notwendige Include-Datei eislib ist im Verzeichnis
 /usr/share/doc/fbtr64toolbox hinterlegt. Auf dem Zielsystem muss neben
-den Standardtools wie grep, awk und sed auch curl, wget und ksh existieren.
+den Standardtools wie grep, awk und sed auch curl, wget, xmlstarlet
+und ksh existieren.
 
 ============================================================================
 
@@ -162,12 +163,13 @@ wanaccessinfo <ip>
 wanaccessswitch <ip>
                 : Activates/Deactivates WAN access for host given by ip address.
                 : WAN access depends also on the profile defined in fritzbox web ui.
-autowolinfo <mac>|<ip>
-                : Shows Auto WOL configuration of host given by mac or ip address.
-autowolswitch <mac>|<ip>
-                : Activates/Deactivates Auto WOL configuration of host given by mac or ip address.
-wolclient <mac>|<ip>
-                : Wake on lan client given by mac or ip address.
+autowolinfo <ip>|<mac>|<name>
+                : Shows Auto WOL configuration of host given by ip address, mac address or name.
+autowolswitch <ip>|<mac>|<name>
+                : Activates/Deactivates Auto WOL configuration of host given by
+                : ip address, mac address or name.
+wolclient <ip>|<mac>|<name>
+                : Wake on lan client given by ip address, mac address or name.
 storageinfo     : Information/Status of ftp and smb server.
 ftpswitch       : Activates/deactivates ftp server.
 ftpwanswitch    : Activates/deactivates ftp wan server.
@@ -1001,7 +1003,7 @@ folgende data-Sektion (ui2 steht fuer den Datentyp; siehe 3. Die
 SOAP-Beispieldateien)
 
 data="
-       <NewIndex>${P1}<type>ui2</type></NewIndex>
+       <NewIndex>\${P1}<type>ui2</type></NewIndex>
      "
 
 kann man die SOAP-Datei ohne Aenderung fuer einen bestimmten Index ausfuehren:
@@ -1027,9 +1029,9 @@ fbtr64toolbox.sh mysoaprequest ... --SOAPparameterlist "1,abc,123,Max Mustermann
 Die Beispieldatei x_tamSCPD.xml.MarkMessage_1 enthaelt den Datenblock:
 
 data="
-       <NewIndex>${P1}<type>ui2</NewIndex>
-       <NewMessageIndex>${P2}<type>ui2</NewMessageIndex>
-       <NewMarkedAsRead>${P3}<type>boolean</NewMarkedAsRead>
+       <NewIndex>\${P1}<type>ui2</NewIndex>
+       <NewMessageIndex>\${P2}<type>ui2</NewMessageIndex>
+       <NewMarkedAsRead>\${P3}<type>boolean</NewMarkedAsRead>
 "
 
 Der Aufruf
