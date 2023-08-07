@@ -24,7 +24,7 @@ Steuerungsdateien jede beliebige TR-064-Funktion ausgeführt werden.
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
 
-Auf dem Zielsystem benötigte Tools: awk, grep, sed, curl, wget und ksh
+Auf dem Zielsystem benötigte Tools: awk, grep, sed, curl, wget, xmlstarlet und ksh
 
 **Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
 **/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
@@ -75,13 +75,14 @@ wanaccessinfo <ip>
                 : Shows if client given by ip address has WAN access.
 wanaccessswitch <ip>
                 : Activates/Deactivates WAN access for host given by ip address.
-                : WAN access depends also on the profile defined in fritzbox web ui.
-autowolinfo <mac>|<ip>
-                : Shows Auto WOL configuration of host given by mac or ip address.
-autowolswitch <mac>|<ip>
-                : Activates/Deactivates Auto WOL configuration of host given by mac or ip address.
-wolclient <mac>|<ip>
-                : Wake on lan client given by mac or ip address.
+                  WAN access depends also on the profile defined in fritzbox web ui.
+autowolinfo <ip>|<mac>|<name>
+                : Shows Auto WOL configuration of host given by ip address, mac address or name.
+autowolswitch <ip>|<mac>|<name>
+                : Activates/Deactivates Auto WOL configuration of host given by
+                  ip address, mac address or name.
+wolclient <ip>|<mac>|<name>
+                : Wake on lan client given by ip address, mac address or name.
 storageinfo     : Information/Status of ftp and smb server.
 ftpswitch       : Activates/deactivates ftp server.
 ftpwanswitch    : Activates/deactivates ftp wan server.
