@@ -162,12 +162,12 @@ wanaccessinfo <ip>
                 : Shows if client given by ip address has WAN access.
 wanaccessswitch <ip>
                 : Activates/Deactivates WAN access for host given by ip address.
-                : WAN access depends also on the profile defined in fritzbox web ui.
+                  WAN access depends also on the profile defined in fritzbox web ui.
 autowolinfo <ip>|<mac>|<name>
                 : Shows Auto WOL configuration of host given by ip address, mac address or name.
 autowolswitch <ip>|<mac>|<name>
                 : Activates/Deactivates Auto WOL configuration of host given by
-                : ip address, mac address or name.
+                  ip address, mac address or name.
 wolclient <ip>|<mac>|<name>
                 : Wake on lan client given by ip address, mac address or name.
 storageinfo     : Information/Status of ftp and smb server.
