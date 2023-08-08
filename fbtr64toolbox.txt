@@ -857,21 +857,20 @@ tr64desc.xml angezeigt werden soll, z. B.:
 
 fbtr64toolbox.sh showxmlfile igddesc.xml
 
-Die xml-Dokumente tr64desc.xml, igddesc.xml, fboxdesc.xml und usbdesc.xml
-beschreiben alle verfuegbaren Services. Insbesondere die Existenz von
-fboxdesc.xml und usbdesc.xml ist abhaengig von Typ und Firmware der Fritzbox.
+Die xml-Dokumente tr64desc.xml, igddesc.xml, fboxdesc.xml, usbdesc.xml
+avmnexusdesc.xml und l2tpv3.xml beschreiben alle verfuegbaren Services. Teilweise
+ist die Existenz dieser XML-Dateien abhaengig von Typ und Firmware der Fritzbox.
 
-Weitere xml-Dokumente sind in den SCPDURL-TAGs von tr64desc.xml, igddesc.xml,
-fboxdesc.xml und usbdesc.xml angegeben und enthalten detaillierte
-Informationen zu den Services, z. B.:
+Weitere xml-Dokumente sind in den SCPDURL-TAGs der vorgenannten XML-Dokumente
+angegeben und enthalten detaillierte Informationen zu den Services, z. B.:
 
 fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml
 
 Mit der Option --soapfilter werden nur die fuer die Erstellung eigener
 SOAP-Request notwendigen Informationen ausgefiltert.
 
-Im Falle von tr64desc.xml, igddesc.xml, fboxdesc.xml und usbdesc.xml werden
-folgende Informationen ausgegeben (Ausschnitt):
+Im Falle von tr64desc.xml, igddesc.xml, fboxdesc.xml, usbdesc.xml, avmnexusdesc.xml
+und l2tpv3.xml werden folgende Informationen ausgegeben (Ausschnitt):
 
 fbtr64toolbox.sh showxmlfile tr64desc.xml --soapfilter
 
@@ -888,9 +887,9 @@ ergibt:
 --------------------
 [...]
 
-Fuer die in den SCPDURL-Tags von tr64desc.xml, igddesc.xml, fboxdesc.xml und
-usbdesc.xml angegebenen xml-Dateien werden Aktionen und ihre Argumente
-(inklusive Richtung und Datentyp) angezeigt, z. B.:
+Fuer die in den SCPDURL-Tags von tr64desc.xml, igddesc.xml, fboxdesc.xml,
+usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml angegebenen xml-Dateien werden
+Aktionen und ihre Argumente (inklusive Richtung und Datentyp) angezeigt, z. B.:
 
 fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml --soapfilter
 
@@ -1228,5 +1227,5 @@ die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
 die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-05
+Stand: 2023-08-08
 Marcus Roeckrath
