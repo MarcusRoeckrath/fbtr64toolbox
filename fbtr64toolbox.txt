@@ -857,9 +857,10 @@ tr64desc.xml angezeigt werden soll, z. B.:
 
 fbtr64toolbox.sh showxmlfile igddesc.xml
 
-Die xml-Dokumente tr64desc.xml, igddesc.xml, fboxdesc.xml, usbdesc.xml
-avmnexusdesc.xml und l2tpv3.xml beschreiben alle verfuegbaren Services. Teilweise
-ist die Existenz dieser XML-Dateien abhaengig von Typ und Firmware der Fritzbox.
+Die xml-Dokumente tr64desc.xml, igddesc.xml, igd2desc.xml, fboxdesc.xml,
+usbdesc.xml avmnexusdesc.xml und l2tpv3.xml beschreiben alle verfuegbaren
+Services. Teilweise ist die Existenz dieser XML-Dateien abhaengig von Typ
+und Firmware der Fritzbox.
 
 Weitere xml-Dokumente sind in den SCPDURL-TAGs der vorgenannten XML-Dokumente
 angegeben und enthalten detaillierte Informationen zu den Services, z. B.:
@@ -869,8 +870,9 @@ fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml
 Mit der Option --soapfilter werden nur die fuer die Erstellung eigener
 SOAP-Request notwendigen Informationen ausgefiltert.
 
-Im Falle von tr64desc.xml, igddesc.xml, fboxdesc.xml, usbdesc.xml, avmnexusdesc.xml
-und l2tpv3.xml werden folgende Informationen ausgegeben (Ausschnitt):
+Im Falle von tr64desc.xml, igddesc.xml, igd2desc.xml, fboxdesc.xml,
+usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml werden folgende Informationen
+ausgegeben (Ausschnitt):
 
 fbtr64toolbox.sh showxmlfile tr64desc.xml --soapfilter
 
@@ -887,9 +889,10 @@ ergibt:
 --------------------
 [...]
 
-Fuer die in den SCPDURL-Tags von tr64desc.xml, igddesc.xml, fboxdesc.xml,
-usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml angegebenen xml-Dateien werden
-Aktionen und ihre Argumente (inklusive Richtung und Datentyp) angezeigt, z. B.:
+Fuer die in den SCPDURL-Tags von tr64desc.xml, igddesc.xml, igd2desc.xml,
+fboxdesc.xml, usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml angegebenen
+xml-Dateien werden Aktionen und ihre Argumente (inklusive Richtung und Datentyp)
+angezeigt, z. B.:
 
 fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml --soapfilter
 
@@ -991,7 +994,7 @@ dritten Kapitel dieser Dokumentation.
 Wird eine solche SOAP-Datei ausgefuehrt, haben Kommandozeilenparameter Vorrang
 vor den Werten innerhalb der SOAP-Datei, z. B.
 
-fbtr64toolbox.sh mysoaprequest deviceinfoSCPD.xml.GetSecurityPort_1 --SOAPtype http
+fbtr64toolbox.sh mysoaprequest tr64desc.xml.deviceinfoSCPD.xml.GetSecurityPort_1 --SOAPtype http
 
 nutzt nun http statt des in der SOAP-Datei angegebenen https.
 
@@ -1025,7 +1028,7 @@ Erfordert eine Funktion mehrere Eingangswerte, ist die Liste entsprechend zu ver
 
 fbtr64toolbox.sh mysoaprequest ... --SOAPparameterlist "1,abc,123,Max Mustermann,"
 
-Die Beispieldatei x_tamSCPD.xml.MarkMessage_1 enthaelt den Datenblock:
+Die Beispieldatei tr64desc.xml.x_tamSCPD.xml.MarkMessage_1 enthaelt den Datenblock:
 
 data="
        <NewIndex>\${P1}<type>ui2</NewIndex>
@@ -1189,7 +1192,7 @@ Diese Beispieldateien erhalten Dateinamen nach folgendem Schema:
 
 also z. B.
 
-deviceinfoSCPD.xml.GetInfo_1
+tr64desc.xml.deviceinfoSCPD.xml.GetInfo_1
 
 Falls es mehrere Komponenten eines Servicetypes gibt, z. B. die
 verschiedenen WLANs, unterscheiden diese sich bei gleicher Funktion
@@ -1223,9 +1226,9 @@ und koennen sofort genutzt werden.
 
 Man sollte sich aber immer ueber die Wirkung eines TR-064-Funktion im Klaren
 sein, da eventuell Veraenderungen an der Fritzbox vorgenommen werden, so wird
-die Beispieldatei deviceconfigSCPD.xml.FactoryReset_1 ohne weitere Rueckfrage
-die Fritzbox auf Werkseinstellungen zuruecksetzen.
+die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
+Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-08
+Stand: 2023-08-09
 Marcus Roeckrath
