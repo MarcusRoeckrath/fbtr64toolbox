@@ -1,3 +1,9 @@
+v2.15.6  stable - 2023-08-10
+============================
++ Added bc to requirements
+* fbtr64toolbox.sh version 3.0.5
+
+
 v2.15.5  stable - 2023-08-09
 ============================
 + Support for fritzbox service documents igd2desc.xml added

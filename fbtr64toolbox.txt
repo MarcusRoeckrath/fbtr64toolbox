@@ -30,8 +30,8 @@ das Skript oder einem der folgenden Pfade
 abzulegen und wird dann automatisch vom Skript gefunden und inkludiert.
 Die unbedingt notwendige Include-Datei eislib ist im Verzeichnis
 /usr/share/doc/fbtr64toolbox hinterlegt. Auf dem Zielsystem muss neben
-den Standardtools wie grep, awk und sed auch curl, wget, xmlstarlet
-und ksh existieren.
+den Standardtools wie grep, awk und sed auch bc, curl, ksh, wget und
+xmlstarlet existieren.
 
 ============================================================================
 
@@ -1230,5 +1230,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-09
+Stand: 2023-08-10
 Marcus Roeckrath
