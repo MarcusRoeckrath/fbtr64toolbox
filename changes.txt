@@ -1,3 +1,9 @@
+v2.15.8  stable - 2023-08-13
+============================
+* deflections: Recoded using defelctions list and parsing by xmlstarlet
+* fbtr64toolbox.sh version 3.0.7
+
+
 v2.15.7  stable - 2023-08-12
 ============================
 * dectinfo: Recoded using dect list and parsing by xmlstarlet
