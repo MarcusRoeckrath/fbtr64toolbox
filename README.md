@@ -121,6 +121,9 @@ writesoapfile [<fullpath>/<file>]
 
 Optional parameters:
 Parameter                            Used by commands
+--conffilesuffix <text>              all
+          Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
+          instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
