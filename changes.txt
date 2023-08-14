@@ -1,3 +1,11 @@
+v2.16.0  stable - 2023-08-14
+============================
+* New parameter --conffilesuffix to allow
+  use of different configuration files
+* Changed timeouts of check on startup if fritzbox is reachable
+* fbtr64toolbox.sh version 3.1.0
+
+
 v2.15.8  stable - 2023-08-13
 ============================
 * deflectionsinfo: Recoded using deflections list and

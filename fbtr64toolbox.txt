@@ -208,6 +208,9 @@ writesoapfile [<fullpath>/<file>]
 
 Optional parameters:
 Parameter                            Used by commands
+--conffilesuffix <text>              all
+          Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
+          instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
@@ -1077,8 +1080,14 @@ Folgende Parameter, die Vorrang vor den in der Konfigurationsdatei oder einer
 SOAP-Steuerdatei gesetzten Optionen haben, ergaenzen die Kommandos:
 
 Parameter                        Benutzt vom Kommando
+--conffilesuffix <text>              all
+          Ermoeglicht die Nutzung unbterschiedlicher Konfigurationsdateien.
+          Das gewaehlte Suffix wird an ${HOME}/.fbtr64toolbox nach einemm Punkt angehaengt,
+          z. B. wird bei Angabe von repeater die Konfigurationsdatei
+          ${HOME}/.fbtr64toolbox.repeater vom Skript genutzt.
+
 --fbip <ip address>|<fqdn>       Alle ausser writeconfig and writesoapfile
-    IP-Adresse oder FQDN der Fritzbox
+    IP-Adresse oder FQDN der Fritzbox.
 
 --description "<text>"              add, enable, disable
     Beschreibung der Portfreigabe.
@@ -1230,5 +1239,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-10
+Stand: 2023-08-14
 Marcus Roeckrath
