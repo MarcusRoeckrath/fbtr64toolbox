@@ -1,3 +1,11 @@
+v2.16.2  stable - 2023-08-15
+============================
+* Unification of output especially
+  reformatted or newly added title lines
+* Changes in documentation
+* fbtr64toolbox.sh version 3.1.2
+
+
 v2.16.1  stable - 2023-08-14
 ============================
 ! Fixed code error in install.sh
@@ -122,7 +130,7 @@ v2.14.11 stable - 2023-07-30
 
 v2.14.10 stable - 2023-07-27
 ============================
-* Harmonized output of --verbose
+* Unification output of --verbose
 * fbtr64toolbox.sh version 2.9.9
 
 

@@ -17,20 +17,11 @@ Fehlermeldung "Error on communication with fritzbox".
 
 Hinweis:
 Soll das Skript in einer anderen Distribution als eisfair (www.eisfair.org)
-benutzt werden, kann beim mir ein Archiv angefordert werden, welches eine
-notwendige Include-Datei enthaelt und gleichzeitig auf eisfair spezifische
-Bestandteile verzichtet.
+benutzt werden, kann auf https://github.com/MarcusRoeckrath/fbtr64toolbox
+ein tar-Archiv downloaden, welches auf dem Zielsystem komplett entpackt
+werden muss.
 
-Diese inkludierte Datei eislib ist in gleichen Verzeichnis wie
-das Skript oder einem der folgenden Pfade
-
-    /var/install/include
-    /usr/share/doc/fbtr64toolbox
-
-abzulegen und wird dann automatisch vom Skript gefunden und inkludiert.
-Die unbedingt notwendige Include-Datei eislib ist im Verzeichnis
-/usr/share/doc/fbtr64toolbox hinterlegt. Auf dem Zielsystem muss neben
-den Standardtools wie grep, awk und sed auch bc, curl, ksh, wget und
+Auf dem Zielsystem muessen die Tools awk, bc, curl, grep, ksh, sed, wget und
 xmlstarlet existieren.
 
 ============================================================================
@@ -208,7 +199,7 @@ writesoapfile [<fullpath>/<file>]
 
 Optional parameters:
 Parameter                            Used by commands
---conffilesuffix <text>              all
+--conffilesuffix <text>              all but writesoapfile
           Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
           instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
@@ -1239,5 +1230,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-14
+Stand: 2023-08-15
 Marcus Roeckrath
