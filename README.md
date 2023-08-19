@@ -170,7 +170,7 @@ Parameter                            Used by commands
 --fbconffilepassword "<text>"        savefbconfig
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>              mysoaprequest
+--SOAPtype <https|http>              all but writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
