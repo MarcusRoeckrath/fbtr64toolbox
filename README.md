@@ -29,6 +29,11 @@ Auf dem Zielsystem benötigte Tools: **awk, bc, curl, grep, ksh, sed, wget und x
 **Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
 **/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
 
+**Das Skript unterstützt die folgenden Authentifizierungsmethoden:**
+- Benutzername und Passwort in der skripteigenen Konfigurationsdatei
+- Benutzername und Passwort in ${HOME}/.netrc
+- Benutzername und (gehashtes) Geheimnis in der skripteigenen Konfigurationsdatei
+
 Das Skript wurde in folgenden System getestet:
 - eisfair (Linux-Serverdistribution eisfair.org)
 - OpenSuSE
@@ -102,7 +107,7 @@ alarmswitch <index>
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
 savefbconfig    : Stores the fritzbox configuration to
-                  /root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config.
+                  "/root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
@@ -121,7 +126,7 @@ writesoapfile [<fullpath>/<file>]
 
 Optional parameters:
 Parameter                            Used by commands
---conffilesuffix <text>              all
+--conffilesuffix <text>              all but writesoapfile
           Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
           instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
@@ -196,6 +201,19 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
+The script can use the fritzbox authentication data from "${HOME}/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
+Put into this file a line like:
+machine <address of fritzbox> login <username> password <password>
+f. e.: machine ${FBIP} login ${user} password ${password}
+The fritzbox address has to be given in the same type (ip or fqdn) in
+configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
+Saviest solution for authentication is the use of "user" and hashed "secret".
+Write down "user" and "password" into the configuration file an run
+fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
+configuration file and removes the password from it."
+
+
 The script can use the fritzbox authentification data from ${HOME}/.netrc
 which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like: machine <address of fritzbox> login <username> password <password>
@@ -234,6 +252,10 @@ FBREVERSEPORTS="false"
 # Set this to true if you are affected."
 FBREVERSEFTPWAN="false"
 
+# Use http or https SOAP request
+# Normally http requests are much faster than https requests.
+type="https"
+
 # Authentification settings
 # dslf-config is the standard user defined in TR-064 with web login password.
 # You can use any other user defined in your fritzbox with sufficient rights.
@@ -248,8 +270,14 @@ FBREVERSEFTPWAN="false"
 # machine 192.168.1.1 login dslf-config password xxxxx
 # The fritzbox address has to be given in the same type (ip or fqdn) in
 # ${HOME}/.fbtr64toolbox or on command line parameter --fbip and ${HOME}/.netrc.
+#
+# Saviest solution for authentication is the use of "user" and hashed "secret".
+# Write down "user" and "password into this file an run "fbtrtoolbox calcsecret"
+# which will calculate the "secret", stores it in this configuration file and
+# removes the password from it.
 user="dslf-config"
 password="xxxxx"
+secret=""
 
 # Save fritzbox configuration settings
 # Absolute path to fritzbox configuration file; not empty.
