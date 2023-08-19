@@ -126,6 +126,7 @@ writeconfig     : Writes sample configuration file to /root/.fbtr64toolbox.
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP configuration file to
                   specified file or to sample file /root/fbtr64toolbox.samplesoap.
+calcsecret      : Calculates hashed secret and stores it to the configuration file.
 
 Optional parameters:
 Parameter                            Used by commands
