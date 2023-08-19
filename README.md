@@ -32,11 +32,10 @@ Auf dem Zielsystem benötigte Tools: **awk, bc, curl, grep, ksh, sed, wget und x
 **Nach Update sollte die Konfiguration mit "fbtr64toolbox.sh writeconfig" neu geschrieben werden,**
 **damit Änderungen in die Datei einfließen.**
 
-**Das Skript unterstützt die folgenden Authentifizierungsmethoden:**
+**Das Skript unterstützt die folgenden Authentifizierungsmethoden (siehe Dokumentation):**
 - Benutzername und Passwort in der skripteigenen Konfigurationsdatei
 - Benutzername und Passwort in ${HOME}/.netrc
 - Benutzername und (gehashtes) Geheimnis in der skripteigenen Konfigurationsdatei (neu in 3.2.0)
-**Bitte hierzu die Dokumentaion lesen.** 
 
 Das Skript wurde in folgenden System getestet:
 - eisfair (Linux-Serverdistribution eisfair.org)
