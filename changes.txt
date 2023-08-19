@@ -1,3 +1,20 @@
+v2.17.0  stable - 2023-08-19
+============================
++ conffilesuffix: Added _ to allowed characters
++ New authentication SOAP-Auth (secret/nonce)
++ New command calcseceret to create secret for SOAP-Auth
++ Check for required tools
+* New configuration option type to select between
+  http and https soap requests
+  (overwritable with --SOAPtype on command line)
+* Internal subroutines execute_http_soap_request and
+  execute_https_soap_request combined to execute_soap_request
+  reexecute_https_soap_request renamed to reexecute_soap_request
+* Code cleanup
+* Changes and additions in documentation
+* fbtr64toolbox.sh version 3.2.0
+
+
 v2.16.2  stable - 2023-08-15
 ============================
 * Unification of output especially

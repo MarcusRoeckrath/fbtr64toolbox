@@ -180,7 +180,7 @@ alarmswitch <index>
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
 savefbconfig    : Stores the fritzbox configuration to
-                  /root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config.
+                  "/root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
@@ -192,10 +192,11 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration file to /root/.fbtr64toolbox.
+writeconfig     : Writes sample configuration file.
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP configuration file to
                   specified file or to sample file /root/fbtr64toolbox.samplesoap.
+calcsecret      : Calculates hashed secret and stores it to the configuration file.
 
 Optional parameters:
 Parameter                            Used by commands
@@ -239,7 +240,7 @@ Parameter                            Used by commands
 --fbconffilepassword "<text>"        savefbconfig
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>              mysoaprequest
+--SOAPtype <https|http>              all but writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
@@ -274,12 +275,17 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script can use the fritzbox authentification data from ${HOME}/.netrc
-which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
-Put into this file a line like: machine <address of fritzbox> login <username> password <password>
-f. e.: machine 192.168.178.1 login dslf-config password abcdefg
+The script can use the fritzbox authentication data from "${HOME}/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
+Put into this file a line like:
+machine <address of fritzbox> login <username> password <password>
+f. e.: machine ${FBIP} login ${user} password ${password}
 The fritzbox address has to be given in the same type (ip or fqdn) in
-${HOME}/.fbtr64toolbox or on command line parameter --fbip and ${HOME}/.netrc.
+configuration file or on command line parameter "--fbip" and "${netrcfile}".
+Saviest solution for authentication is the use of "user" and hashed "secret".
+Write down "user" and "password" into the configuration file an run
+fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
+configuration file and removes the password from it."
 
 Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
@@ -295,10 +301,27 @@ im Home-Verzeichnis des aufrufenden Users mit dem Dateinamen .fbtr64toolbox
 angelegt wird. Diese Konfigurationsdatei enthaelt Hinweise zur Bedeutung der
 Parameter.
 
+Ueber die Option --conffilesuffix <text> kann der Konfigurationsdatei eine Extension
+angehaengt werden, wodurch mit mehreren verschiedenen Konfigurationen z. B. mit
+mehreren Fritzboxen in einem Mesh gearbeitet werden kann. Fuer <text> sind nur die
+Zeichen a-z, A-Z, 0-9 und _ erlaubt. So ergibt
+
+fbtr64toolbox.sh writeconfig --conffilesuffix Router_3
+
+die Konfigurationsdatei ".fbtr64toolbox.Router_3".
+
+Soll das Skript nun diese Datei benutzen, ist die Option --conffilesuffix bei
+einem Skriptstart anzugeben. Im Folgenden gelten alle Nennungen der Konfigurationsdatei
+".fbtr64toolbox" in gleicher Weise fuer Konfigurationsdateien mit Namenserweiterung
+nach den vorstehenden Erlaeuterungen.
+
 Bitte niemals direkt im Skript Aenderungen an den Default-Werten vornehmen.
 
 In der Konfigurationsdatei ist die IP-Adresse oder FQDN der eigenen Fritzbox
 anzugeben.
+
+Ein SOAP-Request kann ueblicherweise mittels http oder https erfolgen, wobei
+http-SOAP-Request viel schneller sind. Die Voreinstellung ist https.
 
 Die Kommunikation mit der Fritzbox muss authentifiziert erfolgen, wozu in der
 Konfigurationsdatei die Werte fuer user und password anzupassen sind.
@@ -343,6 +366,18 @@ Die Datei .netrc darf nur fuer den Besitzer les- und schreibbar sein, welches
 mit folgendem Befehl erreicht wird:
 
 chmod 0600 ${HOME}/.netrc
+
+Als sicherste Variante kann in der Konfigurationsdatei ein Geheimnis (secret)
+hinterlegt werden, welches zusammen mit dem User zur Authentifizierung genutzt
+wird. Hierzu ist in der Konfigurationsdatei User und Passwort anzugeben und dann
+
+fbtr64toolbox.sh calcsecret
+
+auszufuehren. Dieses Kommando berechnet das Geheimnis, speichert es in der
+Konfigurationsdatei und loescht gleichzeitig das Passwort aus dieser.
+
+Dieses Geheimnis ist nur fuer den Zugriff mittels TR-064-Funktionen gueltig,
+kann jedoch nicht zur Anmeldung an der Weboberflaeche der Fritzbox genutzt werden.
 
 Der Befehl
 
@@ -1062,7 +1097,13 @@ dargestellt.
 
 
 writeconfig:
-Schreibt die Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments
+Schreibt die Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments.
+
+
+calcsecret:
+Berechnet das Geheimnis fuer die SOAP-Authentifizierung und speichert es in der
+Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments.
+
 
 help|--help|-h: Zeigt eine Hilfeseite an.
 
@@ -1230,5 +1271,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-15
+Stand: 2023-08-19
 Marcus Roeckrath
