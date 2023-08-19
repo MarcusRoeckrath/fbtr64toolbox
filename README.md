@@ -217,7 +217,6 @@ Write down "user" and "password" into the configuration file an run
 fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
 configuration file and removes the password from it."
 
-
 The script can use the fritzbox authentification data from ${HOME}/.netrc
 which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like: machine <address of fritzbox> login <username> password <password>
