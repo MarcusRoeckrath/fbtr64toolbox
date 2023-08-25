@@ -1,6 +1,12 @@
+v2.17.2  stable - 2023-08-25
+============================
+* createsoapfiles: Added more hints into soap files
+* fbtr64toolbox.sh version 3.2.2
+
+
 v2.17.1  stable - 2023-08-21
 ============================
-* show: Changed column width of host and client
+* show: Changed columns width of host and client
 * fbtr64toolbox.sh version 3.2.1
 
 
