@@ -20,8 +20,8 @@ dieser Einstellung entfernt dann jedoch dauerhaft diese Option.
 
 Neben den vordefinierten Kommandos kann über Kommandozeilenoptionen oder
 Steuerungsdateien jede beliebige TR-064-Funktion ausgeführt werden. Der Aufruf
-"fbtr64toolbox.sh createsoapfiles" erzeugt aus den TR-64-XML-Dokumenten der Fritzbox
-Steuerungsdateien für jede TR-64-Funktion. Eine Anleitung zur Nutzung dieser Steuerungsdateien
+"fbtr64toolbox.sh createsoapfiles" erzeugt aus den TR-064-XML-Dokumenten der Fritzbox
+Steuerungsdateien für jede TR-064-Funktion. Eine Anleitung zur Nutzung dieser Steuerungsdateien
 befindet sich in diesen.
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
