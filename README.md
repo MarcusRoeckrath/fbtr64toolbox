@@ -24,6 +24,16 @@ Der Aufruf "fbtr64toolbox.sh createsoapfiles" erzeugt aus den TR-064-XML-Dokumen
 Steuerungsdateien für alle TR-064-Funktion. Eine Anleitung zur Nutzung dieser Steuerungsdateien
 befindet sich in diesen Dateien.
 
+Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf derFritzbox vorhanden sind:
+- tr64desc.xml
+- igddesc.xml
+- igd2desc.xml
+- fboxdesc.xml
+- usbdesc.xml
+- avmnexusdesc.xml
+- l2tpv3.xml
+- aura.xml (nur verfügbar, wenn USB-Fernanschluss aktiviert ist)
+
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
 
