@@ -887,9 +887,10 @@ tr64desc.xml angezeigt werden soll, z. B.:
 fbtr64toolbox.sh showxmlfile igddesc.xml
 
 Die xml-Dokumente tr64desc.xml, igddesc.xml, igd2desc.xml, fboxdesc.xml,
-usbdesc.xml avmnexusdesc.xml und l2tpv3.xml beschreiben alle verfuegbaren
-Services. Teilweise ist die Existenz dieser XML-Dateien abhaengig von Typ
-und Firmware der Fritzbox.
+usbdesc.xml avmnexusdesc.xml, l2tpv3.xml und aura.xml beschreiben alle
+verfuegbaren Services. Teilweise ist die Existenz dieser XML-Dateien abhaengig
+von Typ und Firmware der Fritzbox. auroa.xml ist nur verfuegbar, wenn
+USB-Fernanschluss unter USB/Speicher aktiviert ist.
 
 Weitere xml-Dokumente sind in den SCPDURL-TAGs der vorgenannten XML-Dokumente
 angegeben und enthalten detaillierte Informationen zu den Services, z. B.:
@@ -900,8 +901,8 @@ Mit der Option --soapfilter werden nur die fuer die Erstellung eigener
 SOAP-Request notwendigen Informationen ausgefiltert.
 
 Im Falle von tr64desc.xml, igddesc.xml, igd2desc.xml, fboxdesc.xml,
-usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml werden folgende Informationen
-ausgegeben (Ausschnitt):
+usbdesc.xml, avmnexusdesc.xml, l2tpv3.xml und aura.xml werden folgende
+Informationen ausgegeben (Ausschnitt):
 
 fbtr64toolbox.sh showxmlfile tr64desc.xml --soapfilter
 
@@ -919,9 +920,9 @@ ergibt:
 [...]
 
 Fuer die in den SCPDURL-Tags von tr64desc.xml, igddesc.xml, igd2desc.xml,
-fboxdesc.xml, usbdesc.xml, avmnexusdesc.xml und l2tpv3.xml angegebenen
-xml-Dateien werden Aktionen und ihre Argumente (inklusive Richtung und Datentyp)
-angezeigt, z. B.:
+fboxdesc.xml, usbdesc.xml, avmnexusdesc.xml, l2tpv3.xml und aura.xml
+angegebenen xml-Dateien werden Aktionen und ihre Argumente (inklusive
+Richtung und Datentyp) angezeigt, z. B.:
 
 fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml --soapfilter
 
@@ -1262,10 +1263,15 @@ dokumentation von AVM zu Rate zu ziehen:
 
     https://avm.de/service/schnittstellen
 
-Wenn als Datentyp boolean angegeben ist, ist in der Regel 0 fuer false und
-1 fuer true anzugeben.
+Datentypenuebersicht, ohne Gewaehr, da es kaum Dokumentation gibt:
 
-Beispieldateien fuer Funktionen, die keine weiteren Parameter erfordern,
+    boolean       : 0=falsch; 1=wahr
+    dateTime      : yyyy-mm-ddThh:mm:ss[+|-hh:mm]
+    i1, i2, i4    : Vorzeichenbehaftete 1, 2 oder 4 Byte Integer
+    string        : Zeichenkette
+    ui1, ui2, ui4 : Vorzeichenlose 1, 2 oder 4 Byte Integer
+
+Beispieldateien fuer Funktionen, die keine Eingabeparameter erfordern,
 enthalten die Zeile
 
 data=""
@@ -1278,5 +1284,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-22
+Stand: 2023-08-27
 Marcus Roeckrath

@@ -1,3 +1,11 @@
+v2.17.3  stable - 2023-08-27
+============================
+! Port checks changed to >= 1 instead of >= 0
++ Added data types of SOAP variables to documentation
++ Support for fritzbox service document aura.xml added
+* fbtr64toolbox.sh version 3.2.3
+
+
 v2.17.2  stable - 2023-08-25
 ============================
 * createsoapfiles: Added more hints into soap files
