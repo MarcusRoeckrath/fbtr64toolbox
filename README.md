@@ -24,7 +24,7 @@ Der Aufruf "fbtr64toolbox.sh createsoapfiles" erzeugt aus den TR-064-XML-Dokumen
 Steuerungsdateien für alle TR-064-Funktion. Eine Anleitung zur Nutzung dieser Steuerungsdateien
 befindet sich in diesen Dateien.
 
-Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf derFritzbox vorhanden sind:
+Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Fritzbox vorhanden sind:
 - tr64desc.xml
 - igddesc.xml
 - igd2desc.xml
@@ -227,7 +227,7 @@ The fritzbox address has to be given in the same type (ip or fqdn) in
 configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
-fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
+"fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
 configuration file and removes the password from it."
 
 The script can use the fritzbox authentification data from ${HOME}/.netrc
