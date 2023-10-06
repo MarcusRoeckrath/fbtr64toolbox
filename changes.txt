@@ -1,3 +1,10 @@
+v2.17.4  stable - 2023-10-06
+============================
+* dectinfo: Print first of UpdateInfo only
++ Little changing in code formatting
+* fbtr64toolbox.sh version 3.2.4
+
+
 v2.17.3  stable - 2023-08-27
 ============================
 ! Port checks changed to >= 1 instead of >= 0
