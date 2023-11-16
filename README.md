@@ -152,8 +152,8 @@ Parameter                            Used by commands
 --intclient <ip address>             add, enable, disable
 --intport <port number>              add, enable, disable
 --protocol <TCP|UDP>                 add, enable, disable, del
---active                             add, *switch
---inactive                           add, *switch
+--active                             add, *switch, hostsinfo
+--inactive                           add, *switch, hostsinfo
           Either --actice or --inactive is required on all switch commands.
 --searchhomeautoain "<text>"         homeautoinfo
 --searchhomeautodeviceid "<text>"    homeautoinfo
@@ -162,6 +162,7 @@ Parameter                            Used by commands
 --showWANstatus                      hostsinfo
 --showWOLstatus                      hostsinfo
 --showhosts "<active|inactive>"      hostsinfo
+          Short form: "<--active|--inactive>"
 --ftpwansslonlyon (**)               ftpwanswitch
 --ftpwansslonlyoff (**)              ftpwanswitch
 --ftpwanon (**)                      ftpwansslswitch
