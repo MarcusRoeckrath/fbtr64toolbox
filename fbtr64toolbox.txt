@@ -1147,7 +1147,8 @@ Parameter                        Benutzt vom Kommando
 
 --active                            add, *switch, hostsinfo
 --inactive                          add, *switch, hostsinfo
-    Aktivierungs-/Deaktivierungsschalter
+    Aktivierungs-/Deaktivierungsschalter, obligatorisch bei
+    allen switch Kommandos.
 
 --searchhomeautoain "<text>"        homeautoinfo
     Suchmaske fuer die AIN eines Homeautomation/Smarthome-Geraetes.
@@ -1286,5 +1287,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-08-27
+Stand: 2023-11-26
 Marcus Roeckrath
