@@ -1,3 +1,9 @@
+v2.17.6  stable - 2023-11-26
+============================
+! Added wlanswitch to switchlist 
+* fbtr64toolbox.sh version 3.2.6
+
+
 v2.17.5  stable - 2023-11-16
 ============================
 + hostsinfo: short form --active|--inactive
