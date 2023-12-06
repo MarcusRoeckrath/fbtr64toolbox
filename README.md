@@ -154,7 +154,7 @@ Parameter                            Used by commands
 --protocol <TCP|UDP>                 add, enable, disable, del
 --active                             add, *switch, hostsinfo
 --inactive                           add, *switch, hostsinfo
-          Either --actice or --inactive is required on all switch commands.
+          Either --active or --inactive is required on all switch commands.
 --searchhomeautoain "<text>"         homeautoinfo
 --searchhomeautodeviceid "<text>"    homeautoinfo
 --searchhomeautodevicename "<text>"  homeautoinfo
