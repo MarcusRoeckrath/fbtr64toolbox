@@ -211,7 +211,7 @@ Parameter                            Used by commands
 --protocol <TCP|UDP>                 add, enable, disable, del
 --active                             add, *switch, hostsinfo
 --inactive                           add, *switch, hostsinfo
-          Either --actice or --inactive is required on all switch commands.
+          Either --active or --inactive is required on all switch commands.
 --searchhomeautoain "<text>"         homeautoinfo
 --searchhomeautodeviceid "<text>"    homeautoinfo
 --searchhomeautodevicename "<text>"  homeautoinfo
@@ -1287,5 +1287,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-11-26
+Stand: 2023-12-06
 Marcus Roeckrath
