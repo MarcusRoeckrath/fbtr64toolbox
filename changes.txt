@@ -1,3 +1,15 @@
+v2.17.8  stable - 2023-12-09
+============================
++ Change grep regexp on AIN check again
+! devicelog: --rawdevicelog now hides head line
+  like described in documentation
+* devicelog: now --nowrap is accepted working
+  like --rawdevicelog but printing head line
+* mysoaprequest: Printing out additional function infos
+  in second head line
+* fbtr64toolbox.sh version 3.2.8
+
+
 v2.17.7  stable - 2023-12-06
 ============================
 ! Typo in help page

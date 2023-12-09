@@ -232,7 +232,7 @@ Parameter                            Used by commands
                *on|off parameter is not given on the command line.
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
---nowrap                             deviceinfo
+--nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
 --fbconffilepath "<abs path>"        savefbconfig
@@ -1193,11 +1193,11 @@ Parameter                        Benutzt vom Kommando
     einer anderen TR-64-Funktion als Eingabewert genutzt werden, ist
     in der Regel von einer ab "0" ausgehenden Nummerierung auszugehen.
 
---nowrap                            deviceinfo
-    Zeigt die Zeile fuer den letzten Event ohne Zeilenumbruch an.
+--nowrap                            deviceinfo, devicelog
+    Zeigt Log-Zeilen ohne Zeilenumbruch an.
 
 --rawdevicelog                      devicelog
-    Zeigt das Log unformatiert und ohne Kopfzeile an.
+    Zeigt das Log unformatiert (wie mit --nowrap) und ohne Kopfzeile an.
 
 --soapfilter                        showxmlfile
     Zeigt nur die moeglichen Aktionen und die zugehoerigen
@@ -1287,5 +1287,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-12-06
+Stand: 2023-12-09
 Marcus Roeckrath
