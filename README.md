@@ -175,7 +175,7 @@ Parameter                            Used by commands
                *on|off parameter is not given on the command line.
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
---nowrap                             deviceinfo
+--nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
 --fbconffilepath "<abs path>"        savefbconfig
