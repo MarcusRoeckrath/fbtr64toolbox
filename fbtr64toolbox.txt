@@ -150,7 +150,7 @@ hostsinfo       : Shows hosts list.
 hostinfo <ip>|<name>
                 : Informations about host given by ip address or name.
 wanaccessinfo <ip>|<name>
-                : Shows if client given by ip address or name has WAN access.
+                : Shows if host given by ip address or name has WAN access.
 wanaccessswitch <ip>|<name>
                 : Activates/Deactivates WAN access for host given by ip address or name.
                   WAN access depends also on the profile defined in fritzbox web ui.
@@ -179,8 +179,11 @@ alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
-savefbconfig    : Stores the fritzbox configuration to
-                  "/root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
+savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
+                  "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
+                  Use (see below) --fbconffile* options for modifying path and filename
+                  and setting mandatory password. Command does not work on fritzboxes
+                  with enabled "second factor authentication".
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
@@ -192,16 +195,19 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration file.
+writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
+                  or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
-                : Writes sample SOAP configuration file to
-                  specified file or to sample file /root/fbtr64toolbox.samplesoap.
-calcsecret      : Calculates hashed secret and stores it to the configuration file.
+                : Writes sample SOAP request to specified file
+                  or to default file "${HOME}/fbtr64toolbox.samplesoap".
+calcsecret      : Calculates hashed secret and stores it into the default configuration file
+                  "${HOME}/.fbtr64toolbox" or into specific configuration file defined by the
+                  "--conffilesuffix" option (see below).
 
-Optional parameters:
-Parameter                            Used by commands
+Optional or mandatory options/parameters:
+Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
+          Use of configuration file "${HOME}/.fbtr64toolbox.text"
           instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
@@ -256,15 +262,15 @@ Useable for special prepared SOAP files as created by the createsoapfiles comman
 --experimental                       Enables experimental commands (*).
 
 --debugfb                            Activate debug output on fritzbox communication.
---verbose                            Print out return code of all TR-064 function calls.
+--verbose                            Print out return codes of all TR-064 function calls.
 
 version|--version                    Prints version and copyright informations.
 help|--help|-h                       Prints help page.
 
-Necessary parameters not given on the command line are taken from default
-values or ${HOME}/.fbtr64toolbox.
-
-If exists ${HOME}/.fbtr64toolbox is read on startup to override defaults.
+Necessary parameters not given on the command line are taken from default values or the
+configuration file. The configuration file is read from your home directory on script
+startup overriding default values. By default it is named ".fbtr64toolbox" but an extension
+can be added using the "--conffilesuffix <text>" parameter (see above).
 
 If modifying an existing port forwarding entry with the add, enable or disable commands
 the values for extport, intclient and protocol has to be entered in exact the same
@@ -280,18 +286,18 @@ The script can use the fritzbox authentication data from "${HOME}/.netrc"
 which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
-f. e.: machine ${FBIP} login ${user} password ${password}
+f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
+the configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
-fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
-configuration file and removes the password from it."
+"fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
+configuration file and removes the password from it.
 
 Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
-through the tr-064 interface ending up in corrupted port forwarding entries.
+through the TR-064 interface ending up in corrupted port forwarding entries.
 ------------------------------------------------------------------------------------------
 
 Voreinstellungen werden aus einer Konfigurationsdatei gelesen, die mit dem Befehl
@@ -603,50 +609,50 @@ Festlegung des gewuenschten Status.
 Beispiele:
 
 fbtr64toolbox.sh wlan1info
-    Informationen zum ersten WLan
+    Informationen zum ersten WLan.
 
 fbtr64toolbox.sh wlan2switch --active --experimental
-    Erste WLan anschalten
+    Erste WLan anschalten.
 
 fbtr64toolbox.sh autowolswitch 12:34:56:78:90:ab --active
-    Aktiviert Auto WOL fuer den Host mit der MAC-Adresse 12:34:56:78:90:ab
+    Aktiviert Auto WOL fuer den Host mit der MAC-Adresse "12:34:56:78:90:ab".
 
 fbtr64toolbox.sh wolclient 12:34:56:78:90:ab
-    Weckt den Client mit der MAC-Adresse 12:34:56:78:90:ab auf
+    Weckt den Client mit der MAC-Adresse "12:34:56:78:90:ab" auf.
 
 fbtr64toolbox.sh ftpswitch --inactive
-    Aktiviert den internen FTP-Server
+    Aktiviert den internen FTP-Server.
 
 fbtr64toolbox.sh smbswitch --active
-    Deaktiviert den internen Samba-Server
+    Deaktiviert den internen Samba-Server.
 
 fbtr64toolbox.sh ftpwanswitch --active
     Aktiviert den externen FTP-Server, die bisherige Einstellung fuer "SSL only"
-    bleibt erhalten
+    bleibt erhalten.
 
 fbtr64toolbox.sh ftpwanswitch --active --ftpwansslonlyon
-    Aktiviert den externen FTP-Server mit aktiviertem "SSL only" Modus
+    Aktiviert den externen FTP-Server mit aktiviertem "SSL only" Modus.
 
 fbtr64toolbox.sh ftpwanswitch --active --ftpwansslonlyoff
-    Aktiviert den externen FTP-Server mit deaktivierten "SSL only" Modus
+    Aktiviert den externen FTP-Server mit deaktivierten "SSL only" Modus.
 
 fbtr64toolbox.sh smbswitch --active 
-    Schaltet den internen Samba-Server an
+    Schaltet den internen Samba-Server an.
 
 fbtr64toolbox.sh extipv4
-    Ausgabe der externen IPv4-Adresse
+    Ausgabe der externen IPv4-Adresse.
 
 fbtr64toolbox.sh reconnect
-    Erneuert die Internetverbindung
+    Erneuert die Internetverbindung.
 
 fbtr64toolbox.sh reboot
-    Reboot der Fritzbox
+    Reboot der Fritzbox.
 
 fbtr64toolbox.sh savefbconfig
-    Sichern der Fritzbox Konfiguration
+    Sichern der Fritzbox Konfiguration.
 
 fbtr64toolbox.sh deviceinfo --fbip 192.168.100.1
-    Infos zur Fritzbox mit der IP 192.168.100.1
+    Infos zur Fritzbox mit der IP "192.168.100.1".
 
 
 Kommandos:
@@ -655,13 +661,13 @@ extip, extipv4, und extipv6:
 Zeigt die externen IPv4/v6-Adresse an (letztere mit Prefix).
 
 
-conninfo: Zeigt Informationen und Status dr Internetverbindung an.
+conninfo: Zeigt Informationen und Status der Internetverbindung an.
 
 
 connstat: Zeigt des Status der Internetverbindung an.
 
 
-ddnsinfo: Zeigt Informationen und Status eines Dynaminc DNS Service an.
+ddnsinfo: Zeigt Informationen und Status eines Dynamic DNS Service an.
 
 
 timeinfo:
@@ -670,15 +676,11 @@ Zeigt Informationen und Status der NTP-Server und weitere Zeitinformationen an.
 
 wlancount:
 Zeigt die Anzahl der WLAN-APs an (2,4 GHz, 5 GHz, Gaeste-WLAN), wobei
-versucht wird, den Typ der WLAN-APs aus der Fritzbox zu ermitteln, der
-Hinweis presumed (vermutet) oder detected (ermittelt) in der Ausgabe
-zeigt dies an.
+versucht wird, den Typ der WLAN-APs aus der Fritzbox zu ermitteln.
 
 
 wlan?info: Gibt Informationen zu einem der WLANs aus (?=1..4), wobei
-versucht wird, den Typ des WLAN-APs aus der Fritzbox zu ermitteln, der
-Hinweis presumed (vermutet) oder detected (ermittelt) in der Ausgabe
-zeigt dies an.
+versucht wird, den Typ des WLAN-APs aus der Fritzbox zu ermitteln.
 
 
 wlanswitch:
@@ -1111,23 +1113,24 @@ Schreibt die Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments
 
 calcsecret:
 Berechnet das Geheimnis fuer die SOAP-Authentifizierung und speichert es in der
-Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments.
+Konfigurationsdatei; siehe Erlaeuterungen am Beginn dieses Dokuments.
 
 
 help|--help|-h: Zeigt eine Hilfeseite an.
 
 
-Folgende Parameter, die Vorrang vor den in der Konfigurationsdatei oder einer
-SOAP-Steuerdatei gesetzten Optionen haben, ergaenzen die Kommandos:
+Folgende optionalen oder notwendigen Optionen/Parameter, die Vorrang vor den in
+der Konfigurationsdatei oder einer SOAP-Steuerdatei gesetzten Optionen haben,
+ergaenzen die Kommandos:
 
-Parameter                        Benutzt vom Kommando
---conffilesuffix <text>              all
-          Ermoeglicht die Nutzung unbterschiedlicher Konfigurationsdateien.
-          Das gewaehlte Suffix wird an ${HOME}/.fbtr64toolbox nach einemm Punkt angehaengt,
-          z. B. wird bei Angabe von repeater die Konfigurationsdatei
+Option/Parameter                    Benutzt vom Kommando
+--conffilesuffix <text>             all
+          Ermoeglicht die Nutzung unterschiedlicher Konfigurationsdateien.
+          Das gewaehlte Suffix wird an ${HOME}/.fbtr64toolbox nach einem Punkt
+          angehaengt, z. B. wird bei Angabe von repeater die Konfigurationsdatei
           ${HOME}/.fbtr64toolbox.repeater vom Skript genutzt.
 
---fbip <ip address>|<fqdn>       Alle ausser writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>          Alle ausser writeconfig and writesoapfile
     IP-Adresse oder FQDN der Fritzbox.
 
 --description "<text>"              add, enable, disable
@@ -1204,13 +1207,18 @@ Parameter                        Benutzt vom Kommando
     Argumente (inklusive Richtung und Datentyp) an.
 
 --fbconffilepath "<abs path>"       savefbconfig
+    Vorgabe: Home-Verzeichnis
 --fbconffileprefix "<text>"         savefbconfig
+    Vorgabe: fritzbox
 --fbconffilesuffix "<text>"         savefbconfig
+    Vorgabe: config
 --fbconffilepassword "<text>"       savefbconfig
     Parameter zur Definition des Pfades und Dateinamens
-    bzw. des Passworts der Fritzbox-Konfigurationsdatei.
+    und des obligatorischen Passworts der Fritzbox-Konfigurationsdatei.
+    Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermaßen gebildet:
+    <fb...path>/<fb...prefix>_<model>_<serialno>_<firmwareversion>_<date_time>.<fb...suffix>
 
-Erklaerungen fuer diese Parameter stehen in der SOAP-Beispieldatei.
+Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
 --SOAPtype <https|http>             mysoaprequest
 --SOAPdescfile <xmlfilename>        mysoaprequest
 --SOAPcontrolURL <URL>              mysoaprequest
@@ -1228,7 +1236,9 @@ eventuell mit dem Kommando createsoapfiles neu erzeugt werden.
                                     mysoaprequest
 
 --experimental
-    Schaltet als experimentell eingestufte Kommandos frei.
+    Schaltet als experimentell eingestufte Kommandos frei. Kommandos werden insbesondere
+    dann als experimentell eingestuft, wenn zugrundeligende TR-064-Funktionen in einzelnen
+    Fritzbox-Modellen oder Firmwares unerwartete Ergebnisse zeigen.
 
 --debugfb
     Aktiviert eine Debug-Ausgabe zur Fehlersuche.
@@ -1287,5 +1297,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-12-09
+Stand: 2023-12-12
 Marcus Roeckrath
