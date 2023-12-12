@@ -93,7 +93,7 @@ hostsinfo       : Shows hosts list.
 hostinfo <ip>|<name>
                 : Informations about host given by ip address or name.
 wanaccessinfo <ip>|<name>
-                : Shows if client given by ip address or name has WAN access.
+                : Shows if host given by ip address or name has WAN access.
 wanaccessswitch <ip>|<name>
                 : Activates/Deactivates WAN access for host given by ip address or name.
                   WAN access depends also on the profile defined in fritzbox web ui.
@@ -122,8 +122,11 @@ alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
-savefbconfig    : Stores the fritzbox configuration to
-                  "/root/fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
+savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
+                  "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
+                  Use (see below) --fbconffile* options for modifying path and filename
+                  and setting mandatory password. Command does not work on fritzboxes
+                  with enabled "second factor authentication".
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
@@ -135,16 +138,19 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration file to /root/.fbtr64toolbox.
+writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
+                  or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
-                : Writes sample SOAP configuration file to
-                  specified file or to sample file /root/fbtr64toolbox.samplesoap.
-calcsecret      : Calculates hashed secret and stores it to the configuration file.
+                : Writes sample SOAP request to specified file
+                  or to default file "${HOME}/fbtr64toolbox.samplesoap".
+calcsecret      : Calculates hashed secret and stores it into the default configuration file
+                  "${HOME}/.fbtr64toolbox" or into specific configuration file defined by the
+                  "--conffilesuffix" option (see below).
 
-Optional parameters:
-Parameter                            Used by commands
+Optional or mandatory options/parameters:
+Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "${HOME}/.fbtr64toolbox.<text>"
+          Use of configuration file "${HOME}/.fbtr64toolbox.text"
           instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
@@ -199,15 +205,15 @@ Useable for special prepared SOAP files as created by the createsoapfiles comman
 --experimental                       Enables experimental commands (*).
 
 --debugfb                            Activate debug output on fritzbox communication.
---verbose                            Print out return code of all TR-064 function calls.
+--verbose                            Print out return codes of all TR-064 function calls.
 
 version|--version                    Prints version and copyright informations.
 help|--help|-h                       Prints help page.
 
-Necessary parameters not given on the command line are taken from default
-values or ${HOME}/.fbtr64toolbox.
-
-If exists /root/.fbtr64toolbox is read on startup to override defaults.
+Necessary parameters not given on the command line are taken from default values or the
+configuration file. The configuration file is read from your home directory on script
+startup overriding default values. By default it is named ".fbtr64toolbox" but an extension
+can be added using the "--conffilesuffix <text>" parameter (see above).
 
 If modifying an existing port forwarding entry with the add, enable or disable commands
 the values for extport, intclient and protocol has to be entered in exact the same
@@ -223,25 +229,18 @@ The script can use the fritzbox authentication data from "${HOME}/.netrc"
 which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
-f. e.: machine ${FBIP} login ${user} password ${password}
+f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
+the configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
-"fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the"
-configuration file and removes the password from it."
-
-The script can use the fritzbox authentification data from ${HOME}/.netrc
-which has to be readable/writable by owner only (chmod 0600 ${HOME}/.netrc).
-Put into this file a line like: machine <address of fritzbox> login <username> password <password>
-f. e.: machine 192.168.178.1 login dslf-config password abcdefg
-The fritzbox address has to be given in the same type (ip or fqdn) in
-${HOME}/.fbtr64toolbox or on command line parameter --fbip and ${HOME}/.netrc.
+"fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
+configuration file and removes the password from it.
 
 Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
-through the tr-064 interface ending up in corrupted port forwarding entries.
+through the TR-064 interface ending up in corrupted port forwarding entries.
 ```
 
 Das Kommando writeconfig schreibt eine beispielhafte Konfigurationsdatei in das Homeverzeichnis,
