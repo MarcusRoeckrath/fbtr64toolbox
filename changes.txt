@@ -1,3 +1,10 @@
+v2.17.10 stable - 2024-0120
+============================
+* Minor changes to documentation
+* Minor changes on comments in sample soap files
+* fbtr64toolbox.sh version 3.2.10
+
+
 v2.17.9  stable - 2023-12-12
 ============================
 * Changes to help page and documentation

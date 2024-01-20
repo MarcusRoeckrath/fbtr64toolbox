@@ -4,7 +4,7 @@
 
 Bash-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 
-Copyright (c) 2016-2023 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2024 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 ============================================================================
@@ -117,7 +117,7 @@ erhaelt man folgende Hilfeseite zu Kommandos und ergaenzenden Parametern:
 
 ------------------------------------------------------------------------------------------
 Fritzbox TR-064 command line interface
-Version: <version>; Copyright: (2016-2023) Marcus Roeckrath ; Licence: GPL2
+Version: <version>; Copyright: (2016-2024) Marcus Roeckrath ; Licence: GPL2
                                            marcus(dot)roeckrath(at)gmx(dot)de
 Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
 
@@ -497,7 +497,7 @@ in diesem Fall dann auf dem zwischengeschalteten Router zu erfolgen.
 b) Ein PC kann nur Portfreigaben auf sich selbst einrichten.
 
 Fuer den Sonderfall einen Zwischenrouters mit auf diesem eingeschalteten
-Masquerading gilt die Beschreibung unter 1.
+Masquerading gilt die Beschreibung unter a).
 
 Zur Bearbeitung und Anzeige von Portfreigaben dienen die Kommandos
 
@@ -1297,5 +1297,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2023-12-12
+Stand: 2024-01-20
 Marcus Roeckrath
