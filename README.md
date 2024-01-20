@@ -3,7 +3,7 @@ TR-064-Bash-Script for AVM fritzboxes
 
 Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Funktionen
 
-Copyright (c) 2016-2023 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2024 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
