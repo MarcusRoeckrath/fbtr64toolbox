@@ -1,5 +1,5 @@
 # fbtr64toolbox
-Command line tool (bash script) for TR-064 interface of fritzboxes
+Command line tool (bash script) for the TR-064 interface of fritzboxes
 
 Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Funktionen
 
