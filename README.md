@@ -59,7 +59,7 @@ Das Skript wurde in folgenden System getestet:
 
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
-Fritzbox TR-064 command line interface
+Command line tool for the TR-064 interface of fritzboxes
 Version: <version>; Copyright (C) 2016-2023 Marcus Roeckrath ; Licence: GPL2
                                             marcus(dot)roeckrath(at)gmx(dot)de
                     This program comes with ABSOLUTELY NO WARRANTY.
