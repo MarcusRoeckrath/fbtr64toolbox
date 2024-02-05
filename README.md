@@ -1,5 +1,5 @@
 # fbtr64toolbox
-TR-064-Bash-Script for AVM fritzboxes
+Command line tool (bash script) for TR-064 interface of fritzboxes
 
 Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Funktionen
 
@@ -60,8 +60,13 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
 Fritzbox TR-064 command line interface
-Version: <version>; Copyright: (2016-2023) Marcus Roeckrath ; Licence: GPL2
-                                           marcus(dot)roeckrath(at)gmx(dot)de
+Version: <version>; Copyright (C) 2016-2023 Marcus Roeckrath ; Licence: GPL2
+                                            marcus(dot)roeckrath(at)gmx(dot)de
+                    This program comes with ABSOLUTELY NO WARRANTY.
+                    This is free software, and you are welcome to
+                    redistribute it under certain conditions.
+                    (for details see <https://www.gnu.org/licenses/>)
+
 Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
 
 Commands:
@@ -208,6 +213,8 @@ Useable for special prepared SOAP files as created by the createsoapfiles comman
 --verbose                            Print out return codes of all TR-064 function calls.
 
 version|--version                    Prints version and copyright informations.
+license|--license                    Prints license informations.
+disclaimer|--disclaimer              Prints disclaimer.
 help|--help|-h                       Prints help page.
 
 Necessary parameters not given on the command line are taken from default values or the
