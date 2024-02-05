@@ -116,9 +116,14 @@ fbtr64toolbox.sh help
 erhaelt man folgende Hilfeseite zu Kommandos und ergaenzenden Parametern:
 
 ------------------------------------------------------------------------------------------
-Fritzbox TR-064 command line interface
-Version: <version>; Copyright: (2016-2024) Marcus Roeckrath ; Licence: GPL2
-                                           marcus(dot)roeckrath(at)gmx(dot)de
+Command line tool for the TR-064 interface of fritzboxes
+Version: <version>; Copyright (C) 2016-2024 Marcus Roeckrath ; Licence: GPL2
+                                            marcus(dot)roeckrath(at)gmx(dot)de
+                    This program comes with ABSOLUTELY NO WARRANTY.
+                    This is free software, and you are welcome to
+                    redistribute it under certain conditions.
+                    (for details see <https://www.gnu.org/licenses/>)
+
 Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
 
 Commands:
@@ -265,6 +270,8 @@ Useable for special prepared SOAP files as created by the createsoapfiles comman
 --verbose                            Print out return codes of all TR-064 function calls.
 
 version|--version                    Prints version and copyright informations.
+license|--license                    Prints license informations.
+disclaimer|--disclaimer              Prints disclaimer.
 help|--help|-h                       Prints help page.
 
 Necessary parameters not given on the command line are taken from default values or the
@@ -1115,6 +1122,11 @@ calcsecret:
 Berechnet das Geheimnis fuer die SOAP-Authentifizierung und speichert es in der
 Konfigurationsdatei; siehe Erlaeuterungen am Beginn dieses Dokuments.
 
+version|--version: Zeigt Version und Copyright an.
+
+license|--license: Zeigt die Lizenz an.
+
+disclaimer|--disclaimer: Zeigt den Haftungsauschluss an.
 
 help|--help|-h: Zeigt eine Hilfeseite an.
 
@@ -1297,5 +1309,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-01-20
+Stand: 2024-02-05
 Marcus Roeckrath

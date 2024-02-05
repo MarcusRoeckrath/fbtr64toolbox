@@ -1,4 +1,17 @@
-v2.17.10 stable - 2024-0120
+v2.17.11 stable - 2024-02-05
+============================
+* Minor changes to documentation
+* Code cleanup and optimizations
+* Added GPL disclaimer to script file
+* New commands [--]license and [--disclaimer]
+  to show GPL license and disclaimer
+* Enhanced checks on options
+* Adding http(s)://<fbip>:<fbport> to  URL
+  returned by fritzbox if missing
+* fbtr64toolbox.sh version 3.2.11
+
+
+v2.17.10 stable - 2024-01-20
 ============================
 * Minor changes to documentation
 * Minor changes on comments in sample soap files
