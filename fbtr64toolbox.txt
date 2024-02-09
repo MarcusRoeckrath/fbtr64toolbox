@@ -21,8 +21,10 @@ benutzt werden, kann auf https://github.com/MarcusRoeckrath/fbtr64toolbox
 ein tar-Archiv downloaden, welches auf dem Zielsystem komplett entpackt
 werden muss.
 
-Auf dem Zielsystem muessen die Tools awk, bc, curl, grep, ksh, sed, wget und
-xmlstarlet existieren.
+Auf dem Zielsystem muessen die Tools awk, bc, curl, grep, ksh, sed, wget
+und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox ausgelesen
+werden soll (downloadcert-Kommando) muessen auch tr und openssl vorhanden
+sein.
 
 ============================================================================
 
@@ -193,6 +195,7 @@ updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
 devicelog       : Shows fritzbox log formatted or raw.
+downloadcert    : Downloads certificate from fritzbox.
 listxmlfiles    : Lists all xml documents on fritzbox.
 showxmlfile [<xmlfilename>]
                 : Shows xml documents on fritzbox.
@@ -250,6 +253,7 @@ Option/Parameter                     Used by commands
 --fbconffileprefix "<text>"          savefbconfig
 --fbconffilesuffix "<text>"          savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
+--certpath "<abs path>"              downloadcert
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype <https|http>              all but writeconfig and writesoapfile
@@ -860,8 +864,9 @@ reboot: Rebootet die Fritzbox
 
 
 savefbconfig:
-Sichert die Konfiguration der Fritzbox in einen definierbaren Pfad unter dem
-Namen:
+Sichert die Konfiguration der Fritzbox in einen mittels eines ueber
+die Konfigurationsvariablen fbconffilepath bzw. der Kommandozeilen-
+option --fbconffilepath definierbaren Pfad unter dem Namen:
 
 <waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss.
 <waehlbarer Suffix>
@@ -883,6 +888,12 @@ Anbindung ans Internet PPPoE oder IP.
 devicelog:
 Zeigt das Log der Fritzbox an. Bei Angabe der Option --rawdevicelog geschieht
 dies unformatiert und ohne Kopfzeile.
+
+
+downloadcert:
+Speichert das Zertifikat der Fritzbox als .pem-Datei in dem mittels der
+Konfigurationsvariablen fbconffilepath oder der Kommandozeilenoption
+--certpath angegebenen Pfad.
 
 
 listxmlfiles:
@@ -1230,6 +1241,9 @@ Option/Parameter                    Benutzt vom Kommando
     Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermaßen gebildet:
     <fb...path>/<fb...prefix>_<model>_<serialno>_<firmwareversion>_<date_time>.<fb...suffix>
 
+--certpath "<abs path>"             downloadcert
+    Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
+
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
 --SOAPtype <https|http>             mysoaprequest
 --SOAPdescfile <xmlfilename>        mysoaprequest
@@ -1309,5 +1323,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-02-05
+Stand: 2024-02-09
 Marcus Roeckrath

@@ -1,9 +1,23 @@
+v2.17.12 stable - 2024-02-09
+============================
++ Additions to documentation
++ New command downloadcert to download
+  certificate from fritzbox
+* New configuration option --certpath to modify the
+  default file path for the downloaded certificate
+! calcsecret: Empty password instead of setting to "xxxxx"
+* Removing password from configuration file on
+  startup if password and secret are both set
+* writeconfig: Removing password if secret is set
+* fbtr64toolbox.sh version 3.2.12
+
+
 v2.17.11 stable - 2024-02-05
 ============================
 * Minor changes to documentation
 * Code cleanup and optimizations
-* Added GPL disclaimer to script file
-* New commands [--]license and [--disclaimer]
++ Added GPL disclaimer to script file
++ New commands [--]license and [--disclaimer]
   to show GPL license and disclaimer
 * Enhanced checks on options
 * Adding http(s)://<fbip>:<fbport> to  URL
@@ -46,7 +60,7 @@ v2.17.7  stable - 2023-12-06
 
 v2.17.6  stable - 2023-11-26
 ============================
-! Added wlanswitch to switchlist 
+! Added wlanswitch to switchlist
 * fbtr64toolbox.sh version 3.2.6
 
 
@@ -60,7 +74,7 @@ v2.17.5  stable - 2023-11-16
 v2.17.4  stable - 2023-10-06
 ============================
 * dectinfo: Print first of UpdateInfo only
-+ Little changing in code formatting
++ Little changes in code formatting
 * fbtr64toolbox.sh version 3.2.4
 
 
