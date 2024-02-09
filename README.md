@@ -136,6 +136,7 @@ updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
 devicelog       : Shows fritzbox log formatted or raw.
+downloadcert    : Downloads certificate from fritzbox.
 listxmlfiles    : Lists all xml documents on fritzbox.
 showxmlfile [<xmlfilename>]
                 : Shows xml documents on fritzbox.
@@ -193,6 +194,7 @@ Option/Parameter                     Used by commands
 --fbconffileprefix "<text>"          savefbconfig
 --fbconffilesuffix "<text>"          savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
+--certpath "<abs path>"              downloadcert
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype <https|http>              all but writeconfig and writesoapfile
