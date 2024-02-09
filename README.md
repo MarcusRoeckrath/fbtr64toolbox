@@ -39,6 +39,8 @@ https://avm.de/service/schnittstellen/
 
 Auf dem Zielsystem benötigte Tools: **awk, bc, curl, grep, ksh, sed, wget und xmlstarlet**
 
+Bei Nutzung des Kommandos downloadcert sind zusätzlich **openssl** und **tr** erforderlich.
+
 **Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
 **/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
 
