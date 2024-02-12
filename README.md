@@ -139,6 +139,7 @@ tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
 devicelog       : Shows fritzbox log formatted or raw.
 downloadcert    : Downloads certificate from fritzbox.
+certvalidity    : Shows validity data of fritzbox certificate.
 listxmlfiles    : Lists all xml documents on fritzbox.
 showxmlfile [<xmlfilename>]
                 : Shows xml documents on fritzbox.
