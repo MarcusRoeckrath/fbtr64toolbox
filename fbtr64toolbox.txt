@@ -196,6 +196,7 @@ tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
 devicelog       : Shows fritzbox log formatted or raw.
 downloadcert    : Downloads certificate from fritzbox.
+certvalidity    : Shows validity data of fritzbox certificate.
 listxmlfiles    : Lists all xml documents on fritzbox.
 showxmlfile [<xmlfilename>]
                 : Shows xml documents on fritzbox.
@@ -896,6 +897,10 @@ Konfigurationsvariablen fbconffilepath oder der Kommandozeilenoption
 --certpath angegebenen Pfad.
 
 
+certvalidity:
+Zeigt die Gültigkeitsdauer des Fritzbox-Zertifikates an.
+
+
 listxmlfiles:
 Zeigt eine Liste aller xml SOAP Beschreibungsdateien der Fritzbox an.
 
@@ -1323,5 +1328,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-02-09
+Stand: 2024-02-12
 Marcus Roeckrath

@@ -1,3 +1,14 @@
+v2.17.13 stable - 2024-02-12
+============================
++ Additions to documentation
++ New command certvalidity showing validity
+  data of fritzbox certificate
++ downloadcert: Added output of certificate validity data
+* Optimized check if fritzbox is reachable
+* Little code optimization
+* fbtr64toolbox.sh version 3.2.13
+
+
 v2.17.12 stable - 2024-02-09
 ============================
 + Additions to documentation
