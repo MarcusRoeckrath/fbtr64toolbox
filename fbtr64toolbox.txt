@@ -184,6 +184,10 @@ tamswitch <index> (*)
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2
+speedtestinfo   : Informations/Status of network bandwidth measurements.
+speedteststats  : Shows network bandwith measurement statistics.
+speedtestresetstats
+                : Resets network bandwith measurement statistics.
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
 savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
@@ -691,8 +695,8 @@ Zeigt die Anzahl der WLAN-APs an (2,4 GHz, 5 GHz, Gaeste-WLAN), wobei
 versucht wird, den Typ der WLAN-APs aus der Fritzbox zu ermitteln.
 
 
-wlan?info: Gibt Informationen zu einem der WLANs aus (?=1..4), wobei
-versucht wird, den Typ des WLAN-APs aus der Fritzbox zu ermitteln.
+wlan?info: Gibt Informationen und Status zu einem der WLANs aus (?=1..4),
+wobei versucht wird, den Typ des WLAN-APs aus der Fritzbox zu ermitteln.
 
 
 wlanswitch:
@@ -798,7 +802,7 @@ anzugeben, wobei fuer die x die Zahlen 0-9 oder die Buchstaben a-f in Gross- ode
 Kleinschreibung stehen. Eine fuehrende 0 darf nicht ausgelassen werden!
 
 
-storageinfo: Zeigt den Status des FTP- und Samba-Servers an.
+storageinfo: Zeigt Informationen und Status des FTP- und Samba-Servers an.
 
 
 ftpswitch: Schaltet den internen FTP-Server an bzw. aus.
@@ -824,7 +828,7 @@ Schaltet den internen FTP- und Samba-Server an bzw. aus. Fuer die
 Nutzung des internen Medienservers muessen beide Server aktiviert werden.
 
 
-upnpmediainfo: Zeigt Informationen zum UPnP- und Medienserver-Status an.
+upnpmediainfo: Zeigt Informationen und Status des UPnP- und Medienserver-Status an.
 
 
 upnpswitch: Schaltet die Anzeige von Statusinformationen per UPnP an bzw. aus.
@@ -833,7 +837,7 @@ upnpswitch: Schaltet die Anzeige von Statusinformationen per UPnP an bzw. aus.
 mediaswitch: Schaltet den Medienserver an bzw. aus.
 
 
-taminfo: Zeigt Informationen zu den Anrufbeantwortern an.
+taminfo: Zeigt Informationen und Status der Anrufbeantworter an.
 
 
 tamcap: Zeigt die verfuegbare Aufnahmekapazitaet der Anrufbeantworter an.
@@ -851,11 +855,25 @@ werden konnte.
 
 
 alarminfo:
-Zeigt Informationen zu den Weckern an.
+Zeigt Informationen und Status der Wecker an.
 
 
 alarmswitch <index>:
 Schaltet den durch Index (0-2) angegebenen Wecker an oder aus.
+
+
+speedtestinfo: Zeigt Informationen und Status der Netzwerkdurchsatzmessung an.
+
+
+speedteststats: Zeigt Statistiken der Netzwerkdurchsatzmessung an.
+
+Der "Byte count"-Wert laeuft bei TCP-Durchsatzmessungen bei 4 GiB ueber,
+wodurch wegen weiterlaufender Zeitbasis der Messung die Angabe fuer
+"KBits/s average" falsch wird. Bei UDP-Durchsatzmessungen kommt es, vermutlich
+beim Ueberlauf, zu einem "Internal error" der TR-064-Funktion.
+
+
+speedtestresetstats: Setzt die Statistiken der Netzwerkdurchsatzmessung zurueck.
 
 
 reconnect: Erneuert die Internetverbindung
@@ -898,7 +916,7 @@ Konfigurationsvariablen fbconffilepath oder der Kommandozeilenoption
 
 
 certvalidity:
-Zeigt die Gültigkeitsdauer des Fritzbox-Zertifikates an.
+Zeigt die Gueltigkeitsdauer des Fritzbox-Zertifikates an.
 
 
 listxmlfiles:
@@ -1243,7 +1261,7 @@ Option/Parameter                    Benutzt vom Kommando
 --fbconffilepassword "<text>"       savefbconfig
     Parameter zur Definition des Pfades und Dateinamens
     und des obligatorischen Passworts der Fritzbox-Konfigurationsdatei.
-    Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermaßen gebildet:
+    Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermassen gebildet:
     <fb...path>/<fb...prefix>_<model>_<serialno>_<firmwareversion>_<date_time>.<fb...suffix>
 
 --certpath "<abs path>"             downloadcert
@@ -1328,5 +1346,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-02-12
+Stand: 2024-04-12
 Marcus Roeckrath
