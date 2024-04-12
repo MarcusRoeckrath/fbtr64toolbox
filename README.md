@@ -127,6 +127,11 @@ tamswitch <index> (*)
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2
+speedtestinfo   : Informations/Status of network bandwidth measurements.
+speedteststats  : Shows network bandwith measurement statistics.
+speedtestresetstats
+                : Resets network bandwith measurement statistics.
+
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
 savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
