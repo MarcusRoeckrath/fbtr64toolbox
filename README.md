@@ -128,6 +128,7 @@ alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
 speedtestinfo   : Informations/Status of network bandwidth measurements.
+speedtestswitch : Activates/Deactivates network bandwidth measurements.
 speedteststats  : Shows network bandwith measurement statistics.
 speedtestresetstats
                 : Resets network bandwith measurement statistics.
@@ -193,6 +194,8 @@ Option/Parameter                     Used by commands
 --upnpoff (**)                       mediaswitch
           (**) Previous status will be preserved if
                *on|off parameter is not given on the command line.
+--speedtestudpbidirlanon             speedtestswitch
+--speedtestwanon                     speedtestswitch
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
 --nowrap                             deviceinfo, devicelog
