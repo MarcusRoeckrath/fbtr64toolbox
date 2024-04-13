@@ -251,9 +251,7 @@ Option/Parameter                     Used by commands
           (**) Previous status will be preserved if
                *on|off parameter is not given on the command line.
 --speedtestudpbidirlanon             speedtestswitch
---speedtestudpbidirlanoff            speedtestswitch
 --speedtestwanon                     speedtestswitch
---speedtestwanoff                    speedtestswitch
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
 --nowrap                             deviceinfo, devicelog
