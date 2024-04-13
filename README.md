@@ -123,10 +123,10 @@ mediaswitch     : Activates/deactivates media server.
 taminfo         : Information/Status of answering machines.
 tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
-                : Activates/Deactivates answering machine given by index 0-4
+                : Activates/Deactivates answering machine given by index 0-4.
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
-                : Activates/Deactivates alarm clock given by index 0-2
+                : Activates/Deactivates alarm clock given by index 0-2.
 speedtestinfo   : Informations/Status of network bandwidth measurements.
 speedteststats  : Shows network bandwith measurement statistics.
 speedtestresetstats
