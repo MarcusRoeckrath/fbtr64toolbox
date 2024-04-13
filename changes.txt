@@ -1,3 +1,12 @@
+v2.17.16 stable - 2024-04-13
+============================
++ New command speedtestswitch
+  and according additional parameters
+  speedtestudpbidirlanon
+  speedtestwanon
+* Minor code cleanup
+
+
 v2.17.15 stable - 2024-04-12
 ============================
 + New commands: speedtestinfo, speedteststats

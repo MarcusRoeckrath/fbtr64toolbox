@@ -180,11 +180,12 @@ mediaswitch     : Activates/deactivates media server.
 taminfo         : Information/Status of answering machines.
 tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
-                : Activates/Deactivates answering machine given by index 0-4
+                : Activates/Deactivates answering machine given by index 0-4.
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
-                : Activates/Deactivates alarm clock given by index 0-2
+                : Activates/Deactivates alarm clock given by index 0-2.
 speedtestinfo   : Informations/Status of network bandwidth measurements.
+speedtestswitch : Activates/Deactivates network bandwidth measurements.
 speedteststats  : Shows network bandwith measurement statistics.
 speedtestresetstats
                 : Resets network bandwith measurement statistics.
@@ -249,6 +250,10 @@ Option/Parameter                     Used by commands
 --upnpoff (**)                       mediaswitch
           (**) Previous status will be preserved if
                *on|off parameter is not given on the command line.
+--speedtestudpbidirlanon             speedtestswitch
+--speedtestudpbidirlanoff            speedtestswitch
+--speedtestwanon                     speedtestswitch
+--speedtestwanoff                    speedtestswitch
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
 --nowrap                             deviceinfo, devicelog
@@ -1235,6 +1240,13 @@ Option/Parameter                    Benutzt vom Kommando
     angegeben, bleibt der vorige Schaltzustand der
     gekoppelten Funktion unveraendert.
 
+--speedtestudpbidirlanon            speedtestswitch
+    Schaltet beim speedtestswitch-Kommando die bidirektionale
+    Netzwerk-Durchsatzmessung mittels UDP im lokalen Netz an.
+--speedtestwanon                    speedtestswitch
+    Schaltet beim speedtestswitch-Kommando die Netzwerk-Durchsatzmessung
+    ueber WAN (Internet) an.
+
 --showfritzindexes                  show, deflectionsinfo,
                                     homeautoinfo, homepluginfo, hostsinfo
     Beginnt den Index in diesen Listen mit "0" statt "1", was der internen
@@ -1346,5 +1358,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-12
+Stand: 2024-04-13
 Marcus Roeckrath
