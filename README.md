@@ -37,7 +37,7 @@ Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Frit
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
 
-Auf dem Zielsystem benötigte Tools: **awk, bc, curl, grep, ksh, sed, wget und xmlstarlet**
+Auf dem Zielsystem benötigte Tools: **awk, bc, curl, dos2unix, grep, ksh, sed, wget und xmlstarlet**
 
 Bei Nutzung der Kommandos downloadcert und certvalidity sind zusätzlich **openssl** und **tr** erforderlich.
 
