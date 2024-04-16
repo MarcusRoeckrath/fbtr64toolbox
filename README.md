@@ -33,6 +33,7 @@ Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Frit
 - avmnexusdesc.xml
 - l2tpv3.xml
 - aura.xml (nur verfügbar, wenn USB-Fernanschluss aktiviert ist)
+- MediaServerDevDesc.xml
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
