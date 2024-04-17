@@ -1,3 +1,10 @@
+v2.17.19 stable - 2024-04-17
+============================
++ Abort if descfile not found on fritzbox
++ Abort if control_url and/or urn not found in descfile
+* fbtr64toolbox.sh version 3.2.19
+
+
 v2.17.18 stable - 2024-04-16
 ============================
 + Differentiated output on ftpswitch, smbswitch
@@ -6,11 +13,13 @@ v2.17.18 stable - 2024-04-16
 + Fritzbox xml files converted to unix format because
   they possibly can have dos crlf line endings
 + Added requirement dos2unix
+* fbtr64toolbox.sh version 3.2.18
 
 
 v2.17.17 stable - 2024-04-14
 ============================
 + Added more output on some switch commands
+* fbtr64toolbox.sh version 3.2.17
 
 
 v2.17.16 stable - 2024-04-13
@@ -20,17 +29,20 @@ v2.17.16 stable - 2024-04-13
   speedtestudpbidirlanon
   speedtestwanon
 * Minor code cleanup
+* fbtr64toolbox.sh version 3.2.16
 
 
 v2.17.15 stable - 2024-04-12
 ============================
 + New commands: speedtestinfo, speedteststats
   and speedtestresetstats
+* fbtr64toolbox.sh version 3.2.15
 
 
 v2.17.14 stable - 2024-04-05
 ============================
 + Added "On" resp. "Off" to output of *switch commands
+* fbtr64toolbox.sh version 3.2.14
 
 
 v2.17.13 stable - 2024-02-12
