@@ -19,7 +19,7 @@ oder
 
 Heimnetz->Netzwerk->Netzwerkeinstellungen->Heimnetzfreigaben
 
-die Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
+die Parameter "Zugriff für Anwendungen zulassen" und "Statusinformationen
 über UPnP übertragen" zu aktivieren.
 
 Einzelne Funktionen wie die Speicherung der Konfiguration erfordern die Deaktivierung
