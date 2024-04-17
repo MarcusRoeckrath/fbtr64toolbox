@@ -13,9 +13,11 @@ Fehlermeldung "Error on communication with fritzbox".
 Um mit diesem Skript mit der Fritzbox kommunizieren zu koennen, ist in der
 Fritzbox je nach Firmware z. B. unter
 
-    Heimnetz->Heimnetzübersicht->Netzwerkeinstellungen->Heimnetzfreigaben
+Heimnetz->Heimnetzübersicht->Netzwerkeinstellungen->Heimnetzfreigaben
+
 oder
-    Heimnetz->Netzwerk->Netzwerkeinstellungen->Heimnetzfreigaben
+
+Heimnetz->Netzwerk->Netzwerkeinstellungen->Heimnetzfreigaben
 
 der Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
 über UPnP übertragen" zu aktivieren.
