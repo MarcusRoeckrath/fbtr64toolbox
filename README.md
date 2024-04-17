@@ -10,6 +10,16 @@ Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
 Fehlermeldung "Error on communication with fritzbox".
 
+Um mit diesem Skript mit der Fritzbox kommunizieren zu koennen, ist in der
+Fritzbox je nach Firmware z. B. unter
+
+    Heimnetz->Heimnetzübersicht->Netzwerkeinstellungen->Heimnetzfreigaben
+oder
+    Heimnetz->Netzwerk->Netzwerkeinstellungen->Heimnetzfreigaben
+
+der Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
+über UPnP übertragen" zu aktivieren.
+
 Einzelne Funktionen wie die Speicherung der Konfiguration erfordern die Deaktivierung
 der "zusätzlichen Bestätigung" durch einen zweiten Faktor. Solche Funktionen des
 Skriptes funktionieren daher nicht, wenn diese "zusätzliche Bestätigung" aktiviert
