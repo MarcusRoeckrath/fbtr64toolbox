@@ -1,3 +1,9 @@
+v2.17.20 stable - 2024-04-17
+============================
++ Addition to documentation:
+  "Statusinformationen ueber UPnP uebertragen"
+
+
 v2.17.19 stable - 2024-04-17
 ============================
 + Abort if descfile not found on fritzbox

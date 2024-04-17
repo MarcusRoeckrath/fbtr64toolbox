@@ -87,7 +87,8 @@ Fritzbox je nach Firmware z. B. unter
 oder
     Heimnetz->Netzwerk->Netzwerkeinstellungen->Heimnetzfreigaben
 
-der Parameter "Zugriff fuer Anwendungen zulassen" zu aktivieren.
+der Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
+ueber UPnP uebertragen" zu aktivieren.
 
 Einige Funktionen sind nicht verfuegbar, wenn unter
 
