@@ -255,6 +255,8 @@ Option/Parameter                     Used by commands
 --speedtestwanon                     speedtestswitch
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
+--csvtableoutput                     show, dectinfo, deflectionsinfo, homepluginfo
+                                     hostsinfo, taminfo, alarminfo
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
@@ -1253,6 +1255,13 @@ Option/Parameter                    Benutzt vom Kommando
     einer anderen TR-64-Funktion als Eingabewert genutzt werden, ist
     in der Regel von einer ab "0" ausgehenden Nummerierung auszugehen.
 
+--csvtableoutput                    show, dectinfo, deflectionsinfo, homepluginfo
+                                    hostsinfo, taminfo, alarminfo
+    Da ueberlange Spalteninhalte bei Ausgabe als Tabelle abgeschnitten werden,
+    kann mit diesem Parameter die Ausgabe als CSV-Format der Tabellen inklusive
+    erweiterter Spaltenueberschriften erzwungen werden. Andere Bestandteile der
+    Ausgabe wie Titelzeile werden in beiden Formatierungen identisch ausgegeben.
+
 --nowrap                            deviceinfo, devicelog
     Zeigt Log-Zeilen ohne Zeilenumbruch an.
 
@@ -1357,5 +1366,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-17
+Stand: 2024-04-18
 Marcus Roeckrath

@@ -1,3 +1,14 @@
+v2.18.0  stable - 2024-04-18
+============================
++ New parameter --csvtableoutput to print table output in
+  csv format with extended column descriptors as header line
+  (semicolon as separator, all fields enclosed in "")
+! Fixed download of tam messages list
+! Fixed calculation of total and new tam messages
+! Make some grep quiet to avoid unneeded output
+* fbtr64toolbox.sh version 3.3.0
+
+
 v2.17.20 stable - 2024-04-17
 ============================
 + Addition to documentation:
