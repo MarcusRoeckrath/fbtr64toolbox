@@ -211,6 +211,8 @@ Option/Parameter                     Used by commands
 --speedtestwanon                     speedtestswitch
 --showfritzindexes                   show, deflectionsinfo,
                                      homeautoinfo, homepluginfo, hostsinfo
+--csvtableoutput                     show, dectinfo, deflectionsinfo, homepluginfo
+                                     hostsinfo, taminfo, alarminfo
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
