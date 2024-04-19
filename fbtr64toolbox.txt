@@ -200,6 +200,7 @@ savefbconfig    : Stores the fritzbox configuration to your home directory; defa
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
+macinfo         : Shows fritzbox mac addresses.
 devicelog       : Shows fritzbox log formatted or raw.
 downloadcert    : Downloads certificate from fritzbox.
 certvalidity    : Shows validity data of fritzbox certificate.
@@ -1366,5 +1367,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-18
+Stand: 2024-04-19
 Marcus Roeckrath

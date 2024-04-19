@@ -1,3 +1,10 @@
+v2.18.1  stable - 2024-04-19
+============================
++ New command macinfo showing mac adresses
+* Some text changes in header line of hostsinfo command in
+  cvstableoutput mode
+
+
 v2.18.0  stable - 2024-04-18
 ============================
 + New parameter --csvtableoutput to print table output in
