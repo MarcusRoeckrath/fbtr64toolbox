@@ -38,13 +38,13 @@ befindet sich in diesen Dateien.
 
 Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Fritzbox vorhanden sind:
 - tr64desc.xml
-- igddesc.xml
-- igd2desc.xml
+- igddesc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
+- igd2desc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
 - fboxdesc.xml
 - usbdesc.xml
 - avmnexusdesc.xml
 - l2tpv3.xml
-- aura.xml (nur verfügbar, wenn USB-Fernanschluss aktiviert ist)
+- aura.xml (nur verfügbar, wenn der USB-Fernanschluss aktiviert ist)
 - MediaServerDevDesc.xml
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
