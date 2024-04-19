@@ -156,6 +156,7 @@ savefbconfig    : Stores the fritzbox configuration to your home directory; defa
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
+macinfo         : Shows fritzbox mac addresses.
 devicelog       : Shows fritzbox log formatted or raw.
 downloadcert    : Downloads certificate from fritzbox.
 certvalidity    : Shows validity data of fritzbox certificate.
