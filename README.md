@@ -124,19 +124,20 @@ autowolswitch <ip>|<mac>|<name>
                   ip address, mac address or name.
 wolclient <ip>|<mac>|<name>
                 : Wake on lan client given by ip address, mac address or name.
-storageinfo     : Information/Status of ftp and smb server.
+storageinfo     : Informations/Status of ftp and smb server.
 ftpswitch       : Activates/deactivates ftp server.
 ftpwanswitch    : Activates/deactivates ftp wan server.
 ftpwansslswitch : Activates/deactivates ssl only on ftp wan server.
 smbswitch       : Activates/deactivates smb server.
 nasswitch       : Activates/deactivates nas server (local ftp and smb).
-upnpmediainfo   : Information/Status of upnp media server.
+upnpmediainfo   : Informations/Status of upnp media server.
 upnpswitch      : Activates/deactivates upnp status messages.
 mediaswitch     : Activates/deactivates media server.
-taminfo         : Information/Status of answering machines.
+taminfo         : Informations/Status of answering machines.
 tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
                 : Activates/Deactivates answering machine given by index 0-4.
+phonebookinfo   : Informations about phonebooks.
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
