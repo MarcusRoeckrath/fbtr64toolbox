@@ -1,8 +1,21 @@
+v2.18.2  stable - 2024-04-21
+============================
++ New command phonebookinfo
++ get_url_and_urn:
+  Added error messages on abort
++ Addition to documentation
+* dectinfo: Reduced "ID" column width by one and extended
+  "Name" column with by one
+* macinfo: Replaced string operations by similiar for loop
+* fbtr64toolbox.sh version 3.3.2
+
+
 v2.18.1  stable - 2024-04-19
 ============================
 + New command macinfo showing mac adresses
 * Some text changes in header line of hostsinfo command in
   cvstableoutput mode
+* fbtr64toolbox.sh version 3.3.1
 
 
 v2.18.0  stable - 2024-04-18
@@ -24,8 +37,9 @@ v2.17.20 stable - 2024-04-17
 
 v2.17.19 stable - 2024-04-17
 ============================
-+ Abort if descfile not found on fritzbox
-+ Abort if control_url and/or urn not found in descfile
++ get_url_and_urn:
+  Abort if descfile not found on fritzbox
+  Abort if control_url and/or urn not found in descfile
 * fbtr64toolbox.sh version 3.2.19
 
 
