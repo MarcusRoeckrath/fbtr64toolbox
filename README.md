@@ -138,6 +138,11 @@ tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
                 : Activates/Deactivates answering machine given by index 0-4.
 phonebookinfo   : Informations about phonebooks.
+savephonebook <id>
+                : Stores a fritzbox phonebook to your home (or /tmp) directory.
+                  Default filename:
+                  "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
+                  Use (see below) --phonebookfile* options to modify path and filename.
 alarminfo       : Information/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -149,10 +154,11 @@ speedtestresetstats
 
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
-savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
+savefbconfig    : Stores the fritzbox configuration to your home (or /tmp) directory.
+                  Default filename:
                   "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
-                  Use (see below) --fbconffile* options for modifying path and filename
-                  and setting mandatory password. Command does not work on fritzboxes
+                  Use (see below) --fbconffile* options to modify path and filename
+                  and set mandatory password. Command does not work on fritzboxes
                   with enabled "second factor authentication".
 updateinfo      : Informations about fritzbox firmware updates.
 tr69info        : Informations about provider managed updates via TR-069.
@@ -218,9 +224,11 @@ Option/Parameter                     Used by commands
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
+--phonebookfilepath "<abs path>"     savephonebook
+--phonebookfileprefix ["<text>"]     savephonebook
 --fbconffilepath "<abs path>"        savefbconfig
---fbconffileprefix "<text>"          savefbconfig
---fbconffilesuffix "<text>"          savefbconfig
+--fbconffileprefix ["<text>"]        savefbconfig
+--fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert
 
