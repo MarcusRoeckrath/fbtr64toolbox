@@ -195,6 +195,11 @@ tamcap          : Shows capacity of answering machines.
 tamswitch <index> (*)
                 : Activates/Deactivates answering machine given by index 0-4.
 phonebookinfo   : Informations about phonebooks.
+savephonebook <id>
+                : Stores the fritzbox phonebook to your home (or /tmp) directory.
+                  Default filename:
+                  "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>_<id_name_extraid>.xml".
+                  Use (see below) --phonebookfile* options to modify path and filename.
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -205,9 +210,10 @@ speedtestresetstats
                 : Resets network bandwith measurement statistics.
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
-savefbconfig    : Stores the fritzbox configuration to your home directory; default filename:
+savefbconfig    : Stores the fritzbox configuration to your home (or /tmp) directory.
+                  Default filename:
                   "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>.config".
-                  Use (see below) --fbconffile* options for modifying path and filename
+                  Use (see below) --fbconffile* options to modify path and filename
                   and setting mandatory password. Command does not work on fritzboxes
                   with enabled "second factor authentication".
 updateinfo      : Informations about fritzbox firmware updates.
@@ -274,9 +280,11 @@ Option/Parameter                     Used by commands
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
+--phonebookfilepath "<abs path>"     savephonebook
+--phonebookfileprefix ["<text>"]     savephonebook
 --fbconffilepath "<abs path>"        savefbconfig
---fbconffileprefix "<text>"          savefbconfig
---fbconffilesuffix "<text>"          savefbconfig
+--fbconffileprefix ["<text>"]        savefbconfig
+--fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert
 
@@ -884,6 +892,18 @@ unter anderem auch eine temporaer gueltige URL) enthaelt ebenfalls diese
 zusaetzlichen Telefonbuchgeintraege.
 
 
+savephonebook <id>:
+Sichert das Telefonbuch mit der gegebenen ID in einem mittels der Kommandozeilen-
+option --phonebookfilepath definierbaren Pfad (Standard: Home-Vverzeichnis
+oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist) unter dem Namen:
+
+<waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss_<ID_Name_ExtraID>.xml
+
+Hinweis: Die heruntergeladenen Telefonbuecher enthalten ueber die im
+Webinterface angezeigten Eintraege hinaus auch interne Rufnummern (siehe
+auch vorstehenden Erlaeuterungen zum phonebookinfo-Kommando).
+
+
 alarminfo: Zeigt Informationen und Status der Wecker an.
 
 
@@ -912,12 +932,12 @@ reboot: Rebootet die Fritzbox
 
 
 savefbconfig:
-Sichert die Konfiguration der Fritzbox in einen mittels eines ueber
+Sichert die Konfiguration der Fritzbox in einem mittels eines ueber
 die Konfigurationsvariablen fbconffilepath bzw. der Kommandozeilen-
-option --fbconffilepath definierbaren Pfad unter dem Namen:
+option --fbconffilepath definierbaren Pfad (Standard: Home-Verzeichnis
+oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist) unter dem Namen:
 
-<waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss.
-<waehlbarer Suffix>
+<waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss.<waehlbarer Suffix>
 
 
 updateinfo: Zeigt Informationen zu verfuegbaren Firmwareupdates an.
@@ -1295,12 +1315,22 @@ Option/Parameter                    Benutzt vom Kommando
     Zeigt nur die moeglichen Aktionen und die zugehoerigen
     Argumente (inklusive Richtung und Datentyp) an.
 
+--phonebookfilepath "<abs path>"    savephonebook
+    Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
+    ermittelbar ist.
+--phonebookfileprefix ["<text>"]    savephonebook
+    Vorgabe: fritzboxphonebook
+    Wird "text" nicht angegeben, wird die Vorgabe geloescht.
+
 --fbconffilepath "<abs path>"       savefbconfig
-    Vorgabe: Home-Verzeichnis
---fbconffileprefix "<text>"         savefbconfig
+    Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
+    ermittelbar ist.
+--fbconffileprefix ["<text>"]       savefbconfig
     Vorgabe: fritzbox
---fbconffilesuffix "<text>"         savefbconfig
+    Wird "text" nicht angegeben, wird die Vorgabe geloescht.
+--fbconffilesuffix ["<text>"]       savefbconfig
     Vorgabe: config
+    Wird "text" nicht angegeben, wird die Vorgabe geloescht.
 --fbconffilepassword "<text>"       savefbconfig
     Parameter zur Definition des Pfades und Dateinamens
     und des obligatorischen Passworts der Fritzbox-Konfigurationsdatei.
@@ -1389,5 +1419,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-21
+Stand: 2024-04-22
 Marcus Roeckrath

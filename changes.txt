@@ -1,3 +1,12 @@
+v2.18.3  stable - 2024-04-22
+============================
++ New command savephonebook and according new parameters
+  --phonebookfilepath and --phonebookfilesuffix
+  to download fritzbox phonebooks
++ Additions and clarifications to documentation
+* fbtr64toolbox.sh version 3.3.3
+
+
 v2.18.2  stable - 2024-04-21
 ============================
 + New command phonebookinfo
@@ -6,7 +15,8 @@ v2.18.2  stable - 2024-04-21
 + Addition to documentation
 * dectinfo: Reduced "ID" column width by one and extended
   "Name" column with by one
-* macinfo: Replaced string operations by similiar for loop
+* macinfo: Replaced while loop with string operations by
+  simplier IFS definition with for loop
 * fbtr64toolbox.sh version 3.3.2
 
 
