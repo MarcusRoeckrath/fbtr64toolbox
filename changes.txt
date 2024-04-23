@@ -1,7 +1,14 @@
+v2.18.4  stable - 2024-04-23
+============================
+* --SOAPparameterlist: Replaced while loop with string
+  operations by simplier IFS definition with for loop
+* fbtr64toolbox.sh version 3.3.4
+
+
 v2.18.3  stable - 2024-04-22
 ============================
 + New command savephonebook and according new parameters
-  --phonebookfilepath and --phonebookfilesuffix
+  --phonebookfilepath and --phonebookfileprefix
   to download fritzbox phonebooks
 + Additions and clarifications to documentation
 * fbtr64toolbox.sh version 3.3.3
