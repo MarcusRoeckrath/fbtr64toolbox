@@ -1,3 +1,14 @@
+v2.18.5  stable - 2024-04-26
+============================
++ New command wlanhostsinfo showing connected wlan devices
+* Replacing determine_ip_or_mac_from_name by more general
+  determine_tag_from_anchor_with_anchorvalue_from_hosts_list
+! Fixed detectwlantype for wifi 6
+* Minor code cleanup/changes
++ Additions to documentation
+* fbtr64toolbox.sh version 3.3.5
+
+
 v2.18.4  stable - 2024-04-23
 ============================
 * --SOAPparameterlist: Replaced while loop with string

@@ -160,6 +160,7 @@ wlancount       : Prints number and type of available wlans.
 wlan?info       : Informations/Status of wlan; ? = 1, 2, 3 or 4.
 wlanswitch (*)  : Activates/deactivates wlan global acting like button on fritzbox.
 wlan?switch (*) : Activates/deactivates wlan; ? = 1, 2, 3 or 4.
+wlanhostsinfo   : Shows connected wlan devices list.
 dectinfo        : Shows dect telephone list.
 deflectionsinfo : Shows telephone deflections list.
 homeautoinfo    : Shows informations from home automation/smart home devices.
@@ -741,8 +742,15 @@ werden koennen. Ist dies nicht der Fall, kommt es zu Fehlerzustaenden
 im WLAN-Teil der Fritzbox, die einen Reboot erforderlich machen.
 
 
-dectinfo:
-Zeigt eine Liste alle Dect-Telefone an.
+wlanhostsinfo:
+Zeigt eine Liste aller verbundene WLAN-Geraete an. Im Mesh-Betrieb mehrerer
+Fritzboxen werden nur die mit der abgefragten Fritzbox verbundenen
+WLAN-Geraete aufgelistet und nicht des gesamten Mesh-Verbundes; fuer
+eine Komplettuebersicht aller verbundenen WLAN-Geraete sind also alle
+Fritzboxen abzufragen.
+
+
+dectinfo: Zeigt eine Liste alle Dect-Telefone an.
 
 
 deflectionsinfo:
@@ -770,7 +778,6 @@ erfuellt sein muessen. Die Suchmasken sind zwingend in Hochkommas anzugeben:
 
 
 homeautoswitch "<ain>":
-
 Schaltet den mittels AIN-Adresse angegebenen Smarthome-Schalter
 an oder aus, wobei die AIN immer in Anfuehrungszeichen anzugeben ist.
 Dies funktioniert nur fuer Schalter, die der Fritzbox bekannt sind.
@@ -1419,5 +1426,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-23
+Stand: 2024-04-26
 Marcus Roeckrath
