@@ -103,6 +103,7 @@ wlancount       : Prints number and type of available wlans.
 wlan?info       : Informations/Status of wlan; ? = 1, 2, 3 or 4.
 wlanswitch (*)  : Activates/deactivates wlan global acting like button on fritzbox.
 wlan?switch (*) : Activates/deactivates wlan; ? = 1, 2, 3 or 4.
+wlanhostsinfo   : Shows connected wlan devices list.
 dectinfo        : Shows dect telephone list.
 deflectionsinfo : Shows telephone deflections list.
 homeautoinfo    : Shows informations from home automation/smart home devices.
