@@ -218,10 +218,15 @@ Option/Parameter                     Used by commands
                *on|off parameter is not given on the command line.
 --speedtestudpbidirlanon             speedtestswitch
 --speedtestwanon                     speedtestswitch
---showfritzindexes                   show, deflectionsinfo,
-                                     homeautoinfo, homepluginfo, hostsinfo
---csvtableoutput                     show, dectinfo, deflectionsinfo, homepluginfo
-                                     hostsinfo, taminfo, alarminfo
+--showfritzindexes                   deflectionsinfo, homeautoinfo,
+                                     homepluginfo, hostsinfo, show
+--csvtableoutput                     alarminfo, dectinfo, deflectionsinfo,
+                                     homepluginfo, hostsinfo, phonebookinfo,
+                                     show, taminfo, wlanhostsinfo
+--showtablelegend                    alarminfo, dectinfo, deflectionsinfo,
+                                     homepluginfo, hostsinfo, phonebookinfo,
+                                     show, taminfo, wlanhostsinfo
+          Effective only if --csvtableoutput is not used.
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
