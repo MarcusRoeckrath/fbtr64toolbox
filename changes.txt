@@ -1,3 +1,11 @@
+v2.18.6  stable - 2024-04-30
+============================
++ New parameter --showtablelegend to write
+  out abbreviated column headers
++ Additions to documentation
+* fbtr64toolbox.sh version 3.3.6
+
+
 v2.18.5  stable - 2024-04-26
 ============================
 + New command wlanhostsinfo showing connected wlan devices

@@ -274,10 +274,15 @@ Option/Parameter                     Used by commands
                *on|off parameter is not given on the command line.
 --speedtestudpbidirlanon             speedtestswitch
 --speedtestwanon                     speedtestswitch
---showfritzindexes                   show, deflectionsinfo,
-                                     homeautoinfo, homepluginfo, hostsinfo
---csvtableoutput                     show, dectinfo, deflectionsinfo, homepluginfo
-                                     hostsinfo, taminfo, alarminfo
+--showfritzindexes                   deflectionsinfo, homeautoinfo,
+                                     homepluginfo, hostsinfo, show
+--csvtableoutput                     alarminfo, dectinfo, deflectionsinfo,
+                                     homepluginfo, hostsinfo, phonebookinfo,
+                                     show, taminfo, wlanhostsinfo
+--showtablelegend                    alarminfo, dectinfo, deflectionsinfo,
+                                     homepluginfo, hostsinfo, phonebookinfo,
+                                     show, taminfo, wlanhostsinfo
+          Effective only if --csvtableoutput is not used.
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
@@ -1298,19 +1303,27 @@ Option/Parameter                    Benutzt vom Kommando
     Schaltet beim speedtestswitch-Kommando die Netzwerk-Durchsatzmessung
     ueber WAN (Internet) an.
 
---showfritzindexes                  show, deflectionsinfo,
-                                    homeautoinfo, homepluginfo, hostsinfo
+--showfritzindexes                  deflectionsinfo, homeautoinfo,
+                                    homepluginfo, hostsinfo, show
     Beginnt den Index in diesen Listen mit "0" statt "1", was der internen
     Nummerierung der Fritzbox entspricht. Soll ein ermittelter Index in
     einer anderen TR-64-Funktion als Eingabewert genutzt werden, ist
     in der Regel von einer ab "0" ausgehenden Nummerierung auszugehen.
 
---csvtableoutput                    show, dectinfo, deflectionsinfo, homepluginfo
-                                    hostsinfo, taminfo, alarminfo
+--csvtableoutput                    alarminfo, dectinfo, deflectionsinfo,
+                                    homepluginfo, hostsinfo, phonebookinfo,
+                                    show, taminfo, wlanhostsinfo
     Da ueberlange Spalteninhalte bei Ausgabe als Tabelle abgeschnitten werden,
     kann mit diesem Parameter die Ausgabe als CSV-Format der Tabellen inklusive
     erweiterter Spaltenueberschriften erzwungen werden. Andere Bestandteile der
     Ausgabe wie Titelzeile werden in beiden Formatierungen identisch ausgegeben.
+
+--showtablelegend                   alarminfo, dectinfo, deflectionsinfo,
+                                    homepluginfo, hostsinfo, phonebookinfo,
+                                    show, taminfo, wlanhostsinfo
+    Im Anschluss an die Tabelle werden in einer Legende die abgekuerzten
+    Spaltenueberschriften ausgeschrieben ausgegeben. Diese Option wird nur aktiv,
+    wenn die Option --csvtableoutput nicht genutzt wird.
 
 --nowrap                            deviceinfo, devicelog
     Zeigt Log-Zeilen ohne Zeilenumbruch an.
@@ -1426,5 +1439,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-26
+Stand: 2024-04-30
 Marcus Roeckrath
