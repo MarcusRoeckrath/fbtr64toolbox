@@ -100,7 +100,7 @@ Es werden folgende AVM-Service-XML-Dateien unterstuetzt, sofern sie auf der Frit
     avmnexusdesc.xml
     l2tpv3.xml
     aura.xml (nur verfuegbar, wenn der USB-Fernanschluss aktiviert ist)
-    MediaServerDevDesc.xml
+    MediaServerDevDesc.xml (nur verfuegbar, wenn der Medienserver aktiviert ist)
 
 Einige Funktionen sind nicht verfuegbar, wenn unter
 
@@ -1361,7 +1361,9 @@ Option/Parameter                    Benutzt vom Kommando
     Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
---SOAPtype <https|http>             mysoaprequest
+--SOAPtype <https|http>             all but writeconfig and writesoapfile
+    Diese Option wirkt auch auf wget-Aufrufe, wenn die Fritzbox keine komplette
+    mit http oder https beginnende URL zurueckliefert.
 --SOAPdescfile <xmlfilename>        mysoaprequest
 --SOAPcontrolURL <URL>              mysoaprequest
 --SOAPserviceType <service type>    mysoaprequest
@@ -1439,5 +1441,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-04-30
+Stand: 2024-07-06
 Marcus Roeckrath
