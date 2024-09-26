@@ -484,7 +484,7 @@ auf "true" gesetzt werden. Dieser Bug scheint in der Firmware 6.80
 behoben zu sein.
 
 Das Loeschen von Portfreigaben mittels del-Kommando scheint ab Firmware 7.25
-nicht mehr korekt zu funktionieren. Die Fritzbox signalisiert zwar eine
+nicht mehr korrekt zu funktionieren. Die Fritzbox signalisiert zwar eine
 erfolgreiche Ausfuehrung des Kommandos, jedoch wird die Freigabe weiterhin
 angezeigt (show-Kommando) und auch in der Weboberflaeche wird sie aufgefuehrt.
 Eine nochmalige Ausfuehrung des del-Kommandos wird mit der Fehlermeldung quittiert,
@@ -1441,5 +1441,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-07-06
+Stand: 2024-09-26
 Marcus Roeckrath
