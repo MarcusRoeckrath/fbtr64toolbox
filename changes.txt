@@ -1,3 +1,9 @@
+v2.18.9  stable - 2024-10-13
+============================
++ mysoaprequest: Enhanced error output on missing parameters
+* fbtr64toolbox.sh version 3.3.9
+
+
 v2.18.8  stable - 2024-09-26
 ============================
 ! homeautoinfo: Fixed wrong variable idx to typeidx
