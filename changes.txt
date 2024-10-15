@@ -1,3 +1,9 @@
+v2.18.10 stable - 2024-10-15
+============================
+! Typo in help page and documentation
+* fbtr64toolbox.sh version 3.3.10
+
+
 v2.18.9  stable - 2024-10-13
 ============================
 + mysoaprequest: Enhanced error output on missing parameters
