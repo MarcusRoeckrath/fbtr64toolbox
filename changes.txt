@@ -1,6 +1,18 @@
+v2.18.12 stable - 2024-10-21
+============================
+* Some code improvements 
+* fbtr64toolbox.sh version 3.3.11
+
+
+v2.18.11 stable - 2024-10-19
+============================
++ Added some more info commands to "show info" menu
+* fbtr64toolbox.sh version 3.3.10
+
+
 v2.18.10 stable - 2024-10-15
 ============================
-! Typo in help page and documentation
++ Typo in help page and documentation
 * fbtr64toolbox.sh version 3.3.10
 
 
@@ -461,7 +473,7 @@ v2.14.3 stable  - 2023-04-10
 
 v2.14.2 stable  - 2023-04-10
 ============================
-+ Renamed timeserverinfo to timeinfo
++ Renamed timeserver to timeinfo
 * fbtr64toolbox.sh version 2.9.2
 
 
