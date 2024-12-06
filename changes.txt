@@ -1,3 +1,9 @@
+v2.18.13 stable - 2024-12-06
+============================
+* wlanhostsinfo: Skip entries without ip address
+* fbtr64toolbox.sh version 3.3.12
+
+
 v2.18.12 stable - 2024-10-21
 ============================
 * Some code improvements 
