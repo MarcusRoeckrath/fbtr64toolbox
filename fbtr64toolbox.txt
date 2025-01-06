@@ -4,7 +4,7 @@
 
 Bash-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 
-Copyright (c) 2016-2024 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2025 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 ============================================================================
@@ -19,12 +19,14 @@ Hinweis:
 Soll das Skript in einer anderen Distribution als eisfair (www.eisfair.org)
 benutzt werden, kann auf https://github.com/MarcusRoeckrath/fbtr64toolbox
 ein tar-Archiv downloaden, welches auf dem Zielsystem komplett entpackt
-werden muss.
+werden muss. Der direkte Link zum Archiv lautet:
+
+https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
 
 Auf dem Zielsystem muessen die Tools awk, bc, curl, dos2unix, grep, ksh, sed,
 wget und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox ausgelesen
-werden soll (downloadcert-Kommando) muessen auch tr und openssl vorhanden
-sein.
+werden soll (downloadcert-Kommando) oder die Gueltigkeit des Zertifikats
+(certvalidity-Kommando) muessen auch tr und openssl vorhanden sein.
 
 ============================================================================
 
@@ -33,7 +35,8 @@ sein.
 
         View documentation
         Show info pages from fritzbox
-            Deviceinfo
+            Device
+            Device MACs
             Portforwardings
             Internet connection
             External IPv4/v6
@@ -49,6 +52,8 @@ sein.
             Telephone call deflections
             DECT
             Answering machines
+            Capacity of answering machines
+            Phonebooks
             Alarm clocks
             FTP/Samba server
             Media server
@@ -56,6 +61,7 @@ sein.
             Homeplug/Powerline
             Firmware updates
             TR-069
+            Speedtest
             Log
         Show documents from fritzbox
         Show filtered documents from fritzbox
@@ -128,11 +134,11 @@ Mit dem Aufruf:
 
 fbtr64toolbox.sh help
 
-erhaelt man folgende Hilfeseite zu Kommandos und ergaenzenden Parametern:
+erhaelt man folgende Hilfeseite:
 
 ------------------------------------------------------------------------------------------
 Command line tool for the TR-064 interface of fritzboxes
-Version: <version>; Copyright (C) 2016-2024 Marcus Roeckrath ; Licence: GPL2
+Version: <version>; Copyright (C) 2016-2025 Marcus Roeckrath ; Licence: GPL2
                                             marcus(dot)roeckrath(at)gmx(dot)de
                     This program comes with ABSOLUTELY NO WARRANTY.
                     This is free software, and you are welcome to
@@ -449,7 +455,7 @@ nach hoch):
 
 - Defaults im Skript
 - eigene Konfigurationsdatei ${HOME}/.fbtr64toolbox
-- Konfigurationsparamter der beim Kommando mysoaprequest angegebenen
+- Konfigurationsparameter in der beim Kommando mysoaprequest angegebenen
   SOAP-Steuerdatei
 - Kommandozeilen-Optionen beim Aufruf des Skripts
 
@@ -1392,7 +1398,9 @@ eventuell mit dem Kommando createsoapfiles neu erzeugt werden.
 
 3. Die SOAP-Beispieldateien
 
-Diese Beispieldateien erhalten Dateinamen nach folgendem Schema:
+Diese mit dem createsoapfile-Kommando aus den auf der eigenen Fritzbox
+enthaltenen xml-Dokumente erzeugten SOAP-Beispieldateien erhalten
+Dateinamen nach folgendem Schema:
 
 <Name des Fritzbox-Dokumentes>.<Funktion>_<Servicetype-Nummer>
 
@@ -1416,7 +1424,7 @@ data="
 
 befindet. Hier ist <Typ> durch eine dem Datentyp entsprechenden Wert (Zahl,
 Zeichenfolge, ...) zu ersetzen. Hierzu ist die offizielle Entwickler-
-dokumentation von AVM zu Rate zu ziehen:
+Dokumentation von AVM zu Rate zu ziehen:
 
     https://avm.de/service/schnittstellen
 
@@ -1441,5 +1449,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2024-10-15
+Stand: 2025-01-06
 Marcus Roeckrath

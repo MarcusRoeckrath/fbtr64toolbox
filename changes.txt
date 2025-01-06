@@ -1,3 +1,10 @@
+v2.18.14 stable - 2025-01-06
+============================
+* writesoapfile: Preserve value of title
+* Additions and Corrections to documentation
+* fbtr64toolbox.sh version 3.3.13
+
+
 v2.18.13 stable - 2024-12-06
 ============================
 * wlanhostsinfo: Skip entries without ip address
@@ -13,7 +20,6 @@ v2.18.12 stable - 2024-10-21
 v2.18.11 stable - 2024-10-19
 ============================
 + Added some more info commands to "show info" menu
-* fbtr64toolbox.sh version 3.3.10
 
 
 v2.18.10 stable - 2024-10-15
