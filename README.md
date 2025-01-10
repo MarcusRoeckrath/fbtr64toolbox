@@ -3,7 +3,7 @@ Command line tool (bash script) for the TR-064 interface of fritzboxes
 
 Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Funktionen
 
-Copyright (c) 2016-2024 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2025 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 Download-URL: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
@@ -76,28 +76,28 @@ Das Skript wurde in folgenden System getestet:
 
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
-Command line tool for the TR-064 interface of fritzboxes
-Version: <version>; Copyright (C) 2016-2023 Marcus Roeckrath ; Licence: GPL2
-                                            marcus(dot)roeckrath(at)gmx(dot)de
-                    This program comes with ABSOLUTELY NO WARRANTY.
-                    This is free software, and you are welcome to
-                    redistribute it under certain conditions.
-                    (for details see <https://www.gnu.org/licenses/>)
-
-Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
-
-Commands:
-add             : Adds a (predefined) port forward.
-del             : Deletes a (predefined) port forward.
-enable          : Activates a previous disabled (predefined) port forward.
-                  If not yet present in fritzbox port forward will be added enabled.
-disable         : Deactivates a (predefined) port forward if present in fritzbox.
-                  If not yet present in fritzbox port forward will be added disabled.
-show            : Shows all port forwardings whether set by authorized user or upnp.
-extip           : Shows the external IP v4 and v6 addresses.
-extipv4         : Shows the external IP v4 address.
-extipv6         : Shows the external IP v6 address.
-conninfo        : Informations/Status of internet connection.
+Command line tool for the TR-064 interface of fritzboxes                                                                                                                                      
+Version: 3.3.13 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2                                                                                                                    
+                                          marcus(dot)roeckrath(at)gmx(dot)de                                                                                                                  
+                  This program comes with ABSOLUTELY NO WARRANTY.                                                                                                                             
+                  This is free software, and you are welcome to                                                                                                                               
+                  redistribute it under certain conditions.                                                                                                                                   
+                  (for details see <https://www.gnu.org/licenses/>)                                                                                                                           
+                                                                                                                                                                                              
+Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]                                                                                                               
+                                                                                                                                                                                              
+Commands:                                                                                                                                                                                     
+add             : Adds a (predefined) port forward.                                                                                                                                           
+del             : Deletes a (predefined) port forward.                                                                                                                                        
+enable          : Activates a previous disabled (predefined) port forward.                                                                                                                    
+                  If not yet present in fritzbox port forward will be added enabled.                                                                                                          
+disable         : Deactivates a (predefined) port forward if present in fritzbox.                                                                                                             
+                  If not yet present in fritzbox port forward will be added disabled.                                                                                                         
+show            : Shows all port forwardings whether set by authorized user or upnp.                                                                                                          
+extip           : Shows the external IP v4 and v6 addresses.                                                                                                                                  
+extipv4         : Shows the external IP v4 address.                                                                                                                                           
+extipv6         : Shows the external IP v6 address.                                                                                                                                           
+conninfo        : Informations/Status of internet connection.                                                                                                                                 
 connstat        : Status of internet connection.
 ddnsinfo        : Informations/Status of dynamic dns service.
 timeinfo        : Informations/Status of time servers and date/time.
@@ -146,15 +146,14 @@ savephonebook <id>
                   Default filename:
                   "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
                   Use (see below) --phonebookfile* options to modify path and filename.
-alarminfo       : Information/Status of alarm clocks.
+alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
-speedtestinfo   : Informations/Status of network bandwidth measurements.
-speedtestswitch : Activates/Deactivates network bandwidth measurements.
+speedtestinfo   : Informations/Status of network bandwith measurements.
+speedtestswitch : Activates/deactivates network bandwith measurements.
 speedteststats  : Shows network bandwith measurement statistics.
 speedtestresetstats
                 : Resets network bandwith measurement statistics.
-
 reconnect       : Reconnects to internet.
 reboot          : Reboots the fritzbox.
 savefbconfig    : Stores the fritzbox configuration to your home (or /tmp) directory.
@@ -177,20 +176,20 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
+writeconfig     : Writes sample configuration to default file "/root/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP request to specified file
-                  or to default file "${HOME}/fbtr64toolbox.samplesoap".
+                  or to sample file "/root/fbtr64toolbox.samplesoap".
 calcsecret      : Calculates hashed secret and stores it into the default configuration file
-                  "${HOME}/.fbtr64toolbox" or into specific configuration file defined by the
+                  "/root/.fbtr64toolbox" or into specific configuration file defined by the
                   "--conffilesuffix" option (see below).
 
 Optional or mandatory options/parameters:
 Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "${HOME}/.fbtr64toolbox.text"
-          instead of default "${HOME}/.fbtr64toolbox".
+          Use of configuration file "/root/.fbtr64toolbox.text"
+          instead of default "/root/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
@@ -278,13 +277,13 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script can use the fritzbox authentication data from "${HOME}/.netrc"
-which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
+The script can use the fritzbox authentication data from "/root/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 /root/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
 f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-the configuration file or on command line parameter "--fbip" and "${HOME}/.netrc".
+the configuration file or on command line parameter "--fbip" and "/root/.netrc."
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
 "fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
