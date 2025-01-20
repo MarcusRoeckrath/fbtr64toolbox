@@ -1,3 +1,12 @@
+v2.19.0  stable - 2025-01-20
+============================
++ New command savedevicelog (only firmware 8 and higher)
+* Rename [--]phonebookfilepath, [--}phonebookfileprefix
+  and [--]certpath to [--]filepath and [--]fileprefix
++ Additions to documentation
+* fbtr64toolbox.sh version 3.4.0
+
+
 v2.18.15 stable - 2025-01-11
 ============================
 * Minor changes

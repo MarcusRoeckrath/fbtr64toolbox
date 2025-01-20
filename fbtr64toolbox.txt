@@ -205,8 +205,8 @@ phonebookinfo   : Informations about phonebooks.
 savephonebook <id>
                 : Stores a fritzbox phonebook to your home (or /tmp) directory.
                   Default filename:
-                  "fritzbox_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
-                  Use (see below) --phonebookfile* options to modify path and filename.
+                  "fritzboxphonebook_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
+                  Use (see below) --file* options to modify path and filename.
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -228,6 +228,12 @@ tr69info        : Informations about provider managed updates via TR-069.
 deviceinfo      : Informations about the fritzbox (model, firmware, ...).
 macinfo         : Shows fritzbox mac addresses.
 devicelog       : Shows fritzbox log formatted or raw.
+savedevicelog [all|fon|net|sys|usb|wlan]
+                : Stores a fritzbox log to your home (or /tmp) directory;
+                  only available on firmware 8 and higher.
+                  Default filename:
+                  "fritzboxlog_<model>_<serialno>_<firmwareversion>_<date_time>_<logtype>.xml".
+                  Use (see below) --file* options to modify path and filename.
 downloadcert    : Downloads certificate from fritzbox.
 certvalidity    : Shows validity data of fritzbox certificate.
 listxmlfiles    : Lists all xml documents on fritzbox.
@@ -256,7 +262,7 @@ Option/Parameter                     Used by commands
 --extport <port number>              add, enable, disable, del
 --intclient <ip address>             add, enable, disable
 --intport <port number>              add, enable, disable
---protocol <TCP|UDP>                 add, enable, disable, del
+--protocol TCP|UDP                   add, enable, disable, del
 --active                             add, *switch, hostsinfo
 --inactive                           add, *switch, hostsinfo
           Either --active or --inactive is required on all switch commands.
@@ -292,13 +298,15 @@ Option/Parameter                     Used by commands
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
---phonebookfilepath "<abs path>"     savephonebook
---phonebookfileprefix ["<text>"]     savephonebook
+--filepath "<abs path>"              downloadcert, savedevicelog, savephonebook
+--fileprefix ["<text>"]              savedevicelog, savephonebook
+--phonebookfilepath "<abs path>"     savephonebook (deprecated, use --filepath instead)
+--phonebookfileprefix ["<text>"]     savephonebook (deprecated, use --fileprefix instead)
 --fbconffilepath "<abs path>"        savefbconfig
 --fbconffileprefix ["<text>"]        savefbconfig
 --fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
---certpath "<abs path>"              downloadcert
+--certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype <https|http>              all but writeconfig and writesoapfile
@@ -327,6 +335,8 @@ Necessary parameters not given on the command line are taken from default values
 configuration file. The configuration file is read from your home directory on script
 startup overriding default values. By default it is named ".fbtr64toolbox" but an extension
 can be added using the "--conffilesuffix <text>" parameter (see above).
+
+Options and parameters marked as "deprecated" will be removed in near future.
 
 If modifying an existing port forwarding entry with the add, enable or disable commands
 the values for extport, intclient and protocol has to be entered in exact the same
@@ -912,8 +922,9 @@ zusaetzlichen Telefonbuchgeintraege.
 
 savephonebook <id>:
 Sichert das Telefonbuch mit der gegebenen ID in einem mittels der Kommandozeilen-
-option --phonebookfilepath definierbaren Pfad (Standard: Home-Vverzeichnis
-oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist) unter dem Namen:
+option --filepath definierbaren Pfad (Standard: Home-Verzeichnis
+oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist) und mit
+--fileprefix waehlbarem Prefix (Standard: fritzboxphonebook) unter dem Namen:
 
 <waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss_<ID_Name_ExtraID>.xml
 
@@ -976,10 +987,19 @@ Zeigt das Log der Fritzbox an. Bei Angabe der Option --rawdevicelog geschieht
 dies unformatiert und ohne Kopfzeile.
 
 
+savedevielog [all|fon|net|sys|usb|wlan]:
+Sichert das Device-Log des angelegeben Log-Typs in einem mittels der Kommandozeilen-
+option --filepath definierbaren Pfad (Standard: Home-Verzeichnis
+oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist)  und mit
+--fileprefix waehlbarem Prefix (Standard: fritzboxlog) unter dem Namen:
+
+<waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss_<Log-Typ>.xml
+
+
 downloadcert:
 Speichert das Zertifikat der Fritzbox als .pem-Datei in dem mittels der
 Konfigurationsvariablen fbconffilepath oder der Kommandozeilenoption
---certpath angegebenen Pfad.
+--filepath angegebenen Pfad.
 
 
 certvalidity:
@@ -1234,7 +1254,8 @@ help|--help|-h: Zeigt eine Hilfeseite an.
 
 Folgende optionalen oder notwendigen Optionen/Parameter, die Vorrang vor den in
 der Konfigurationsdatei oder einer SOAP-Steuerdatei gesetzten Optionen haben,
-ergaenzen die Kommandos:
+ergaenzen die Kommandos. Als "veraltet" markierte Optionen/Parameter werden
+in naher Zukunft aus dem Skript entfernt:
 
 Option/Parameter                    Benutzt vom Kommando
 --conffilesuffix <text>             all
@@ -1341,10 +1362,18 @@ Option/Parameter                    Benutzt vom Kommando
     Zeigt nur die moeglichen Aktionen und die zugehoerigen
     Argumente (inklusive Richtung und Datentyp) an.
 
---phonebookfilepath "<abs path>"    savephonebook
+--filepath "<abs path>"             certdownload, savedevicelog, savephonebook
     Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
     ermittelbar ist.
---phonebookfileprefix ["<text>"]    savephonebook
+--fileprefix ["<text>"]             savedevicelog, savephonebook
+    Vorgabe: fritzboxlog (savedevicelog)
+             fritzboxphonebook (savephonebook)
+    Wird "text" nicht angegeben, wird die Vorgabe geloescht.
+
+--phonebookfilepath "<abs path>"    savephonebook (veraltet, nutze --filepath instead)
+    Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
+    ermittelbar ist.
+--phonebookfileprefix ["<text>"]    savephonebook (veraltet, nutze --fileprefix instead)
     Vorgabe: fritzboxphonebook
     Wird "text" nicht angegeben, wird die Vorgabe geloescht.
 
@@ -1363,7 +1392,7 @@ Option/Parameter                    Benutzt vom Kommando
     Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermassen gebildet:
     <fb...path>/<fb...prefix>_<model>_<serialno>_<firmwareversion>_<date_time>.<fb...suffix>
 
---certpath "<abs path>"             downloadcert
+--certpath "<abs path>"             downloadcert (veraltet, nutze --filepath instead)
     Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
@@ -1449,5 +1478,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-01-11
+Stand: 2025-01-20
 Marcus Roeckrath
