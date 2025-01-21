@@ -1370,10 +1370,10 @@ Option/Parameter                    Benutzt vom Kommando
              fritzboxphonebook (savephonebook)
     Wird "text" nicht angegeben, wird die Vorgabe geloescht.
 
---phonebookfilepath "<abs path>"    savephonebook (veraltet, nutze --filepath instead)
+--phonebookfilepath "<abs path>"    savephonebook (veraltet, nutze stattdessen --filepath)
     Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
     ermittelbar ist.
---phonebookfileprefix ["<text>"]    savephonebook (veraltet, nutze --fileprefix instead)
+--phonebookfileprefix ["<text>"]    savephonebook (veraltet, nutze stattdessen --fileprefix)
     Vorgabe: fritzboxphonebook
     Wird "text" nicht angegeben, wird die Vorgabe geloescht.
 
@@ -1392,7 +1392,7 @@ Option/Parameter                    Benutzt vom Kommando
     Pfad und Name der Fritzbox-Konfigurationsdatei wird folgendermassen gebildet:
     <fb...path>/<fb...prefix>_<model>_<serialno>_<firmwareversion>_<date_time>.<fb...suffix>
 
---certpath "<abs path>"             downloadcert (veraltet, nutze --filepath instead)
+--certpath "<abs path>"             downloadcert (veraltet, nutze stattdessen --filepath)
     Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
@@ -1478,5 +1478,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-01-20
+Stand: 2025-01-21
 Marcus Roeckrath

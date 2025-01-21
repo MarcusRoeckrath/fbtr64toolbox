@@ -1,3 +1,12 @@
+v2.19.1  stable - 2025-01-21
+============================
+* Remove "!" from model name when building file names
+  for download
+* Enclose all variables in "" on wget commands
+* Little changes in documentation
+* fbtr64toolbox.sh version 3.4.1
+
+
 v2.19.0  stable - 2025-01-20
 ============================
 + New command savedevicelog (only firmware 8 and higher)
