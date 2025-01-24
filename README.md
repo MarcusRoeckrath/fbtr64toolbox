@@ -77,7 +77,7 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
 Command line tool for the TR-064 interface of fritzboxes
-Version: 3.4.0 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
+Version: 3.4.2 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
                                          marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
@@ -145,7 +145,7 @@ savephonebook <id>
                 : Stores a fritzbox phonebook to your home (or /tmp) directory.
                   Default filename:
                   "fritzboxphonebook_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
-                  Use (see below) --file* options to modify path and filename.
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -172,7 +172,8 @@ savedevicelog [all|fon|net|sys|usb|wlan]
                   only available on firmware 8 and higher.
                   Default filename:
                   "fritzboxlog_<model>_<serialno>_<firmwareversion>_<date_time>_<logtype>.xml".
-                  Use (see below) --file* options to modify path and filename.
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
+                  Use (see below) --filetype option to choose type of file (default: xml).
 downloadcert    : Downloads certificate from fritzbox.
 certvalidity    : Shows validity data of fritzbox certificate.
 listxmlfiles    : Lists all xml documents on fritzbox.
@@ -182,20 +183,20 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration to default file "/home/marcus/.fbtr64toolbox"
+writeconfig     : Writes sample configuration to default file "/root/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP request to specified file
-                  or to sample file "/home/marcus/fbtr64toolbox.samplesoap".
+                  or to sample file "/root/fbtr64toolbox.samplesoap".
 calcsecret      : Calculates hashed secret and stores it into the default configuration file
-                  "/home/marcus/.fbtr64toolbox" or into specific configuration file defined by the
+                  "/root/.fbtr64toolbox" or into specific configuration file defined by the
                   "--conffilesuffix" option (see below).
 
 Optional or mandatory options/parameters:
 Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "/home/marcus/.fbtr64toolbox.text"
-          instead of default "/home/marcus/.fbtr64toolbox".
+          Use of configuration file "/root/.fbtr64toolbox.text"
+          instead of default "/root/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
@@ -239,6 +240,7 @@ Option/Parameter                     Used by commands
 --soapfilter                         showxmlfile
 --filepath "<abs path>"              downloadcert, savedevicelog, savephonebook
 --fileprefix ["<text>"]              savedevicelog, savephonebook
+--filetype csv|log                   savedevicelog
 --phonebookfilepath "<abs path>"     savephonebook (deprecated, use --filepath instead)
 --phonebookfileprefix ["<text>"]     savephonebook (deprecated, use --fileprefix instead)
 --fbconffilepath "<abs path>"        savefbconfig
@@ -248,7 +250,7 @@ Option/Parameter                     Used by commands
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>              all but writeconfig and writesoapfile
+--SOAPtype https|http                all but writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
@@ -287,13 +289,13 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script can use the fritzbox authentication data from "/home/marcus/.netrc"
-which has to be readable/writable by the owner only (chmod 0600 /home/marcus/.netrc).
+The script can use the fritzbox authentication data from "/root/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 /root/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
-f. e.: machine 192.168.1.1 login root password 
+f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-the configuration file or on command line parameter "--fbip" and "/home/marcus/.netrc."
+the configuration file or on command line parameter "--fbip" and "/root/.netrc."
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
 "fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
