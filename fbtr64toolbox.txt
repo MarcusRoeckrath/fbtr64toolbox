@@ -206,7 +206,7 @@ savephonebook <id>
                 : Stores a fritzbox phonebook to your home (or /tmp) directory.
                   Default filename:
                   "fritzboxphonebook_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
-                  Use (see below) --file* options to modify path and filename.
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -233,7 +233,8 @@ savedevicelog [all|fon|net|sys|usb|wlan]
                   only available on firmware 8 and higher.
                   Default filename:
                   "fritzboxlog_<model>_<serialno>_<firmwareversion>_<date_time>_<logtype>.xml".
-                  Use (see below) --file* options to modify path and filename.
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
+                  Use (see below) --filetype option to choose type of file (default: xml).
 downloadcert    : Downloads certificate from fritzbox.
 certvalidity    : Shows validity data of fritzbox certificate.
 listxmlfiles    : Lists all xml documents on fritzbox.
@@ -300,6 +301,7 @@ Option/Parameter                     Used by commands
 --soapfilter                         showxmlfile
 --filepath "<abs path>"              downloadcert, savedevicelog, savephonebook
 --fileprefix ["<text>"]              savedevicelog, savephonebook
+--filetype csv|log                   savedevicelog
 --phonebookfilepath "<abs path>"     savephonebook (deprecated, use --filepath instead)
 --phonebookfileprefix ["<text>"]     savephonebook (deprecated, use --fileprefix instead)
 --fbconffilepath "<abs path>"        savefbconfig
@@ -309,7 +311,7 @@ Option/Parameter                     Used by commands
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype <https|http>              all but writeconfig and writesoapfile
+--SOAPtype https|http                all but writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
@@ -1369,6 +1371,10 @@ Option/Parameter                    Benutzt vom Kommando
     Vorgabe: fritzboxlog (savedevicelog)
              fritzboxphonebook (savephonebook)
     Wird "text" nicht angegeben, wird die Vorgabe geloescht.
+--filetype csv|log                  savedevicelog
+    Legt das Speicherformat abweichend vom Standard fest:
+    csv: CSV-Format mit ";" als Feldtrenner
+    log: einfacher zeilenweiser Text
 
 --phonebookfilepath "<abs path>"    savephonebook (veraltet, nutze stattdessen --filepath)
     Vorgabe: Home-Verzeichnis oder /tmp, falls das Home-Verzeichnis nicht
@@ -1478,5 +1484,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-01-21
+Stand: 2025-01-24
 Marcus Roeckrath
