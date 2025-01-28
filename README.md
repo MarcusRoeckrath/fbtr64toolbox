@@ -77,22 +77,22 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh help)
 ```
 Command line tool for the TR-064 interface of fritzboxes
-Version: 3.4.2 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
+Version: 3.5.0 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
                                          marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
                   redistribute it under certain conditions.
                   (for details see <https://www.gnu.org/licenses/>)
 
-Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
-
-Commands:
-add             : Adds a (predefined) port forward.
-del             : Deletes a (predefined) port forward.
-enable          : Activates a previous disabled (predefined) port forward.
-                  If not yet present in fritzbox port forward will be added enabled.
-disable         : Deactivates a (predefined) port forward if present in fritzbox.
-                  If not yet present in fritzbox port forward will be added disabled.
+Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]                                                                                                               
+                                                                                                                                                                                              
+Commands:                                                                                                                                                                                     
+add             : Adds a (predefined) port forward.                                                                                                                                           
+del             : Deletes a (predefined) port forward.                                                                                                                                        
+enable          : Activates a previous disabled (predefined) port forward.                                                                                                                    
+                  If not yet present in fritzbox port forward will be added enabled.                                                                                                          
+disable         : Deactivates a (predefined) port forward if present in fritzbox.                                                                                                             
+                  If not yet present in fritzbox port forward will be added disabled.                                                                                                         
 show            : Shows all port forwardings whether set by authorized user or upnp.
 extip           : Shows the external IP v4 and v6 addresses.
 extipv4         : Shows the external IP v4 address.
@@ -146,6 +146,11 @@ savephonebook <id>
                   Default filename:
                   "fritzboxphonebook_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
                   Use (see below) --filepath and --fileprefix options to modify path and filename.
+savecalllist    : Stores the call list to your home (or /tmp) directory.
+                  Default filename:
+                  "fritzboxcalllist_<model>_<serialno>_<firmwareversion>_<date_time>.xml".
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
+                  Use "--filetype csv" option to save as csv file (default: xml).
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -238,9 +243,9 @@ Option/Parameter                     Used by commands
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
---filepath "<abs path>"              downloadcert, savedevicelog, savephonebook
---fileprefix ["<text>"]              savedevicelog, savephonebook
---filetype csv|log                   savedevicelog
+--filepath "<abs path>"              downloadcert, savecalllist, savedevicelog, savephonebook
+--fileprefix ["<text>"]              savecalllist, savedevicelog, savephonebook
+--filetype csv|log                   savecalllist, savedevicelog
 --phonebookfilepath "<abs path>"     savephonebook (deprecated, use --filepath instead)
 --phonebookfileprefix ["<text>"]     savephonebook (deprecated, use --fileprefix instead)
 --fbconffilepath "<abs path>"        savefbconfig
