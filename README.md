@@ -84,15 +84,15 @@ Version: 3.5.0 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
                   redistribute it under certain conditions.
                   (for details see <https://www.gnu.org/licenses/>)
 
-Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]                                                                                                               
-                                                                                                                                                                                              
-Commands:                                                                                                                                                                                     
-add             : Adds a (predefined) port forward.                                                                                                                                           
-del             : Deletes a (predefined) port forward.                                                                                                                                        
-enable          : Activates a previous disabled (predefined) port forward.                                                                                                                    
-                  If not yet present in fritzbox port forward will be added enabled.                                                                                                          
-disable         : Deactivates a (predefined) port forward if present in fritzbox.                                                                                                             
-                  If not yet present in fritzbox port forward will be added disabled.                                                                                                         
+Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
+
+Commands:
+add             : Adds a (predefined) port forward.
+del             : Deletes a (predefined) port forward.
+enable          : Activates a previous disabled (predefined) port forward.
+                  If not yet present in fritzbox port forward will be added enabled.
+disable         : Deactivates a (predefined) port forward if present in fritzbox.
+                  If not yet present in fritzbox port forward will be added disabled.
 show            : Shows all port forwardings whether set by authorized user or upnp.
 extip           : Shows the external IP v4 and v6 addresses.
 extipv4         : Shows the external IP v4 address.
@@ -188,20 +188,20 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration to default file "/root/.fbtr64toolbox"
+writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP request to specified file
-                  or to sample file "/root/fbtr64toolbox.samplesoap".
+                  or to sample file "${HOME}/fbtr64toolbox.samplesoap".
 calcsecret      : Calculates hashed secret and stores it into the default configuration file
-                  "/root/.fbtr64toolbox" or into specific configuration file defined by the
+                  "${HOME}/.fbtr64toolbox" or into specific configuration file defined by the
                   "--conffilesuffix" option (see below).
 
 Optional or mandatory options/parameters:
 Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "/root/.fbtr64toolbox.text"
-          instead of default "/root/.fbtr64toolbox".
+          Use of configuration file "${HOME}/.fbtr64toolbox.text"
+          instead of default "${HOME}/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
@@ -294,13 +294,13 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script can use the fritzbox authentication data from "/root/.netrc"
-which has to be readable/writable by the owner only (chmod 0600 /root/.netrc).
+The script can use the fritzbox authentication data from "${HOME}/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
 f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-the configuration file or on command line parameter "--fbip" and "/root/.netrc."
+the configuration file or on command line parameter "--fbip" and "${HOME}/.netrc."
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
 "fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
