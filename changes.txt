@@ -1,3 +1,12 @@
+v2.20.0  stable - 2025-01-28
+============================
++ New command savecalllist
+* New internal used function complete_url
+* Code cleanup
+* Additions to documentation
+* fbtr64toolbox.sh version 3.5.0
+
+
 v2.19.2  stable - 2025-01-24
 ============================
 * New option --filetype for converting xml data

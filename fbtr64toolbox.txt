@@ -207,6 +207,11 @@ savephonebook <id>
                   Default filename:
                   "fritzboxphonebook_<model>_<serialno>_<firmwareversion>_<date_time>_<name_id_extraid>.xml".
                   Use (see below) --filepath and --fileprefix options to modify path and filename.
+savecalllist    : Stores the call list to your home (or /tmp) directory.
+                  Default filename:
+                  "fritzboxcalllist_<model>_<serialno>_<firmwareversion>_<date_time>.xml".
+                  Use (see below) --filepath and --fileprefix options to modify path and filename.
+                  Use "--filetype csv" option to save as csv file (default: xml).
 alarminfo       : Informations/Status of alarm clocks.
 alarmswitch <index>
                 : Activates/Deactivates alarm clock given by index 0-2.
@@ -299,9 +304,9 @@ Option/Parameter                     Used by commands
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
 --soapfilter                         showxmlfile
---filepath "<abs path>"              downloadcert, savedevicelog, savephonebook
---fileprefix ["<text>"]              savedevicelog, savephonebook
---filetype csv|log                   savedevicelog
+--filepath "<abs path>"              downloadcert, savecalllist, savedevicelog, savephonebook
+--fileprefix ["<text>"]              savecalllist, savedevicelog, savephonebook
+--filetype csv|log                   savecalllist, savedevicelog
 --phonebookfilepath "<abs path>"     savephonebook (deprecated, use --filepath instead)
 --phonebookfileprefix ["<text>"]     savephonebook (deprecated, use --fileprefix instead)
 --fbconffilepath "<abs path>"        savefbconfig
@@ -339,33 +344,6 @@ startup overriding default values. By default it is named ".fbtr64toolbox" but a
 can be added using the "--conffilesuffix <text>" parameter (see above).
 
 Options and parameters marked as "deprecated" will be removed in near future.
-
-If modifying an existing port forwarding entry with the add, enable or disable commands
-the values for extport, intclient and protocol has to be entered in exact the same
-way as they are stored in the port forwarding entry on the fritzbox! Differing values
-for intport, description and active/inactive status could be used and will change
-these values in the port forwarding entry on the fritzbox.
-
-If deleting an port forwarding entry on the fritzbox the values for extport and protocol
-has to be entered in exact the same way as they are stored in the port forwarding entry
-on the fritzbox.
-
-The script can use the fritzbox authentication data from "/root/.netrc"
-which has to be readable/writable by the owner only (chmod 0600 /root/.netrc).
-Put into this file a line like:
-machine <address of fritzbox> login <username> password <password>
-f. e.: machine 192.168.1.1 login dslf-config password xxxxx
-The fritzbox address has to be given in the same type (ip or fqdn) in
-the configuration file or on command line parameter "--fbip" and "/root/.netrc."
-Saviest solution for authentication is the use of "user" and hashed "secret".
-Write down "user" and "password" into the configuration file an run
-"fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
-configuration file and removes the password from it.
-
-Warning:
-If adding or deleting port forwardings in the webgui of your fritzbox please
-reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
-through the TR-064 interface ending up in corrupted port forwarding entries.
 ------------------------------------------------------------------------------------------
 
 Voreinstellungen werden aus einer Konfigurationsdatei gelesen, die mit dem Befehl
@@ -935,6 +913,19 @@ Webinterface angezeigten Eintraege hinaus auch interne Rufnummern (siehe
 auch vorstehenden Erlaeuterungen zum phonebookinfo-Kommando).
 
 
+savecalllist:
+Sichert die Anruf-Liste in einem mittels der Kommandozeilenoption
+--filepath definierbaren Pfad (Standard: Home-Verzeichnis
+oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist) und mit
+--fileprefix waehlbarem Prefix (Standard: fritzboxcalllist) unter dem Namen:
+
+<waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss.xml
+
+Mit der Option "--filetype csv" kann als Ausgabeformat CSV gewaehlt werden.
+Hierbei wird das von der Fritzbox genutzte Datumsformat dd.mm.yy in
+das Format yyyy-mm-dd umgewandelt.
+
+
 alarminfo: Zeigt Informationen und Status der Wecker an.
 
 
@@ -989,13 +980,17 @@ Zeigt das Log der Fritzbox an. Bei Angabe der Option --rawdevicelog geschieht
 dies unformatiert und ohne Kopfzeile.
 
 
-savedevielog [all|fon|net|sys|usb|wlan]:
-Sichert das Device-Log des angelegeben Log-Typs in einem mittels der Kommandozeilen-
-option --filepath definierbaren Pfad (Standard: Home-Verzeichnis
+savedevicelog [all|fon|net|sys|usb|wlan]:
+Sichert das Device-Log des angegebenen Log-Typs in einem mittels der
+Kommandozeilenoption --filepath definierbaren Pfad (Standard: Home-Verzeichnis
 oder /tmp, falls das Homeverzeichnis nicht ermittelbar ist)  und mit
 --fileprefix waehlbarem Prefix (Standard: fritzboxlog) unter dem Namen:
 
 <waehlbarer Prefix>_Modellname_Seriennummer_Firmwareversion_YYYYMMDD_hhmmss_<Log-Typ>.xml
+
+Mit der Option "--filetype log|csv" kann als Ausgabeformat Text oder CSV
+gewaehlt werden. Hierbei wird das von der Fritzbox genutzte Datumsformat dd.mm.yy
+in das Format yyyy-mm-dd umgewandelt.
 
 
 downloadcert:
@@ -1484,5 +1479,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-01-24
+Stand: 2025-01-28
 Marcus Roeckrath
