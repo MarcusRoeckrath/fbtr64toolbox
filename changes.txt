@@ -1,3 +1,18 @@
+v2.20.2  stable - 2025-02-01
+============================
+* Code formatting
+* savecallist: Moved date and duration columns
+  of csv file to second and third column
++ Added satipdesc.xml and TMediaCenterDevDesc.xml to
+  mainxmlfiles
+* writesoapfile: Little reformatting writing out list
+  of main xml files on singles lines
+! Typo in comment line of soap files created from
+  fritzbox xml documents 
+* Additions to documentation
+* fbtr64toolbox.sh version 3.5.1
+
+
 v2.20.1  stable - 2025-01-29
 ============================
 ! Fixed documentation
