@@ -7,18 +7,18 @@ Bash-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 Copyright (c) 2016-2025 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
-============================================================================
+==============================================================================
 
 Abhaengig von der Firmware einer Fritzbox sind moeglicherweise nicht
 alle Funktionen des Skriptes verfuegbar und fuehren dann zur
 Fehlermeldung "Error on communication with fritzbox".
 
-============================================================================
+==============================================================================
 
 Hinweis:
 Soll das Skript in einer anderen Distribution als eisfair (www.eisfair.org)
 benutzt werden, kann auf https://github.com/MarcusRoeckrath/fbtr64toolbox
-ein tar-Archiv downloaden, welches auf dem Zielsystem komplett entpackt
+ein tar-Archiv downloadet werden, welches auf dem Zielsystem komplett entpackt
 werden muss. Der direkte Link zum Archiv lautet:
 
 https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
@@ -28,7 +28,7 @@ wget und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox ausgelesen
 werden soll (downloadcert-Kommando) oder die Gueltigkeit des Zertifikats
 (certvalidity-Kommando) muessen auch tr und openssl vorhanden sein.
 
-============================================================================
+==============================================================================
 
 
 1. Das Menue (nur auf der Serverdistribution eisfair)
@@ -138,7 +138,8 @@ fbtr64toolbox.sh help
 
 erhaelt man folgende Hilfeseite:
 
-------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
 Command line tool for the TR-064 interface of fritzboxes
 Version: <version>; Copyright (C) 2016-2025 Marcus Roeckrath ; Licence: GPL2
                                           marcus(dot)roeckrath(at)gmx(dot)de
@@ -373,7 +374,8 @@ Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
 through the TR-064 interface ending up in corrupted port forwarding entries.
-------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
 
 Voreinstellungen werden aus einer Konfigurationsdatei gelesen, die mit dem Befehl
 
@@ -1508,5 +1510,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-02-01
+Stand: 2025-02-02
 Marcus Roeckrath
