@@ -96,7 +96,8 @@ oder
 der Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
 ueber UPnP uebertragen" zu aktivieren.
 
-Es werden folgende AVM-Service-XML-Dateien unterstuetzt, sofern sie auf der Fritzbox vorhanden sind:
+Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" und
+"listxmlfiles" unterstuetzt, sofern sie auf der Fritzbox vorhanden sind:
 
     tr64desc.xml
     igddesc.xml (nur verfuegbar, wenn "Statusinformationen ueber UPnP uebertragen" aktiviert ist)
@@ -109,6 +110,10 @@ Es werden folgende AVM-Service-XML-Dateien unterstuetzt, sofern sie auf der Frit
     satipdesc.xml
     MediaServerDevDesc.xml (nur verfuegbar, wenn der Medienserver aktiviert ist)
     TMediaCenterDevDesc.xml
+
+Beim Kommando "mysoaprequest" kann ueber die Kommandozeilenoption "--SOAPdesfile" oder
+ueber die Variable "descfile" in einer SOAP-Request-Beschreibungsdatei auch jede
+andere auf der Fritzbox existierende AVM-Service-XML-Datei angegeben werden.
 
 Einige Funktionen sind nicht verfuegbar, wenn unter
 
@@ -1510,5 +1515,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-02-02
+Stand: 2025-02-03
 Marcus Roeckrath
