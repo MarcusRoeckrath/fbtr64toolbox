@@ -38,7 +38,9 @@ Der Aufruf "fbtr64toolbox.sh createsoapfiles" erzeugt aus den TR-064-XML-Dokumen
 Steuerungsdateien für alle TR-064-Funktion. Eine Anleitung zur Nutzung dieser Steuerungsdateien
 befindet sich in diesen Dateien.
 
-Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Fritzbox vorhanden sind:
+Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" und
+"listxmlfiles" unterstuetzt, sofern sie auf der Fritzbox vorhanden sind:
+
 - tr64desc.xml
 - igddesc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
 - igd2desc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
@@ -50,6 +52,10 @@ Es werden folgende AVM-Service-XML-Dateien unterstützt, sofern sie auf der Frit
 - satipdesc.xml
 - MediaServerDevDesc.xml (nur verfügbar, wenn der Medienserver aktiviert ist)
 - TMediaCenterDevDesc.xml
+
+Beim Kommando "mysoaprequest" kann ueber die Kommandozeilenoption "--SOAPdesfile" oder
+ueber die Variable "descfile" in einer SOAP-Request-Beschreibungsdatei auch jede
+andere auf der Fritzbox existierende AVM-Service-XML-Datei angegeben werden.
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
