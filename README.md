@@ -79,6 +79,7 @@ Das Skript wurde in folgenden System getestet:
 - eisfair (Linux-Serverdistribution eisfair.org)
 - OpenSuSE
 - Ubuntu (im Windows Subsystem for Linux WSL1 in Windows 10)
+- LinuxMint
 - Debian (im Windows Subsystem for Linux WSL1 in Windows 10)
 - Raspbian
 
