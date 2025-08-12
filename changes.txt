@@ -1,3 +1,8 @@
+v2.20.8 stable  - 2025-08-12
+============================
+* Remove downloaded file if wget reports error
+* fbtr64toolbox.sh version 3.5.7
+
 v2.20.7 stable  - 2025-04-28
 ============================
 * Changed egrep to grep -E
