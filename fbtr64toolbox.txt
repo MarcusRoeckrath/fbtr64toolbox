@@ -23,10 +23,11 @@ werden muss. Der direkte Link zum Archiv lautet:
 
 https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
 
-Auf dem Zielsystem muessen die Tools awk, bc, curl, dos2unix, grep, ksh, sed,
-wget und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox ausgelesen
-werden soll (downloadcert-Kommando) oder die Gueltigkeit des Zertifikats
-(certvalidity-Kommando) muessen auch tr und openssl vorhanden sein.
+Auf dem Zielsystem muessen die Tools awk, bc, curl, dos2unix, grep, ksh,
+sed, wget und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox
+ausgelesen (downloadcert-Kommando) oder die Gueltigkeit des Zertifikats
+(certvalidity-Kommando) geprueft werden soll, muessen auch tr und openssl
+vorhanden sein.
 
 ==============================================================================
 
@@ -322,6 +323,7 @@ Option/Parameter                     Used by commands
 --fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
+--usecurl                            savecalllist, savedevicelog, savefbconfig, savephonebook
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype https|http                all but writeconfig and writesoapfile
@@ -1432,6 +1434,9 @@ Option/Parameter                    Benutzt vom Kommando
 --certpath "<abs path>"             downloadcert (veraltet, nutze stattdessen --filepath)
     Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
 
+--usecurl                           savecalllist, savedevicelog, savefbconfig, savephonebook
+    Nutzt curl statt wget zum Download von der Fritzbox.
+
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
 --SOAPtype <https|http>             all but writeconfig and writesoapfile
     Diese Option wirkt auch auf wget-Aufrufe, wenn die Fritzbox keine komplette
@@ -1515,5 +1520,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-02-03
+Stand: 2025-08-14
 Marcus Roeckrath
