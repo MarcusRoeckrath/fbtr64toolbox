@@ -262,6 +262,7 @@ Option/Parameter                     Used by commands
 --fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
+--usecurl                            savecalllist, savedevicelog, savefbconfig, savephonebook
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype https|http                all but writeconfig and writesoapfile
