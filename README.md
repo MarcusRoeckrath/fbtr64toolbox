@@ -211,7 +211,7 @@ Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
           Use of configuration file "${HOME}/.fbtr64toolbox.text"
           instead of default "${HOME}/.fbtr64toolbox".
---fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>           all but calcsecret, writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
 --intclient <ip address>             add, enable, disable
@@ -265,7 +265,7 @@ Option/Parameter                     Used by commands
 --usecurl                            savecalllist, savedevicelog, savefbconfig, savephonebook
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype https|http                all but writeconfig and writesoapfile
+--SOAPtype https|http                all but calcsecret, writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
