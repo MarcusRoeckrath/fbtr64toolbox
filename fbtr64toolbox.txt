@@ -1293,13 +1293,13 @@ ergaenzen die Kommandos. Als "veraltet" markierte Optionen/Parameter werden
 in naher Zukunft aus dem Skript entfernt:
 
 Option/Parameter                    Benutzt vom Kommando
---conffilesuffix <text>             all
+--conffilesuffix <text>             Alle ausser writesoapfile
           Ermoeglicht die Nutzung unterschiedlicher Konfigurationsdateien.
           Das gewaehlte Suffix wird an ${HOME}/.fbtr64toolbox nach einem Punkt
           angehaengt, z. B. wird bei Angabe von repeater die Konfigurationsdatei
           ${HOME}/.fbtr64toolbox.repeater vom Skript genutzt.
 
---fbip <ip address>|<fqdn>          Alle ausser writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>          Alle ausser calcsecret, writeconfig and writesoapfile
     IP-Adresse oder FQDN der Fritzbox.
 
 --description "<text>"              add, enable, disable
@@ -1438,7 +1438,7 @@ Option/Parameter                    Benutzt vom Kommando
     Nutzt curl statt wget zum Download von der Fritzbox.
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
---SOAPtype <https|http>             all but writeconfig and writesoapfile
+--SOAPtype <https|http>             All ausser cacsecret, writeconfig and writesoapfile
     Diese Option wirkt auch auf wget-Aufrufe, wenn die Fritzbox keine komplette
     mit http oder https beginnende URL zurueckliefert.
 --SOAPdescfile <xmlfilename>        mysoaprequest
@@ -1520,5 +1520,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-08-14
+Stand: 2025-09-23
 Marcus Roeckrath
