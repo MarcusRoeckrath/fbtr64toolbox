@@ -1,3 +1,8 @@
+v2.22.3 stable  - 2025-09-27
+============================
++ Enhanced bash completion file
+
+
 v2.22.2 stable  - 2025-09-24
 ============================
 + Enhanced bash completion file
