@@ -1,11 +1,16 @@
+v2.22.4 stable  - 2025-09-29
+============================
+* Enhanced bash completion file
+
+
 v2.22.3 stable  - 2025-09-27
 ============================
-+ Enhanced bash completion file
+* Enhanced bash completion file
 
 
 v2.22.2 stable  - 2025-09-24
 ============================
-+ Enhanced bash completion file
+* Enhanced bash completion file
 ! grep regexp option from -E to -P for
   recognizing \t as class instead of character t
 * fbtr64toolbox.sh version 3.6.2
