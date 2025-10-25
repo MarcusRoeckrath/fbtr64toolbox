@@ -1,3 +1,10 @@
+v2.22.5 stable  - 2025-10-25
+============================
+! Typo in NewX_AVM-DE_SetupAssistantStatus
+  was NewX_AVM-DE_SetupAssistentStatus
+* fbtr64toolbox.sh version 3.6.3
+
+
 v2.22.4 stable  - 2025-09-29
 ============================
 * Enhanced bash completion file
