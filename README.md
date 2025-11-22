@@ -6,7 +6,9 @@ Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Fu
 Copyright (c) 2016-2025 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
-Download-URL: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
+Download:
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.5-1.0.noarch.rpm
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
