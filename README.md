@@ -12,7 +12,7 @@ tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar
 
 rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.5-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.5-2.all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.5-2_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
