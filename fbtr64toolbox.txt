@@ -24,10 +24,7 @@ werden muss. Der direkte Link zum Archiv lautet:
 https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
 
 Auf dem Zielsystem muessen die Tools awk, bc, curl, dos2unix, grep, ksh,
-sed, wget und xmlstarlet existieren. Falls das Zertifikat aus der Fritzbox
-ausgelesen (downloadcert-Kommando) oder die Gueltigkeit des Zertifikats
-(certvalidity-Kommando) geprueft werden soll, muessen auch tr und openssl
-vorhanden sein.
+md5sum, openssl, sed, tr, wget und xmlstarlet existieren.
 
 ==============================================================================
 
@@ -1520,5 +1517,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-09-23
+Stand: 2025-11-24
 Marcus Roeckrath
