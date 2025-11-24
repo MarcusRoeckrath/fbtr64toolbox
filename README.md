@@ -8,11 +8,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.6.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.5-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.22.6-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.22.5-2_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.22.6-2_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -66,9 +66,7 @@ andere auf der Fritzbox existierende AVM-Service-XML-Datei angegeben werden.
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
 https://avm.de/service/schnittstellen/
 
-Auf dem Zielsystem benötigte Tools: **awk, bc, curl, dos2unix, grep, ksh, sed, wget und xmlstarlet**
-
-Bei Nutzung der Kommandos downloadcert und certvalidity sind zusätzlich **openssl** und **tr** erforderlich.
+Auf dem Zielsystem benötigte Tools: **awk, bc, curl, dos2unix, grep, ksh, md5sum, openssl, sed, tr, wget und xmlstarlet**
 
 **Vor Benutzung bitte unbedingt die Dokumentation im Archiv unter**
 **/usr/share/doc/fbtr64toolbox/fbtr64toolbox.txt lesen.**
