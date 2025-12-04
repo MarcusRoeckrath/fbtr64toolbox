@@ -221,6 +221,7 @@ Option/Parameter                     Used by commands
 --intclient <ip address>             add, enable, disable
 --intport <port number>              add, enable, disable
 --protocol TCP|UDP                   add, enable, disable, del
+--forceinterface                     add, enable, disable
 --active                             add, *switch, hostsinfo
 --inactive                           add, *switch, hostsinfo
           Either --active or --inactive is required on all switch commands.
