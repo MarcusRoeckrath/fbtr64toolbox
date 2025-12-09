@@ -573,8 +573,8 @@ fbtr64toolbox.sh add --extport 80 --protocol TCP --intclient
 192.168.178.2 --intport 999 --description "Meine neue Portfreigabe"
 --active
 
-Die Kommandozeileoption "--forceinterface" darf in diesem Fall nicht
-benutzt werden.
+Die Kommandozeileoption "--forceinterface" oder "forceinterface="true""
+in der Konfigurationsdatei darf in diesem Fall nicht benutzt werden.
 
 Die Weiterleitung auf einen anderen Zielrechner im internen Netz hat
 in diesem Fall dann auf dem zwischengeschalteten Router zu erfolgen.
@@ -584,11 +584,13 @@ b) Ein PC kann nur Portfreigaben auf sich selbst einrichten.
 Auf PCs mit mehreren Netzwerkkarten/IPs erfordert dies, dass die
 Freigabe ueber die Netzwerkkarte einzurichten ist, die der Ziel-IP
 der Freigabe entspricht. Dies kann in diesen Faellen ueber die
-Kommandozeilenoption "--forceinterface" erzwungen werden.
+Kommandozeilenoption "--forceinterface"  oder "forceinterface="true""
+in der Konfigurationsdateierzwungen werden.
 
 Fuer den Sonderfall einen Zwischenrouters mit auf diesem eingeschalteten
 Masquerading gilt die Beschreibung unter a). Die Kommandozeileoption
-"--forceinterface" darf in diesem Fall nicht benutzt werden.
+"--forceinterface" oder "forceinterface="true"" in der Konfigurationsdatei
+darf in diesem Fall nicht benutzt werden.
 
 Zur Bearbeitung und Anzeige von Portfreigaben dienen die Kommandos
 
@@ -1531,5 +1533,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-12-04
+Stand: 2025-12-09
 Marcus Roeckrath
