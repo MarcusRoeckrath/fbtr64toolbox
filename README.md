@@ -413,5 +413,5 @@ new_port_mapping_description="http forward for letsencrypt"
 new_lease_duration="0"
 # Set to true to force use of network interface assigned to new_internal_client
 # on system with multiple networks/network interfaces.
-forceinterface="${forceinterface}"
+forceinterface="false"
 ```
