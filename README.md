@@ -3,7 +3,7 @@ Command line tool (bash script) for the TR-064 interface of fritzboxes
 
 Skript zur Anzeige und Veränderung von Fritzbox-Einstellungen mittels TR-064-Funktionen
 
-Copyright (c) 2016-2025 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2026 Marcus Röckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 Download:
