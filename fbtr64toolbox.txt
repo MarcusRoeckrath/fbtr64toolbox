@@ -4,7 +4,7 @@
 
 Bash-Skript zur Anzeige und Veraenderung von Fritzbox-Einstellungen.
 
-Copyright (c) 2016-2025 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
+Copyright (c) 2016-2026 Marcus Roeckrath, marcus.roeckrath(at)gmx(dot)de
 released under GPL2
 
 ==============================================================================
@@ -47,6 +47,7 @@ md5sum, openssl, sed, tr, wget und xmlstarlet existieren.
             Hosts with WAN status
             Hosts with WOL status
             Hosts with WAN and WOL status
+            VoIP
             Telephone call deflections
             DECT
             Answering machines
@@ -144,7 +145,7 @@ erhaelt man folgende Hilfeseite:
 ------------------------------------------------------------------------------
 
 Command line tool for the TR-064 interface of fritzboxes
-Version: <version>; Copyright (C) 2016-2025 Marcus Roeckrath ; Licence: GPL2
+Version: <version>; Copyright (C) 2016-2026 Marcus Roeckrath ; Licence: GPL2
                                           marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
@@ -173,6 +174,9 @@ wlan?info       : Informations/Status of wlan; ? = 1, 2, 3 or 4.
 wlanswitch (*)  : Activates/deactivates wlan global acting like button on fritzbox.
 wlan?switch (*) : Activates/deactivates wlan; ? = 1, 2, 3 or 4.
 wlanhostsinfo   : Shows connected wlan devices list.
+voipinfo        : Informations/Status of VoIP accounts.
+voipstat <phone number>
+                : Status of VoIP account given by phone number.
 dectinfo        : Shows dect telephone list.
 deflectionsinfo : Shows telephone deflections list.
 homeautoinfo    : Shows informations from home automation/smart home devices.
@@ -300,13 +304,13 @@ Option/Parameter                     Used by commands
 --speedtestudpbidirlanon             speedtestswitch
 --speedtestwanon                     speedtestswitch
 --showfritzindexes                   deflectionsinfo, homeautoinfo,
-                                     homepluginfo, hostsinfo, show
+                                     homepluginfo, hostsinfo, show, voipinfo
 --csvtableoutput                     alarminfo, dectinfo, deflectionsinfo,
                                      homepluginfo, hostsinfo, phonebookinfo,
-                                     show, taminfo, wlanhostsinfo
+                                     show, taminfo, voipinfo, wlanhostsinfo
 --showtablelegend                    alarminfo, dectinfo, deflectionsinfo,
                                      homepluginfo, hostsinfo, phonebookinfo,
-                                     show, taminfo, wlanhostsinfo
+                                     show, taminfo, voipinfo, wlanhostsinfo
           Effective only if --csvtableoutput is not used.
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
@@ -748,7 +752,7 @@ fbtr64toolbox.sh deviceinfo --fbip 192.168.100.1
     Infos zur Fritzbox mit der IP "192.168.100.1".
 
 
-Kommandos:
+Beschreibung der Kommandos:
 
 extip, extipv4, und extipv6:
 Zeigt die externen IPv4/v6-Adresse an (letztere mit Prefix).
@@ -796,6 +800,24 @@ Fritzboxen werden nur die mit der abgefragten Fritzbox verbundenen
 WLAN-Geraete aufgelistet und nicht des gesamten Mesh-Verbundes; fuer
 eine Komplettuebersicht aller verbundenen WLAN-Geraete sind also alle
 Fritzboxen abzufragen.
+
+
+voipinfo: Zeigt Informationen und Status zu den VoIP-Zugaengen an.
+
+
+voipstat <phone number>:
+Gibt des Status des durch die Telefonnummer definierten VoIP-Zugangs aus.
+
+Fuer die beiden Kommandos voipinfo und voipstatus gilt folgende Zuordnung
+zwischen numerischem und textlichem Status:
+
+0: disabled
+1: not registered
+2: registered
+3: connected
+4: unknown
+
+Alle anderen Zahlencodes werden in Textform mit "?" ausgegeben.
 
 
 dectinfo: Zeigt eine Liste alle Dect-Telefone an.
@@ -1254,7 +1276,8 @@ data="
 "
 
 Ist ein Eingabewert leer, kann er einfach ausgelassen werden, die Separatoren jedoch
-niemals:
+niemals, ebenso muss auch bei nur einem einzelnen zu uebergebenden Wert immer
+der Separator folgen:
 
 fbtr64toolbox.sh mysoaprequest <soapfile> --SOAPparameterlist ",12,,1,abc,,9,"
 
@@ -1267,8 +1290,8 @@ Separator ist so zu waehlen, dass dieser in den Eingangswerten selbst nicht vork
 Um diese Option zu nutzen, muessen die durch createsoapfiles erzeugten SOAP-Dateien
 eventuell neu erzeugt werden, um die notwendigen Platzhalter zu enthalten.
 
-Enthaelt die Parameterliste zuviele Werte, werden ueberzaehlige ignoriert. Sind es zuwenige,
-wird fuer die fehlenden Werte ein Leerstring angenommen.
+Enthaelt die Parameterliste zu viele Werte, werden ueberzaehlige ignoriert. Sind es
+zu wenige, wird fuer die fehlenden Werte ein Leerstring angenommen.
 
 Mittels --SOAPsearch "<search text|all>" wird der Output gefiltert und in der Form:
 
@@ -1379,7 +1402,7 @@ Option/Parameter                    Benutzt vom Kommando
     ueber WAN (Internet) an.
 
 --showfritzindexes                  deflectionsinfo, homeautoinfo,
-                                    homepluginfo, hostsinfo, show
+                                    homepluginfo, hostsinfo, show, voipinfo
     Beginnt den Index in diesen Listen mit "0" statt "1", was der internen
     Nummerierung der Fritzbox entspricht. Soll ein ermittelter Index in
     einer anderen TR-64-Funktion als Eingabewert genutzt werden, ist
@@ -1387,7 +1410,7 @@ Option/Parameter                    Benutzt vom Kommando
 
 --csvtableoutput                    alarminfo, dectinfo, deflectionsinfo,
                                     homepluginfo, hostsinfo, phonebookinfo,
-                                    show, taminfo, wlanhostsinfo
+                                    show, taminfo, voipinfo, wlanhostsinfo
     Da ueberlange Spalteninhalte bei Ausgabe als Tabelle abgeschnitten werden,
     kann mit diesem Parameter die Ausgabe als CSV-Format der Tabellen inklusive
     erweiterter Spaltenueberschriften erzwungen werden. Andere Bestandteile der
@@ -1395,7 +1418,7 @@ Option/Parameter                    Benutzt vom Kommando
 
 --showtablelegend                   alarminfo, dectinfo, deflectionsinfo,
                                     homepluginfo, hostsinfo, phonebookinfo,
-                                    show, taminfo, wlanhostsinfo
+                                    show, taminfo, voipinfo, wlanhostsinfo
     Im Anschluss an die Tabelle werden in einer Legende die abgekuerzten
     Spaltenueberschriften ausgeschrieben ausgegeben. Diese Option wird nur aktiv,
     wenn die Option --csvtableoutput nicht genutzt wird.
@@ -1533,5 +1556,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2025-12-09
+Stand: 2026-01-06
 Marcus Roeckrath
