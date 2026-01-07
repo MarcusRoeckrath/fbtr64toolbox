@@ -8,11 +8,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.23.1.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.1.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.23.1-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.1-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.23.1-2_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.1-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -87,30 +87,30 @@ Das Skript wurde in folgenden System getestet:
 - Debian (im Windows Subsystem for Linux WSL1 in Windows 10)
 - Raspbian
 
-Hier die Hilfeseite: (fbtr64toolbox.sh help)
+Hier die Hilfeseite: (fbtr64toolbox.sh --help)
 ```
-Command line tool for the TR-064 interface of fritzboxes
-Version: 3.5.0 ; Copyright (C) 2016-2025 Marcus Roeckrath ; License: GPL2
-                                         marcus(dot)roeckrath(at)gmx(dot)de
-                  This program comes with ABSOLUTELY NO WARRANTY.
-                  This is free software, and you are welcome to
-                  redistribute it under certain conditions.
-                  (for details see <https://www.gnu.org/licenses/>)
-
-Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
-
-Commands:
-add             : Adds a (predefined) port forward.
-del             : Deletes a (predefined) port forward.
-enable          : Activates a previous disabled (predefined) port forward.
-                  If not yet present in fritzbox port forward will be added enabled.
-disable         : Deactivates a (predefined) port forward if present in fritzbox.
-                  If not yet present in fritzbox port forward will be added disabled.
-show            : Shows all port forwardings whether set by authorized user or upnp.
-extip           : Shows the external IP v4 and v6 addresses.
-extipv4         : Shows the external IP v4 address.
-extipv6         : Shows the external IP v6 address.
-conninfo        : Informations/Status of internet connection.
+Command line tool for the TR-064 interface of fritzboxes                                                                                                                                      
+Version: 3.8.1 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2                                                                                                                     
+                                         marcus(dot)roeckrath(at)gmx(dot)de                                                                                                                   
+                  This program comes with ABSOLUTELY NO WARRANTY.                                                                                                                             
+                  This is free software, and you are welcome to                                                                                                                               
+                  redistribute it under certain conditions.                                                                                                                                   
+                  (for details see <https://www.gnu.org/licenses/>)                                                                                                                           
+                                                                                                                                                                                              
+Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]                                                                                                               
+                                                                                                                                                                                              
+Commands:                                                                                                                                                                                     
+add             : Adds a (predefined) port forward.                                                                                                                                           
+del             : Deletes a (predefined) port forward.                                                                                                                                        
+enable          : Activates a previous disabled (predefined) port forward.                                                                                                                    
+                  If not yet present in fritzbox port forward will be added enabled.                                                                                                          
+disable         : Deactivates a (predefined) port forward if present in fritzbox.                                                                                                             
+                  If not yet present in fritzbox port forward will be added disabled.                                                                                                         
+show            : Shows all port forwardings whether set by authorized user or upnp.                                                                                                          
+extip           : Shows the external IP v4 and v6 addresses.                                                                                                                                  
+extipv4         : Shows the external IP v4 address.                                                                                                                                           
+extipv6         : Shows the external IP v6 address.                                                                                                                                           
+conninfo        : Informations/Status of internet connection.                                                                                                                                 
 connstat        : Status of internet connection.
 ddnsinfo        : Informations/Status of dynamic dns service.
 timeinfo        : Informations/Status of time servers and date/time.
@@ -119,6 +119,9 @@ wlan?info       : Informations/Status of wlan; ? = 1, 2, 3 or 4.
 wlanswitch (*)  : Activates/deactivates wlan global acting like button on fritzbox.
 wlan?switch (*) : Activates/deactivates wlan; ? = 1, 2, 3 or 4.
 wlanhostsinfo   : Shows connected wlan devices list.
+voipinfo        : Informations/Status of VoIP accounts.
+voipstat <phone number>
+                : Status of VoIP account given by phone number.
 dectinfo        : Shows dect telephone list.
 deflectionsinfo : Shows telephone deflections list.
 homeautoinfo    : Shows informations from home automation/smart home devices.
@@ -201,20 +204,20 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
-writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
+writeconfig     : Writes sample configuration to default file "/root/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
                 : Writes sample SOAP request to specified file
-                  or to sample file "${HOME}/fbtr64toolbox.samplesoap".
+                  or to sample file "/root/fbtr64toolbox.samplesoap".
 calcsecret      : Calculates hashed secret and stores it into the default configuration file
-                  "${HOME}/.fbtr64toolbox" or into specific configuration file defined by the
+                  "/root/.fbtr64toolbox" or into specific configuration file defined by the
                   "--conffilesuffix" option (see below).
 
 Optional or mandatory options/parameters:
 Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
-          Use of configuration file "${HOME}/.fbtr64toolbox.text"
-          instead of default "${HOME}/.fbtr64toolbox".
+          Use of configuration file "/root/.fbtr64toolbox.text"
+          instead of default "/root/.fbtr64toolbox".
 --fbip <ip address>|<fqdn>           all but calcsecret, writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
@@ -246,13 +249,13 @@ Option/Parameter                     Used by commands
 --speedtestudpbidirlanon             speedtestswitch
 --speedtestwanon                     speedtestswitch
 --showfritzindexes                   deflectionsinfo, homeautoinfo,
-                                     homepluginfo, hostsinfo, show
+                                     homepluginfo, hostsinfo, show, voipinfo
 --csvtableoutput                     alarminfo, dectinfo, deflectionsinfo,
                                      homepluginfo, hostsinfo, phonebookinfo,
-                                     show, taminfo, wlanhostsinfo
+                                     show, taminfo, voipinfo, wlanhostsinfo
 --showtablelegend                    alarminfo, dectinfo, deflectionsinfo,
                                      homepluginfo, hostsinfo, phonebookinfo,
-                                     show, taminfo, wlanhostsinfo
+                                     show, taminfo, voipinfo, wlanhostsinfo
           Effective only if --csvtableoutput is not used.
 --nowrap                             deviceinfo, devicelog
 --rawdevicelog                       devicelog
@@ -309,13 +312,13 @@ If deleting an port forwarding entry on the fritzbox the values for extport and 
 has to be entered in exact the same way as they are stored in the port forwarding entry
 on the fritzbox.
 
-The script can use the fritzbox authentication data from "${HOME}/.netrc"
-which has to be readable/writable by the owner only (chmod 0600 ${HOME}/.netrc).
+The script can use the fritzbox authentication data from "/root/.netrc"
+which has to be readable/writable by the owner only (chmod 0600 /root/.netrc).
 Put into this file a line like:
 machine <address of fritzbox> login <username> password <password>
 f. e.: machine 192.168.1.1 login dslf-config password xxxxx
 The fritzbox address has to be given in the same type (ip or fqdn) in
-the configuration file or on command line parameter "--fbip" and "${HOME}/.netrc."
+the configuration file or on command line parameter "--fbip" and "/root/.netrc."
 Saviest solution for authentication is the use of "user" and hashed "secret".
 Write down "user" and "password" into the configuration file an run
 "fbtrtoolbox calcsecret" which will calculate the "secret", stores it in the
