@@ -1,3 +1,12 @@
+v2.24.2 stable  - 2026-02-05
+============================
++ fetch_list(): Added debug output
+                Using wget or curl
+! execute_soap_request:
+  Fixed response from reexecute_soap_request
+* fbtr64toolbox.sh version 3.8.2
+
+
 v2.24.1 stable  - 2026-01-06
 ============================
 + Command voipstat renamed to voipinfo
