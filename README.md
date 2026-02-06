@@ -356,8 +356,10 @@ FBREVERSEPORTS="false"
 # Set this to true if you are affected."
 FBREVERSEFTPWAN="false"
 
-# Use http or https SOAP request
-# Normally http requests are much faster than https requests.
+# Use http or https SOAP request; also used for wget/curl downloads
+# from fritzboxcalls if fritzbox does not return full url string
+# beginning with http or https.                                                                                                                                                              
+# Normally http requests are much faster than https requests.                                                                                                                                
 type="https"
 
 # Authentification settings
