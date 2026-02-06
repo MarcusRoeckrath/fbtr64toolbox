@@ -8,11 +8,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.2.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.3.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.2-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.3-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.2-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.3-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -270,7 +270,7 @@ Option/Parameter                     Used by commands
 --fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
---usecurl                            savecalllist, savedevicelog, savefbconfig, savephonebook
+--usecurl                            script uses curl instead of wget
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype https|http                all but calcsecret, writeconfig and writesoapfile
