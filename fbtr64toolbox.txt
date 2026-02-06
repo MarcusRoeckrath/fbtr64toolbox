@@ -325,7 +325,7 @@ Option/Parameter                     Used by commands
 --fbconffilesuffix ["<text>"]        savefbconfig
 --fbconffilepassword "<text>"        savefbconfig
 --certpath "<abs path>"              downloadcert (deprecated, use --filepath instead)
---usecurl                            savecalllist, savedevicelog, savefbconfig, savephonebook
+--usecurl                            script uses curl instead of wget
 
 Explanations for these parameters could be found in the SOAP sample file.
 --SOAPtype https|http                all but writeconfig and writesoapfile
@@ -1470,12 +1470,12 @@ Option/Parameter                    Benutzt vom Kommando
 --certpath "<abs path>"             downloadcert (veraltet, nutze stattdessen --filepath)
     Vorgabe: Home-Verzeichnis bzw. fbconffilepath in der Konfigurationsdatei
 
---usecurl                           savecalllist, savedevicelog, savefbconfig, savephonebook
+--usecurl
     Nutzt curl statt wget zum Download von der Fritzbox.
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
---SOAPtype <https|http>             All ausser cacsecret, writeconfig and writesoapfile
-    Diese Option wirkt auch auf wget-Aufrufe, wenn die Fritzbox keine komplette
+--SOAPtype <https|http>             All ausser calcsecret, writeconfig and writesoapfile
+    Diese Option wirkt auch auf wget/curl-Downloads, wenn die Fritzbox keine komplette
     mit http oder https beginnende URL zurueckliefert.
 --SOAPdescfile <xmlfilename>        mysoaprequest
 --SOAPcontrolURL <URL>              mysoaprequest
@@ -1556,5 +1556,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-01-06
+Stand: 2026-02-06
 Marcus Roeckrath

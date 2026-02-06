@@ -1,3 +1,13 @@
+v2.24.3 stable  - 2026-02-06
+============================
++ fetch_list(): More debug output
+                Validity check
++ Added -t 2 to wget calls
++ xmlstarlet: redirect stderr to /dev/null
+* Changes in documentation
+* fbtr64toolbox.sh version 3.8.2
+
+
 v2.24.2 stable  - 2026-02-05
 ============================
 + fetch_list(): Added debug output
