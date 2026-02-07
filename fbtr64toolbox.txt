@@ -1535,7 +1535,7 @@ Dokumentation von AVM zu Rate zu ziehen:
 
     https://avm.de/service/schnittstellen
 
-Datentypenuebersicht, ohne Gewaehr, da es kaum Dokumentation gibt:
+Datentypenuebersicht, ohne Gewaehr, da es kaum Dokumentation hierzu gibt:
 
     boolean       : 0=falsch; 1=wahr
     dateTime      : yyyy-mm-ddThh:mm:ss[+|-hh:mm]
@@ -1556,5 +1556,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-02-06
+Stand: 2026-02-07
 Marcus Roeckrath

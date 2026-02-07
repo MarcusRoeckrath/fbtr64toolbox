@@ -1,3 +1,9 @@
+v2.24.4 stable  - 2026-02-07
+============================
+! savecalllist: Fixed misplaced "
+* fbtr64toolbox.sh version 3.8.3
+
+
 v2.24.3 stable  - 2026-02-06
 ============================
 + fetch_list(): More debug output
