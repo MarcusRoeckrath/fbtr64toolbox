@@ -1,7 +1,18 @@
+v2.24.6 stable  - 2026-02-09
+============================
+* Updated bash completion file
+
+
+v2.24.5 stable  - 2026-02-09
+============================
++ fetch_list(): More debug output
+* fbtr64toolbox.sh version 3.8.5
+
+
 v2.24.4 stable  - 2026-02-07
 ============================
 ! savecalllist: Fixed misplaced "
-* fbtr64toolbox.sh version 3.8.3
+* fbtr64toolbox.sh version 3.8.4
 
 
 v2.24.3 stable  - 2026-02-06
@@ -11,7 +22,7 @@ v2.24.3 stable  - 2026-02-06
 + Added -t 2 to wget calls
 + xmlstarlet: redirect stderr to /dev/null
 * Changes in documentation
-* fbtr64toolbox.sh version 3.8.2
+* fbtr64toolbox.sh version 3.8.3
 
 
 v2.24.2 stable  - 2026-02-05
