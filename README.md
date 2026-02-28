@@ -8,11 +8,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.6.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.7.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.6-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.7-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.6-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.7-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -64,7 +64,7 @@ ueber die Variable "descfile" in einer SOAP-Request-Beschreibungsdatei auch jede
 andere auf der Fritzbox existierende AVM-Service-XML-Datei angegeben werden.
 
 Eine Beschreibung der TR-064-Funktionen der Fritzboxen findet sich unter:
-https://avm.de/service/schnittstellen/
+https://fritz.com/pages/schnittstellen
 
 Auf dem Zielsystem benötigte Tools: **awk, bc, curl, dos2unix, grep, ksh, md5sum, openssl, sed, tr, wget und xmlstarlet**
 
