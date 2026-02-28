@@ -431,7 +431,7 @@ Seit Firmware 7.25 ist ein Login mit dem Benutzernamen dslf-config nicht mehr
 moeglich; beginnend mit dieser Firmwareversion ist auch ein reiner Passwortlogin
 in der Weboberflaeche der Fritzbox nicht mehr moeglich.
 
-Auf https://avm.de/service/schnittstellen finden sich unter
+Auf https://fritz.com/pages/schnittstellen finden sich unter
 
 "Wichtige Informationen: Aenderung des Anmeldeverfahrens an einer Fritz!Box"
 
@@ -1210,7 +1210,7 @@ Wird eine Headerzeile bei der Ausgabe gewuenscht, ist die Option
 ein standardisierter Geraetetext wie
 "(FRITZ!Box 7490 113.06.83@192.168.178.1)" hinzugefuegt wird.
 
-Unter https://avm.de/service/schnittstellen findet man detaillierte Informationen
+Unter https://fritz.com/pages/schnittstellen findet man detaillierte Informationen
 und Dokumente zur SOAP-Schnittstelle.
 
 Unter dem Menue-Punkt "Create sample soap files from fritzbox documents" (siehe
@@ -1533,7 +1533,7 @@ befindet. Hier ist <Typ> durch eine dem Datentyp entsprechenden Wert (Zahl,
 Zeichenfolge, ...) zu ersetzen. Hierzu ist die offizielle Entwickler-
 Dokumentation von AVM zu Rate zu ziehen:
 
-    https://avm.de/service/schnittstellen
+    https://fritz.com/pages/schnittstellen
 
 Datentypenuebersicht, ohne Gewaehr, da es kaum Dokumentation hierzu gibt:
 
@@ -1556,5 +1556,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-02-07
+Stand: 2026-02-28
 Marcus Roeckrath

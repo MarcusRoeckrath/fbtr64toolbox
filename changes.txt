@@ -1,6 +1,11 @@
-v2.24.6 stable  - 2026-02-09
+v2.24.7 stable  - 2026-02-28
 ============================
-* Updated bash completion file
+! get_url_and_urn (): Fixed variable name
++ Extended use of xmlstarlet to reformat and
+  check xml downloads from fritzbox instead
+  use of dos2unix and sed
+* Changed url to official fritz tr-064 documentation
+* fbtr64toolbox.sh version 3.8.6
 
 
 v2.24.5 stable  - 2026-02-09
