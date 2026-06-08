@@ -90,7 +90,7 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh --help)
 ```
 Command line tool for the TR-064 interface of fritzboxes                                                                                                                                      
-Version: 3.8.1 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2                                                                                                                     
+Version: 3.8.7 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2                                                                                                                     
                                          marcus(dot)roeckrath(at)gmx(dot)de                                                                                                                   
                   This program comes with ABSOLUTELY NO WARRANTY.                                                                                                                             
                   This is free software, and you are welcome to                                                                                                                               
