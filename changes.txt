@@ -1,3 +1,12 @@
+v2.24.8 stable  - 2026-06-08
+============================
++ New option --showWLANkeys adds WEP/WPA keys
+  to output of wlan?info commands
+* Updated bash completion file
++ Additions and minor changes to documentation
+* fbtr64toolbox.sh version 3.8.7
+
+
 v2.24.7 stable  - 2026-02-28
 ============================
 ! get_url_and_urn (): Fixed variable name

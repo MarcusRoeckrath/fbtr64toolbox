@@ -73,8 +73,8 @@ Kommandos, wobei im Menuepunkt "Show filtered doc from fritzbox" nur die
 fuer einen SOAP-Request relevanten Informationen dargestellt werden.
 
 Desweiteren koennen fuer alle TR-064 Funktionen der eigenen Fritzbox
-Beispiel-SOAP-Dateien erzeugt werden, die im Verzeichnis
-/usr/share/doc/fbtr64toolbox/samplesoaps abgelegt werden. Diese
+Beispiel-SOAP-Dateien erzeugt werden, die in einem anzugebenden
+Verzeichnis, welches existieren muss, abgelegt werden. Diese
 Beispieldateien werden aus der in der Fritzbox enthaltenen XML-Dokumentation
 abgeleitet. Im dritten Teil dieser Dokumentation folgt eine Beschreibung
 dieser Dateien.
@@ -95,8 +95,8 @@ oder
 der Parameter "Zugriff fuer Anwendungen zulassen" und "Statusinformationen
 ueber UPnP uebertragen" zu aktivieren.
 
-Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" und
-"listxmlfiles" unterstuetzt, sofern sie auf der Fritzbox vorhanden sind:
+Es werden folgende Fritz!-Service-XML-Dateien fuer die Kommandos "createsoapfiles"
+und "listxmlfiles" unterstuetzt, sofern sie auf der Fritzbox vorhanden sind:
 
     tr64desc.xml
     igddesc.xml (nur verfuegbar, wenn "Statusinformationen ueber UPnP uebertragen" aktiviert ist)
@@ -112,7 +112,7 @@ Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" 
 
 Beim Kommando "mysoaprequest" kann ueber die Kommandozeilenoption "--SOAPdesfile" oder
 ueber die Variable "descfile" in einer SOAP-Request-Beschreibungsdatei auch jede
-andere auf der Fritzbox existierende AVM-Service-XML-Datei angegeben werden.
+andere auf der Fritzbox existierende Fritz!-Service-XML-Datei angegeben werden.
 
 Einige Funktionen sind nicht verfuegbar, wenn unter
 
@@ -291,6 +291,7 @@ Option/Parameter                     Used by commands
 --showWOLstatus                      hostsinfo
 --showhosts "<active|inactive>"      hostsinfo
           Short form: "<--active|--inactive>"
+--showWLANkeys                       wlan?info
 --ftpwansslonlyon (**)               ftpwanswitch
 --ftpwansslonlyoff (**)              ftpwanswitch
 --ftpwanon (**)                      ftpwansslswitch
@@ -1375,6 +1376,8 @@ Option/Parameter                    Benutzt vom Kommando
 --showhosts "<active|inactive>"     hostsinfo
     Kurzform: "<--active|--inactive>"
     Zeigt nur die aktiven bzw. inaktiven Hosts an.
+--showWLANkeys                      wlan?info
+    Zeigt die WEP- und WPA-Schluessel an.
 
 --ftpwansslonlyon (**)              ftpwanswitch
 --ftpwansslonlyoff (**)             ftpwanswitch
@@ -1531,7 +1534,7 @@ data="
 
 befindet. Hier ist <Typ> durch eine dem Datentyp entsprechenden Wert (Zahl,
 Zeichenfolge, ...) zu ersetzen. Hierzu ist die offizielle Entwickler-
-Dokumentation von AVM zu Rate zu ziehen:
+Dokumentation von Fritz! zu Rate zu ziehen:
 
     https://fritz.com/pages/schnittstellen
 
@@ -1556,5 +1559,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-02-28
+Stand: 2026-06-07
 Marcus Roeckrath
