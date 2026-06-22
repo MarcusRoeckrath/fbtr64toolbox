@@ -17,11 +17,12 @@ Fehlermeldung "Error on communication with fritzbox".
 
 Hinweis:
 Soll das Skript in einer anderen Distribution als eisfair (www.eisfair.org)
-benutzt werden, kann auf https://github.com/MarcusRoeckrath/fbtr64toolbox
-ein tar-Archiv downloadet werden, welches auf dem Zielsystem komplett entpackt
-werden muss. Der direkte Link zum Archiv lautet:
+benutzt werden, kann es auf https://github.com/MarcusRoeckrath/fbtr64toolbox
+als tar-Archiv, welches auf dem Zielsystem komplett entpackt werden muss,
+heruntergeladen werden.
 
-https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox.tar.bz2
+Desweiteren sind rpm- bzw. deb-Installation-Pakete verfuegbar, die mit den
+ueblichen Installationswerkzeugen einer Distribution installiert werden koennen.
 
 Auf dem Zielsystem muessen die Tools awk, bc, curl, dos2unix, grep, ksh,
 md5sum, openssl, sed, tr, wget und xmlstarlet existieren.
@@ -145,7 +146,7 @@ erhaelt man folgende Hilfeseite:
 ------------------------------------------------------------------------------
 
 Command line tool for the TR-064 interface of fritzboxes
-Version: <version>; Copyright (C) 2016-2026 Marcus Roeckrath ; Licence: GPL2
+Version: <version>; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
                                           marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
@@ -259,6 +260,8 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
+editconfig      : Edits configuration file using standard editor defined by environment variable
+                  ${EDITOR} creating sample configuration file first if not existing.
 writeconfig     : Writes sample configuration to default file "${HOME}/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
@@ -273,7 +276,8 @@ Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
           Use of configuration file "${HOME}/.fbtr64toolbox.text"
           instead of default "${HOME}/.fbtr64toolbox".
---fbip <ip address>|<fqdn>           all but writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>           all but calcsecret, editconfig,
+                                     writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
 --intclient <ip address>             add, enable, disable
@@ -329,7 +333,8 @@ Option/Parameter                     Used by commands
 --usecurl                            script uses curl instead of wget
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype https|http                all but writeconfig and writesoapfile
+--SOAPtype https|http                all but calcsecret, editconfig,
+                                     writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
@@ -1126,7 +1131,7 @@ fbtr64toolbox.sh showxmlfile deviceconfigSCPD.xml --soapfilter
 
 und ergibt folgende Ausgabe:
 
-Filtered Content of deviceconfigSCPD.xml (FRITZ!Box 7490 113.06.83@abc.def.ghi.jkl)
+Filtered Content of deviceconfigSCPD.xml (FRITZ!Box 7490 Release 113.06.83@abc.def.ghi.jkl)
 action: GetPersistentData
    out: NewPersistentData string
 action: SetPersistentData
@@ -1208,8 +1213,8 @@ SOAPdescfile, wobei dieser Parameter mit tr64desc.xml vorbesetzt wird.
 
 Wird eine Headerzeile bei der Ausgabe gewuenscht, ist die Option
 --SOAPtitle "mein text" der Kommandozeile hinzuzufuegen, wobei dann automatisch
-ein standardisierter Geraetetext wie
-"(FRITZ!Box 7490 113.06.83@192.168.178.1)" hinzugefuegt wird.
+ein standardisierter Geraetetext basierend auf der ermittelten Description wie
+"(FRITZ!Box 7490 Release 113.06.83@192.168.178.1)" hinzugefuegt wird.
 
 Unter https://fritz.com/pages/schnittstellen findet man detaillierte Informationen
 und Dokumente zur SOAP-Schnittstelle.
@@ -1303,6 +1308,12 @@ Variable|Wert
 dargestellt.
 
 
+editconfig:
+Oeffnet die Konfigurationsdatei im ueber die Umgebungsvariablen ${EDITOR}
+definierten Standard-Editor. Existiert die Konfigurationsdatei nicht, wird
+eine Standardkonfigurations angelegt.
+
+
 writeconfig:
 Schreibt die Konfigurationsdatei; siehe Erlaeuteungen am Beginn dieses Dokuments.
 
@@ -1332,7 +1343,8 @@ Option/Parameter                    Benutzt vom Kommando
           angehaengt, z. B. wird bei Angabe von repeater die Konfigurationsdatei
           ${HOME}/.fbtr64toolbox.repeater vom Skript genutzt.
 
---fbip <ip address>|<fqdn>          Alle ausser calcsecret, writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>          Alle ausser calcsecret, editconfig,
+                                    writeconfig and writesoapfile
     IP-Adresse oder FQDN der Fritzbox.
 
 --description "<text>"              add, enable, disable
@@ -1477,7 +1489,8 @@ Option/Parameter                    Benutzt vom Kommando
     Nutzt curl statt wget zum Download von der Fritzbox.
 
 Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
---SOAPtype <https|http>             All ausser calcsecret, writeconfig and writesoapfile
+--SOAPtype <https|http>             All ausser calcsecret, editconfig,
+                                    writeconfig and writesoapfile
     Diese Option wirkt auch auf wget/curl-Downloads, wenn die Fritzbox keine komplette
     mit http oder https beginnende URL zurueckliefert.
 --SOAPdescfile <xmlfilename>        mysoaprequest
@@ -1487,6 +1500,9 @@ Erklaerungen fuer die folgenden Parameter stehen in der SOAP-Beispieldatei.
 --SOAPdata "<function data>"        mysoaprequest
 --SOAPsearch "<search text>|all"    mysoaprequest
 --SOAPtitle "<text>"                mysoaprequest
+Diese Kommandozeilenoptionen haben Vorrang vor den Definitionen
+in einer SOAP-Datei, die dort ohne das Prefix "SOAP" hinterlegt sind.
+
 Die folgende Option kann in speziellen aufbereiteten SOAP-Dateien,
 wie den durch das Kommando createsoapfiles erzeugten Beispieldateien
 genutzt werden, um Platzhalter mit Werten zu versehen. Die Beispieldateien
@@ -1559,5 +1575,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-06-07
+Stand: 2026-06-21
 Marcus Roeckrath
