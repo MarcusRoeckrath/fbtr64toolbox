@@ -334,6 +334,8 @@ If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
 through the TR-064 interface ending up in corrupted port forwarding entries.
 ```
+Das Kommando writeconfig schreibt eine beispielhafte Konfigurationsdatei in das Homeverzeichnis, die den eigenen Erfordernissen anzupassen ist; durch Verwendung der Skript-Option --conffilesuffix können verschiedene Konfigurationsdateien vorgehalten werden:
+```
 # Configuration file for fbtr64toolbox.sh
 #
 # Fritzbox settings
