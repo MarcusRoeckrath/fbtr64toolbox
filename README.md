@@ -8,11 +8,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.8.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.0.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.24.8-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.0-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.24.8-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.0-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -89,28 +89,28 @@ Das Skript wurde in folgenden System getestet:
 
 Hier die Hilfeseite: (fbtr64toolbox.sh --help)
 ```
-Command line tool for the TR-064 interface of fritzboxes                                                                                                                                      
-Version: 3.8.7 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2                                                                                                                     
-                                         marcus(dot)roeckrath(at)gmx(dot)de                                                                                                                   
-                  This program comes with ABSOLUTELY NO WARRANTY.                                                                                                                             
-                  This is free software, and you are welcome to                                                                                                                               
-                  redistribute it under certain conditions.                                                                                                                                   
-                  (for details see <https://www.gnu.org/licenses/>)                                                                                                                           
-                                                                                                                                                                                              
-Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]                                                                                                               
-                                                                                                                                                                                              
-Commands:                                                                                                                                                                                     
-add             : Adds a (predefined) port forward.                                                                                                                                           
-del             : Deletes a (predefined) port forward.                                                                                                                                        
-enable          : Activates a previous disabled (predefined) port forward.                                                                                                                    
-                  If not yet present in fritzbox port forward will be added enabled.                                                                                                          
-disable         : Deactivates a (predefined) port forward if present in fritzbox.                                                                                                             
-                  If not yet present in fritzbox port forward will be added disabled.                                                                                                         
-show            : Shows all port forwardings whether set by authorized user or upnp.                                                                                                          
-extip           : Shows the external IP v4 and v6 addresses.                                                                                                                                  
-extipv4         : Shows the external IP v4 address.                                                                                                                                           
-extipv6         : Shows the external IP v6 address.                                                                                                                                           
-conninfo        : Informations/Status of internet connection.                                                                                                                                 
+Command line tool for the TR-064 interface of fritzboxes
+Version: 3.9.0 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
+                                         marcus(dot)roeckrath(at)gmx(dot)de
+                  This program comes with ABSOLUTELY NO WARRANTY.
+                  This is free software, and you are welcome to
+                  redistribute it under certain conditions.
+                  (for details see <https://www.gnu.org/licenses/>)
+
+Usage           : fbtr64toolbox.sh command [option [value]] .. [option [value]]
+
+Commands:
+add             : Adds a (predefined) port forward.
+del             : Deletes a (predefined) port forward.
+enable          : Activates a previous disabled (predefined) port forward.
+                  If not yet present in fritzbox port forward will be added enabled.
+disable         : Deactivates a (predefined) port forward if present in fritzbox.
+                  If not yet present in fritzbox port forward will be added disabled.
+show            : Shows all port forwardings whether set by authorized user or upnp.
+extip           : Shows the external IP v4 and v6 addresses.
+extipv4         : Shows the external IP v4 address.
+extipv6         : Shows the external IP v6 address.
+conninfo        : Informations/Status of internet connection.
 connstat        : Status of internet connection.
 ddnsinfo        : Informations/Status of dynamic dns service.
 timeinfo        : Informations/Status of time servers and date/time.
@@ -204,6 +204,8 @@ createsoapfiles <fullpath>
                 : Creates soap files from xml documents on fritzbox.
 mysoaprequest [<fullpath>/]<file>|<command line parameters>
                 : Makes SOAP request defined in <file> or from command line parameters.
+editconfig      : Edits configuration file using standard editor defined by environment variable
+                  ${EDITOR} creating sample configuration file first if not existing.
 writeconfig     : Writes sample configuration to default file "/root/.fbtr64toolbox"
                   or to specific file defined by the "--conffilesuffix" option (see below).
 writesoapfile [<fullpath>/<file>]
@@ -218,7 +220,8 @@ Option/Parameter                     Used by commands
 --conffilesuffix <text>              all but writesoapfile
           Use of configuration file "/root/.fbtr64toolbox.text"
           instead of default "/root/.fbtr64toolbox".
---fbip <ip address>|<fqdn>           all but calcsecret, writeconfig and writesoapfile
+--fbip <ip address>|<fqdn>           all but calcsecret, editconfig,
+                                     writeconfig and writesoapfile
 --description "<text>"               add, enable, disable
 --extport <port number>              add, enable, disable, del
 --intclient <ip address>             add, enable, disable
@@ -274,7 +277,8 @@ Option/Parameter                     Used by commands
 --usecurl                            script uses curl instead of wget
 
 Explanations for these parameters could be found in the SOAP sample file.
---SOAPtype https|http                all but calcsecret, writeconfig and writesoapfile
+--SOAPtype https|http                all but calcsecret, editconfig,
+                                     writeconfig and writesoapfile
 --SOAPdescfile <xmlfilename>         mysoaprequest
 --SOAPcontrolURL <URL>               mysoaprequest
 --SOAPserviceType <service type>     mysoaprequest
@@ -329,11 +333,6 @@ Warning:
 If adding or deleting port forwardings in the webgui of your fritzbox please
 reboot it afterwards. Otherwise the script will see an incorrect port forwarding count
 through the TR-064 interface ending up in corrupted port forwarding entries.
-```
-
-Das Kommando writeconfig schreibt eine beispielhafte Konfigurationsdatei in das Homeverzeichnis,
-die den eigenen Erfordernissen anzupassen ist; durch Verwendung der Skript-Option --conffilesuffix
-können verschiedene Konfigurationsdateien vorgehalten werden:
 ```
 # Configuration file for fbtr64toolbox.sh
 #
