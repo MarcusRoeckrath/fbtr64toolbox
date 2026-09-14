@@ -73,7 +73,7 @@ eingesehen werden. Letztere benoetigt man zur Definition eigener SOAP-
 Kommandos, wobei im Menuepunkt "Show filtered doc from fritzbox" nur die
 fuer einen SOAP-Request relevanten Informationen dargestellt werden.
 
-Desweiteren koennen fuer alle TR-064 Funktionen der eigenen Fritzbox
+Desweiteren koennen fuer alle TR-064-Funktionen der eigenen Fritzbox
 Beispiel-SOAP-Dateien erzeugt werden, die in einem anzugebenden
 Verzeichnis, welches existieren muss, abgelegt werden. Diese
 Beispieldateien werden aus der in der Fritzbox enthaltenen XML-Dokumentation
@@ -83,7 +83,10 @@ dieser Dateien.
 Ein erneuter Aufruf dieser Funktion loescht die vorhandenen Beispieldateien,
 bevor diese neu erzeugt werden.
 
+Einige TR-064-Funktionen wie z. B. die Abfrage der externen IP ergeben wenig
+aussagekräftige Ergebnisse.
 
+ 
 2. Das Skript
 
 Um mit diesem Skript mit der Fritzbox kommunizieren zu koennen, ist in der
@@ -873,36 +876,37 @@ hostsinfo:
 Zeigt einer Liste aller Hosts mit folgenden Informationen an.
 
 
-hostbyipinfo <ip>:
-Gibt Informationen ueber den mittels IP-Adresse angegebenen Host aus.
+hostinfo <ip>|<name>:
+Gibt Informationen ueber den mittels IP-Adresse oder Name angegebenen Host aus.
 
 
-wanaccessinfo <ip>:
-Zeigt fuer den mittels der IP-Adresse angegebenen Host an, ob der Zugriff
-auf das WAN-Interface erlaubt ist. Dies funktioniert nur fuer Hosts, die
-der Fritzbox bekannt sind.
+wanaccessinfo <ip>|<name>:
+Zeigt fuer den mittels der IP-Adresse oder Name angegebenen Host an,
+ob der Zugriff auf das WAN-Interface erlaubt ist. Dies funktioniert nur
+fuer Hosts, die der Fritzbox bekannt sind.
 
 
-wanaccessswitch <ip>:
-Schaltet den WAN-Zugriff fuer den mittels der IP-Adresse angegebenen Host
-ein bzw. aus. Dies funktioniert nur fuer Hosts, die der Fritzbox bekannt
+wanaccessswitch <ip>|<name>:
+Schaltet den WAN-Zugriff fuer den mittels der IP-Adresse oder Name angegebenen
+Host ein bzw. aus. Dies funktioniert nur fuer Hosts, die der Fritzbox bekannt
 sind. Ein Client erhaelt nur dann Zugriff auf das WAN-Interface, wenn
 sowohl dieser Schalter als auch das in der Web-UI zugeordnete Befehl
 dies erlauben.
 
 
-autowolinfo <mac>|<ip>:
-Zeigt fuer den mittels der MAC- oder IP-Adresse angegebenen Host die Auto WOL
-Konfiguration an. Dies funktioniert nur fuer Hosts, die der Fritzbox
+autowolinfo <mac>|<ip>|<name>:
+Zeigt fuer den mittels der MAC-, IP-Adresse oder Name angegebenen Host die
+Auto WOL Konfiguration an. Dies funktioniert nur fuer Hosts, die der Fritzbox
 bekannt sind.
 
 
-autowolswitch <mac>|<ip>:
-Schaltet Auto WOL fuer den mittels der MAC- oder IP-Adresse angegebenen Host
-ein bzw. aus. Dies funktioniert nur fuer Hosts, die der Fritzbox bekannt sind.
+autowolswitch <mac>|<ip>|<name>:
+Schaltet Auto WOL fuer den mittels der MAC-, IP-Adresse oder Name angegebenen
+Host ein bzw. aus. Dies funktioniert nur fuer Hosts, die der Fritzbox bekannt
+sind.
 
 
-wolclient <mac>|<ip>:
+wolclient <mac>|<ip>|<name>:
 Weckt den mittels der MAC-oder IP-Adresse angegebenen Client auf. Dies
 funktioniert nur fuer Clients, die der Fritzbox bekannt sind.
 
@@ -1220,7 +1224,7 @@ Unter https://fritz.com/pages/schnittstellen findet man detaillierte Information
 und Dokumente zur SOAP-Schnittstelle.
 
 Unter dem Menue-Punkt "Create sample soap files from fritzbox documents" (siehe
-oben unter 1. Das Menue) koennen fuer alle TR-04-Funktionen der eigenen Fritzbox
+oben unter 1. Das Menue) koennen fuer alle TR-064-Funktionen der eigenen Fritzbox
 SOAP-Beispieldateien erzeugt werden. Eine Beschreibung dieser Dateien folgt im
 dritten Kapitel dieser Dokumentation.
 
@@ -1251,7 +1255,7 @@ Beispiel wuerde der Aufruf von
 
 fbtr64toolbox.sh mysoaprequest ... --SOAPparameterlist "1,"
 
-die data-Zeilen so modifiziert an die TR064-Funktion uebergeben:
+die data-Zeilen so modifiziert an die TR-064-Funktion uebergeben:
 
 data="
        <NewIndex>1</NewIndex>
@@ -1273,7 +1277,7 @@ Der Aufruf
 
 fbtr64toolbox.sh mysoaprequest x_tamSCP.xml.MarkMessage_1 --SOAPparameterlist "3,12,1,"
 
-wird dann den Datenblock folgendermassen an die TR064-Funktion uebergeben:
+wird dann den Datenblock folgendermassen an die TR-064-Funktion uebergeben:
 
 data="
        <NewIndex>3</NewIndex>
@@ -1420,7 +1424,7 @@ Option/Parameter                    Benutzt vom Kommando
                                     homepluginfo, hostsinfo, show, voipinfo
     Beginnt den Index in diesen Listen mit "0" statt "1", was der internen
     Nummerierung der Fritzbox entspricht. Soll ein ermittelter Index in
-    einer anderen TR-64-Funktion als Eingabewert genutzt werden, ist
+    einer anderen TR-064-Funktion als Eingabewert genutzt werden, ist
     in der Regel von einer ab "0" ausgehenden Nummerierung auszugehen.
 
 --csvtableoutput                    alarminfo, dectinfo, deflectionsinfo,
@@ -1575,5 +1579,5 @@ die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
 
-Stand: 2026-06-21
+Stand: 2026-09-13
 Marcus Roeckrath
