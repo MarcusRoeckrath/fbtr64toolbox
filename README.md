@@ -1,9 +1,9 @@
 # fbtr64toolbox
 
 ```
-Aktuelle Paketversion: 2.25.0
-Aktuelle Skriptversion: 3.9.0
-Veröffentlichungsdatum: 22.06.2026
+Aktuelle Paketversion: 2.25.1
+Aktuelle Skriptversion: 3.9.1
+Veröffentlichungsdatum: 14.09.2026
 ```
 
 Command line tool (bash script) for the TR-064 interface of fritzboxes
@@ -15,11 +15,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.0.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.1.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.0-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.1-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.0-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.1-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -97,7 +97,7 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh --help)
 ```
 Command line tool for the TR-064 interface of fritzboxes
-Version: 3.9.0 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
+Version: 3.9.1 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
                                          marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
