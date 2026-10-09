@@ -15,11 +15,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.1.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.2.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.1-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.2-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.1-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.2-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
@@ -57,7 +57,9 @@ Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" 
 - tr64desc.xml
 - igddesc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
 - igd2desc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
-- fboxdesc.xml
+- fboxdesc.! Misspelled variable
+* Code cleanup suggested by shellcheck
+xml
 - usbdesc.xml
 - avmnexusdesc.xml
 - l2tpv3.xml
