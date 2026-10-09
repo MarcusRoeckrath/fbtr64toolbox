@@ -1,3 +1,10 @@
+v2.25.2 stable  - 2026-10-09
+============================
+! Misspelled variable
+* Code cleanup suggested by shellcheck
+* fbtr64toolbox.sh version 3.9.2
+
+
 v2.25.1 stable  - 2026-09-14
 ============================
 * hostinfo: Enhanced output to show
