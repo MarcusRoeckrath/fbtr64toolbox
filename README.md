@@ -1,9 +1,9 @@
 # fbtr64toolbox
 
 ```
-Aktuelle Paketversion: 2.25.1
-Aktuelle Skriptversion: 3.9.1
-Veröffentlichungsdatum: 14.09.2026
+Aktuelle Paketversion: 2.25.2
+Aktuelle Skriptversion: 3.9.2
+Veröffentlichungsdatum: 09.10.2026
 ```
 
 Command line tool (bash script) for the TR-064 interface of fritzboxes
