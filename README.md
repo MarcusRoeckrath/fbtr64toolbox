@@ -57,9 +57,7 @@ Es werden folgende AVM-Service-XML-Dateien fuer die Kommandos "createsoapfiles" 
 - tr64desc.xml
 - igddesc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
 - igd2desc.xml (nur verfügbar, wenn "Statusinformationen über UPnP übertragen" aktiviert ist)
-- fboxdesc.! Misspelled variable
-* Code cleanup suggested by shellcheck
-xml
+- fboxdesc.xml
 - usbdesc.xml
 - avmnexusdesc.xml
 - l2tpv3.xml
