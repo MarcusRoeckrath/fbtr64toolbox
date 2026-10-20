@@ -15,11 +15,11 @@ released under GPL2
 
 Download:
 
-tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.3.tar.bz2
+tar: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.4.tar.bz2
 
-rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.3-1.0.noarch.rpm
+rpm: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox-2.25.4-1.0.noarch.rpm
 
-deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.3-1.0_all.deb
+deb: https://github.com/MarcusRoeckrath/fbtr64toolbox/raw/main/fbtr64toolbox_2.25.4-1.0_all.deb
 
 Abhängig von der Firmware einer Fritzbox sind möglicherweise nicht
 alle Funktionen des Skriptes verfügbar und führen dann zur
