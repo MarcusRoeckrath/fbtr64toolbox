@@ -1528,7 +1528,7 @@ eventuell mit dem Kommando createsoapfiles neu erzeugt werden.
 
 3. Die SOAP-Beispieldateien
 
-Diese mit dem createsoapfile-Kommando aus den auf der eigenen Fritzbox
+Die mit dem createsoapfile-Kommando aus den auf der eigenen Fritzbox
 enthaltenen xml-Dokumente erzeugten SOAP-Beispieldateien erhalten
 Dateinamen nach folgendem Schema:
 
@@ -1578,6 +1578,12 @@ sein, da eventuell Veraenderungen an der Fritzbox vorgenommen werden, so wird
 die Beispieldatei tr64desc.xml.deviceconfigSCPD.xml.FactoryReset_1 ohne weitere
 Rueckfrage die Fritzbox auf Werkseinstellungen zuruecksetzen.
 
+Wichtiger Hinweis:
 
-Stand: 2026-09-13
+Abhaengig vom Fritzbox Modell und Firmware koennen sich TR-064-Funktionen unterscheiden.
+Nutze die vom Kommando createsoapfiles erzeugten Beispieldateien nur auf dem Fritzbox-Modell
+und Firmware, fuer die sie erzeugt wurden.
+
+
+Stand: 2026-10-20
 Marcus Roeckrath
