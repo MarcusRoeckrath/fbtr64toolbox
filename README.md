@@ -1,9 +1,9 @@
 # fbtr64toolbox
 
 ```
-Aktuelle Paketversion: 2.25.3
-Aktuelle Skriptversion: 3.9.3
-Veröffentlichungsdatum: 14.10.2026
+Aktuelle Paketversion: 2.25.4
+Aktuelle Skriptversion: 3.9.4
+Veröffentlichungsdatum: 20.10.2026
 ```
 
 Command line tool (bash script) for the TR-064 interface of fritzboxes
@@ -97,7 +97,7 @@ Das Skript wurde in folgenden System getestet:
 Hier die Hilfeseite: (fbtr64toolbox.sh --help)
 ```
 Command line tool for the TR-064 interface of fritzboxes
-Version: 3.9.3 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
+Version: 3.9.4 ; Copyright (C) 2016-2026 Marcus Roeckrath ; License: GPL2
                                          marcus(dot)roeckrath(at)gmx(dot)de
                   This program comes with ABSOLUTELY NO WARRANTY.
                   This is free software, and you are welcome to
